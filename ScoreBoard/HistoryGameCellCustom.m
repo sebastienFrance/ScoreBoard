@@ -7,6 +7,7 @@
 //
 
 #import "HistoryGameCellCustom.h"
+#import "ModelScoreBoard.h"
 
 @implementation HistoryGameCellCustom
 
@@ -25,5 +26,18 @@
 
     // Configure the view for the selected state
 }
+
+- (void) initCellWithPlayer:(ModelScoreBoard*) argPlayer {
+    
+    NSDate* currentDate = [argPlayer GameDate];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    NSString* stringDate = [dateFormatter stringFromDate:currentDate];
+
+    self.gameDateLabel.text = stringDate;
+    self.gameNameLabel.text = argPlayer.GameName;
+}
+
 
 @end

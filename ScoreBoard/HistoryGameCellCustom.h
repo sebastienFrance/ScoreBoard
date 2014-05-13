@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class ModelScoreBoard;
+
 @interface HistoryGameCellCustom : UITableViewCell
+
+@property (nonatomic, retain) IBOutlet UILabel* gameNameLabel;
+@property (nonatomic, retain) IBOutlet UILabel* gameDateLabel;
+
+- (void) initCellWithPlayer:(ModelScoreBoard*) argPlayer;
 
 @end

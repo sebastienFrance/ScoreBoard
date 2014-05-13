@@ -12,12 +12,15 @@
 @class ModelPlayer, ModelScoreBoard, ModelScoreList;
 
 @interface ModelScorePlayer : NSManagedObject {
+    NSInteger totalScore;
+
 @private
 }
 @property (nonatomic, retain) NSNumber * DisplayOrder;
 @property (nonatomic, retain) ModelPlayer *Player;
 @property (nonatomic, retain) ModelScoreBoard *ScoreBoard;
 @property (nonatomic, retain) NSSet *ScoreList;
+@property (nonatomic, assign) NSInteger totalScore;
 @end
 
 @interface ModelScorePlayer (CoreDataGeneratedAccessors)
@@ -26,4 +29,6 @@
 - (void)removeScoreListObject:(ModelScoreList *)value;
 - (void)addScoreList:(NSSet *)values;
 - (void)removeScoreList:(NSSet *)values;
+
+- (void) refreshScore;
 @end

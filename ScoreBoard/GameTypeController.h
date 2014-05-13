@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface GameTypeController : NSObject
+@class PlayersTableViewContoller;
+@class ModelGameConfig;
+
+@interface GameTypeController : UITableViewController
+
+@property(nonatomic, retain) PlayersTableViewContoller *delegate;
+@property(nonatomic, retain) ModelGameConfig *gameConfig;
+
 
 @end

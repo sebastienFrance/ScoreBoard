@@ -1,13 +1,12 @@
-//
-//  UIImage+Alpha.h
-//  ScoreBoard
-//
-//  Created by Sebastien Brugalieres on 22/10/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
-//
+// UIImage+Alpha.h
+// Created by Trevor Harmon on 9/20/09.
+// Free for personal or commercial use, with or without modification.
+// No warranty is expressed or implied.
 
-#import <Foundation/Foundation.h>
-
-@interface UIImage_Alpha : NSObject
-
+// Helper methods for adding an alpha layer to an image
+@interface UIImage (Alpha)
+- (BOOL)hasAlpha;
+- (UIImage *)imageWithAlpha;
+- (UIImage *)transparentBorderImage:(NSUInteger)borderSize;
+- (CGImageRef)newBorderMask:(NSUInteger)borderSize size:(CGSize)size;
 @end

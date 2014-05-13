@@ -1,13 +1,10 @@
-//
-//  UIImage+RoundedCorner.h
-//  ScoreBoard
-//
-//  Created by Sebastien Brugalieres on 22/10/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
-//
+// UIImage+RoundedCorner.h
+// Created by Trevor Harmon on 9/20/09.
+// Free for personal or commercial use, with or without modification.
+// No warranty is expressed or implied.
 
-#import <Foundation/Foundation.h>
-
-@interface UIImage_RoundedCorner : NSObject
-
+// Extends the UIImage class to support making rounded corners
+@interface UIImage (RoundedCorner)
+- (UIImage *)roundedCornerImage:(NSInteger)cornerSize borderSize:(NSInteger)borderSize;
+- (void)addRoundedRectToPath:(CGRect)rect context:(CGContextRef)context ovalWidth:(CGFloat)ovalWidth ovalHeight:(CGFloat)ovalHeight;
 @end

@@ -28,3 +28,8 @@
 - (void)addScorePlayer:(NSSet *)values;
 - (void)removeScorePlayer:(NSSet *)values;
 @end
+
+@interface ImageToDataTransformer : NSValueTransformer {
+}
+@end
+

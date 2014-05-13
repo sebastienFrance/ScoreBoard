@@ -7,8 +7,12 @@
 //
 
 #import "ScoreLogViewController.h"
+#import "HistoryTableViewController.h"
+#import "DatabaseHelper.h"
+#import "PlayersTableViewContoller.h"
 
 @interface ScoreLogViewController ()
+
 
 @end
 
@@ -26,13 +30,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    self.navigationController.navigationBarHidden = TRUE;
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (self.isMovingToParentViewController == NO) {
+        self.navigationController.navigationBarHidden = TRUE;
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+- (BOOL) prefersStatusBarHidden {
+    return TRUE;
+}
+
+#pragma mark - Segue
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    self.navigationController.navigationBarHidden = FALSE;
+    if ([segue.identifier isEqualToString:@"openGameHistory"]) {
+         HistoryTableViewController* controller = segue.destinationViewController;
+        controller.scoreBoard = self;
+    } else if ([segue.identifier isEqualToString:@"StartNewGame"]) {
+        PlayersTableViewContoller* controller = segue.destinationViewController;
+        controller.scoreBoard = self;
+    }
+}
+
+
 
 @end

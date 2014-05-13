@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="ScoreBoardModel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="11B26" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ModelGameConfig" representedClassName="ModelGameConfig">
+        <attribute name="HighestScoreWin" optional="YES" attributeType="Boolean" defaultValueString="YES"/>
+        <attribute name="NegativeScore" optional="YES" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="OrderBy" optional="YES" attributeType="Integer 16" defaultValueString="0"/>
+        <relationship name="ScoreBoard" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="ModelScoreBoard" inverseName="GameConfig" inverseEntity="ModelScoreBoard"/>
+    </entity>
+    <entity name="ModelPlayer" representedClassName="ModelPlayer">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="picture" optional="YES" attributeType="Transformable" valueTransformerName="ImageToDataTransformer"/>
+        <relationship name="ScorePlayer" optional="YES" toMany="YES" minCount="1" deletionRule="Deny" destinationEntity="ModelScorePlayer" inverseName="Player" inverseEntity="ModelScorePlayer"/>
+    </entity>
+    <entity name="ModelScoreBoard" representedClassName="ModelScoreBoard">
+        <attribute name="GameDate" optional="YES" attributeType="Date"/>
+        <attribute name="GameName" optional="YES" attributeType="String"/>
+        <relationship name="GameConfig" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="ModelGameConfig" inverseName="ScoreBoard" inverseEntity="ModelGameConfig"/>
+        <relationship name="ScoreList" optional="YES" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="ModelScorePlayer" inverseName="ScoreBoard" inverseEntity="ModelScorePlayer"/>
+    </entity>
+    <entity name="ModelScoreList" representedClassName="ModelScoreList">
+        <attribute name="DisplayOrder" optional="YES" attributeType="Integer 16" defaultValueString="0"/>
+        <attribute name="Index" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <attribute name="Score" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <relationship name="ScorePlayer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ModelScorePlayer" inverseName="ScoreList" inverseEntity="ModelScorePlayer"/>
+    </entity>
+    <entity name="ModelScorePlayer" representedClassName="ModelScorePlayer">
+        <attribute name="DisplayOrder" optional="YES" attributeType="Integer 16" defaultValueString="0"/>
+        <relationship name="Player" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="ModelPlayer" inverseName="ScorePlayer" inverseEntity="ModelPlayer"/>
+        <relationship name="ScoreBoard" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ModelScoreBoard" inverseName="ScoreList" inverseEntity="ModelScoreBoard"/>
+        <relationship name="ScoreList" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ModelScoreList" inverseName="ScorePlayer" inverseEntity="ModelScoreList"/>
+    </entity>
+    <elements>
+        <element name="ModelGameConfig" positionX="-389" positionY="-162" width="128" height="105"/>
+        <element name="ModelPlayer" positionX="-137" positionY="15" width="128" height="120"/>
+        <element name="ModelScoreBoard" positionX="-587" positionY="-72" width="128" height="105"/>
+        <element name="ModelScoreList" positionX="-542" positionY="153" width="128" height="90"/>
+        <element name="ModelScorePlayer" positionX="-380" positionY="-27" width="128" height="105"/>
+    </elements>
 </model>

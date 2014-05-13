@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlayersTableViewContoller.h"
 
-@interface AddScoreToPlayer : UIViewController
+@class ModelScorePlayer;
+@class ModelGameConfig;
+
+
+@interface AddScoreToPlayerController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIGestureRecognizerDelegate>
+
+@property(nonatomic) PlayersTableViewContoller *delegate;
+@property(nonatomic) ModelScorePlayer *scorePlayer;
+@property(nonatomic) NSMutableArray* modelScoreList;
+@property(nonatomic) ModelGameConfig* gameConfig;
 
 @end

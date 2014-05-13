@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HistoryTableViewController : UIViewController
+@class ScoreLogViewController;
+
+@interface HistoryTableViewController : UITableViewController
+
+
+@property (nonatomic) ScoreLogViewController* scoreBoard;
+
+
 
 @end

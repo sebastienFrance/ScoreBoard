@@ -14,9 +14,9 @@
 @interface ModelScoreBoard : NSManagedObject {
 @private
 }
-@property (nonatomic, retain) NSDate * GameDate;
-@property (nonatomic, retain) NSString * GameName;
-@property (nonatomic, retain) ModelGameConfig *GameConfig;
+@property (nonatomic, retain) NSDate* GameDate;
+@property (nonatomic, retain) NSString* GameName;
+@property (nonatomic, retain) ModelGameConfig* GameConfig;
 @property (nonatomic, retain) NSSet *ScoreList;
 @end
 

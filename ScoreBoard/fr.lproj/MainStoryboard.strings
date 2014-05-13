@@ -1,21 +1,21 @@
 
 /* Class = "IBUISegmentedControl"; 0DG-SF-RkV.segmentTitles[0] = "+ (Positive)"; ObjectID = "0DG-SF-RkV"; */
-"0DG-SF-RkV.segmentTitles[0]" = "+ (Positive)";
+"0DG-SF-RkV.segmentTitles[0]" = "+ (Positif)";
 
 /* Class = "IBUISegmentedControl"; 0DG-SF-RkV.segmentTitles[1] = "- (Minus)"; ObjectID = "0DG-SF-RkV"; */
-"0DG-SF-RkV.segmentTitles[1]" = "- (Minus)";
+"0DG-SF-RkV.segmentTitles[1]" = "- (Negatif)";
 
 /* Class = "IBUITableViewSection"; headerTitle = "Information"; ObjectID = "0Dc-OA-lAR"; */
 "0Dc-OA-lAR.headerTitle" = "Information";
 
 /* Class = "IBUILabel"; text = "Player Name"; ObjectID = "4ov-1o-kbw"; */
-"4ov-1o-kbw.text" = "Player Name";
+"4ov-1o-kbw.text" = "Nom";
 
 /* Class = "IBUIBarButtonItem"; title = "Add"; ObjectID = "8Sk-jS-g3u"; */
-"8Sk-jS-g3u.title" = "Add";
+"8Sk-jS-g3u.title" = "Ajouter";
 
 /* Class = "IBUILabel"; text = "Best score win"; ObjectID = "BxM-qY-usc"; */
-"BxM-qY-usc.text" = "Best score win";
+"BxM-qY-usc.text" = "Le meilleur score gagne";
 
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "DUX-Zw-erR"; */
 "DUX-Zw-erR.text" = "Label";
@@ -24,22 +24,22 @@
 "K6q-rc-MYj.text" = "Game Name Label";
 
 /* Class = "IBUILabel"; text = "Score history"; ObjectID = "OJ0-kx-8k4"; */
-"OJ0-kx-8k4.text" = "Score history";
+"OJ0-kx-8k4.text" = "Historique";
 
 /* Class = "IBUILabel"; text = "Negative score"; ObjectID = "Rk0-Pk-oUT"; */
-"Rk0-Pk-oUT.text" = "Negative score";
+"Rk0-Pk-oUT.text" = "Score négatif";
 
 /* Class = "IBUIButton"; normalTitle = "Start a new Game!"; ObjectID = "XZQ-4l-Pjm"; */
-"XZQ-4l-Pjm.normalTitle" = "Start a new Game!";
+"XZQ-4l-Pjm.normalTitle" = "Nouvelle Partie!";
 
 /* Class = "IBUIBarButtonItem"; title = "Add Score"; ObjectID = "aI3-vd-XhD"; */
-"aI3-vd-XhD.title" = "Add Score";
+"aI3-vd-XhD.title" = "Ajouter score";
 
 /* Class = "IBUILabel"; text = "10"; ObjectID = "bzK-tK-Fux"; */
 "bzK-tK-Fux.text" = "10";
 
 /* Class = "IBUIButton"; normalTitle = "Continue a Game"; ObjectID = "dSN-2W-xz5"; */
-"dSN-2W-xz5.normalTitle" = "Continue a Game";
+"dSN-2W-xz5.normalTitle" = "Continuer une partie";
 
 /* Class = "IBUILabel"; text = "Round:"; ObjectID = "eUI-fT-rcQ"; */
 "eUI-fT-rcQ.text" = "Round:";
@@ -51,16 +51,16 @@
 "fcE-KW-Rz9.placeholder" = "Score";
 
 /* Class = "IBUITextField"; placeholder = "Game name"; ObjectID = "k7a-Vn-jxz"; */
-"k7a-Vn-jxz.placeholder" = "Game name";
+"k7a-Vn-jxz.placeholder" = "Nom de la partie";
 
 /* Class = "IBUITextField"; placeholder = "Name"; ObjectID = "oXy-Ob-3LA"; */
-"oXy-Ob-3LA.placeholder" = "Name";
+"oXy-Ob-3LA.placeholder" = "Nom";
 
 /* Class = "IBUILabel"; text = "About"; ObjectID = "ovY-y6-k5d"; */
-"ovY-y6-k5d.text" = "About";
+"ovY-y6-k5d.text" = "A propos";
 
 /* Class = "IBUIBarButtonItem"; title = "Cancel"; ObjectID = "rTK-go-Nzp"; */
-"rTK-go-Nzp.title" = "Cancel";
+"rTK-go-Nzp.title" = "Annuler";
 
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "rlO-K4-wJf"; */
 "rlO-K4-wJf.text" = "Label";
@@ -70,3 +70,6 @@
 
 /* Class = "IBUILabel"; text = "Score:"; ObjectID = "uel-Qh-076"; */
 "uel-Qh-076.text" = "Score:";
+
+"NwG-Cy-vNw.text" = "ou selectionner un contact";
+

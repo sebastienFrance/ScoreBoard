@@ -17,5 +17,28 @@
 @dynamic Player;
 @dynamic ScoreBoard;
 @dynamic ScoreList;
+@synthesize totalScore;
+
+- (id) init {
+    self = [super init];
+    [self refreshScore];
+    return self;
+}
+
+- (id)initWithEntity:(NSEntityDescription *)entity insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
+    self = [super initWithEntity:entity insertIntoManagedObjectContext:context];
+    [self refreshScore];
+    return self;
+    
+}
+
+- (void) refreshScore {
+    NSEnumerator* enumerator = [self.ScoreList objectEnumerator];
+    ModelScoreList *score = Nil;
+    totalScore = 0;
+    while ((score = [enumerator nextObject]) != Nil) {
+        totalScore += [[score Score] integerValue];
+    }
+}
 
 @end

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameTypeScoreBoardAbout : UIViewController
+@interface ScoreBoardAboutController : UIViewController <UIWebViewDelegate> 
+
+
 
 @end

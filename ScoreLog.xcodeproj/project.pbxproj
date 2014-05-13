@@ -7,20 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0348561466CAF50053BB85 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = BE0348551466CAF50053BB85 /* default.png */; };
+		BE0348581466CB030053BB85 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE0348571466CB030053BB85 /* default@2x.png */; };
+		BE03485E1466CE370053BB85 /* default in Resources */ = {isa = PBXBuildFile; fileRef = BE03485D1466CE370053BB85 /* default */; };
+		BE09E7F9189EDD87008FF16A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE09E7F8189EDD87008FF16A /* Images.xcassets */; };
+		BE09EFAC145321E80094C38C /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09EFAB145321E80094C38C /* UIImage+Resize.m */; };
+		BE09EFB0145322F10094C38C /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09EFAF145322F10094C38C /* UIImage+RoundedCorner.m */; };
+		BE09EFB3145323310094C38C /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09EFB2145323310094C38C /* UIImage+Alpha.m */; };
+		BE1695A01434F7AB001FC88F /* ModelScorePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE16959F1434F7AB001FC88F /* ModelScorePlayer.m */; };
+		BE22F85C145D5A8F00210BF8 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE22F85B145D5A8F00210BF8 /* iAd.framework */; };
+		BE2639E1140C14D6006F8C20 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2639E0140C14D6006F8C20 /* MobileCoreServices.framework */; };
+		BE3A7FA81416AEDE009A1B0B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A7FA71416AEDE009A1B0B /* AddressBookUI.framework */; };
+		BE3A7FAB1416AEED009A1B0B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A7FAA1416AEED009A1B0B /* AddressBook.framework */; };
+		BE3B3929148EB21E00E1023B /* Manual.html in Resources */ = {isa = PBXBuildFile; fileRef = BE3B3928148EB21E00E1023B /* Manual.html */; };
+		BE3D07041466C645006508BC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D07031466C645006508BC /* Icon.png */; };
+		BE3D07061466C662006508BC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D07051466C662006508BC /* Icon@2x.png */; };
+		BE3D070C1466C6B3006508BC /* AboutTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D070B1466C6B3006508BC /* AboutTitle.png */; };
+		BE522F69189C0FE100D760C1 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE522F6B189C0FE100D760C1 /* MainStoryboard.storyboard */; };
+		BE68714A13FAFC1500E515D8 /* PlayersTableViewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = BE68714913FAFC1500E515D8 /* PlayersTableViewContoller.m */; };
+		BE68714D13FB069700E515D8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE68714C13FB069700E515D8 /* CoreData.framework */; };
+		BE76646514404F6E00543CB1 /* ModelScoreBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = BE76646414404F6E00543CB1 /* ModelScoreBoard.m */; };
+		BE83B022144AD1F9006D6B12 /* HistoryGameCellCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = BE83B021144AD1F9006D6B12 /* HistoryGameCellCustom.m */; };
+		BE8DC921142DCDCF00F334DE /* ScoreBoardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE8DC91F142DCDCF00F334DE /* ScoreBoardModel.xcdatamodeld */; };
+		BE932AB4142FC75100324CC3 /* ModelPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE932AB3142FC75100324CC3 /* ModelPlayer.m */; };
+		BE934CB81438C1050051B5AA /* No_Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = BE934CB71438C1050051B5AA /* No_Photo.png */; };
+		BE94DD07142BF28E00586B0F /* start a new game-182x59.png in Resources */ = {isa = PBXBuildFile; fileRef = BE94DD06142BF28E00586B0F /* start a new game-182x59.png */; };
+		BE9589CA1441A73600B0D124 /* GameTypeController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9589C91441A73600B0D124 /* GameTypeController.m */; };
+		BE9589D61441D19D00B0D124 /* ModelGameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9589D51441D19D00B0D124 /* ModelGameConfig.m */; };
+		BE9679B8142633A60099374E /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9679B6142633A60099374E /* HistoryTableViewController.m */; };
+		BE9699EE1435665800D0DD59 /* ModelScoreList.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9699ED1435665800D0DD59 /* ModelScoreList.m */; };
+		BE9D25C81645373F0040A556 /* default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE9D25C71645373F0040A556 /* default-568h@2x.png */; };
+		BEA2A91C143B8AB100167466 /* PlayersTableViewCellCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA2A91B143B8AB100167466 /* PlayersTableViewCellCustom.m */; };
+		BEA410D0145C3DFC0051B4E9 /* About_fr.html in Resources */ = {isa = PBXBuildFile; fileRef = BEA410CF145C3DFC0051B4E9 /* About_fr.html */; };
+		BEA410D3145C3E040051B4E9 /* About.html in Resources */ = {isa = PBXBuildFile; fileRef = BEA410D2145C3E040051B4E9 /* About.html */; };
+		BEB091C018941FBB0012CA47 /* MailHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB091BF18941FBB0012CA47 /* MailHelper.m */; };
+		BEB091C3189420F00012CA47 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB091C2189420F00012CA47 /* Utilities.m */; };
+		BEB698931466CE5600F9BE57 /* default@2x. in Resources */ = {isa = PBXBuildFile; fileRef = BEB698921466CE5600F9BE57 /* default@2x. */; };
+		BEBA14171893090B00FD18A8 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBA14161893090B00FD18A8 /* DatabaseHelper.m */; };
+		BEBB81641444EB870070F64A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBB81631444EB870070F64A /* MessageUI.framework */; };
+		BEBDD24C1459DFD500855A83 /* ScoreBoardAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDD24B1459DFD500855A83 /* ScoreBoardAboutController.m */; };
+		BEC8977914042E1C00D1F674 /* AddScoreToPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC8977814042E1C00D1F674 /* AddScoreToPlayerController.m */; };
 		BEC8F6F413F197650051770E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8F6F313F197650051770E /* UIKit.framework */; };
 		BEC8F6F613F197650051770E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8F6F513F197650051770E /* Foundation.framework */; };
 		BEC8F6F813F197650051770E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8F6F713F197650051770E /* CoreGraphics.framework */; };
-		BEC8F6FE13F197650051770E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEC8F6FC13F197650051770E /* InfoPlist.strings */; };
 		BEC8F70013F197660051770E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC8F6FF13F197650051770E /* main.m */; };
 		BEC8F70413F197660051770E /* ScoreBoardAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC8F70313F197660051770E /* ScoreBoardAppDelegate.m */; };
-		BEC8F70713F197660051770E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC8F70513F197660051770E /* MainWindow.xib */; };
 		BEC8F70F13F197660051770E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8F70E13F197660051770E /* SenTestingKit.framework */; };
 		BEC8F71013F197660051770E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8F6F313F197650051770E /* UIKit.framework */; };
 		BEC8F71113F197660051770E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8F6F513F197650051770E /* Foundation.framework */; };
 		BEC8F71213F197660051770E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8F6F713F197650051770E /* CoreGraphics.framework */; };
-		BEC8F71A13F197660051770E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEC8F71813F197660051770E /* InfoPlist.strings */; };
 		BEC8F71C13F197660051770E /* ScoreBoardTests.h in Resources */ = {isa = PBXBuildFile; fileRef = BEC8F71B13F197660051770E /* ScoreBoardTests.h */; };
 		BEC8F71E13F197660051770E /* ScoreBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC8F71D13F197660051770E /* ScoreBoardTests.m */; };
+		BEDF6C661891BB6600A93324 /* ScoreLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDF6C651891BB6600A93324 /* ScoreLogViewController.m */; };
+		BEE89FF9143324A200039D87 /* DatabaseAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE89FF8143324A200039D87 /* DatabaseAccess.m */; };
+		BEE98E9413FD858500716683 /* AddPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE98E9313FD858500716683 /* AddPlayerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,23 +74,85 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BEC8F6EF13F197650051770E /* ScoreBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE0348551466CAF50053BB85 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default.png; path = "Gimp Score Log/default.png"; sourceTree = "<group>"; };
+		BE0348571466CB030053BB85 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default@2x.png"; path = "Gimp Score Log/default@2x.png"; sourceTree = "<group>"; };
+		BE03485D1466CE370053BB85 /* default */ = {isa = PBXFileReference; lastKnownFileType = file; path = default; sourceTree = "<group>"; };
+		BE09E7F8189EDD87008FF16A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Score Log/Images.xcassets"; sourceTree = "<group>"; };
+		BE09EFAA145321E80094C38C /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Resize.h"; path = "ScoreBoard/UIImage+Resize.h"; sourceTree = "<group>"; };
+		BE09EFAB145321E80094C38C /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "ScoreBoard/UIImage+Resize.m"; sourceTree = "<group>"; };
+		BE09EFAE145322F10094C38C /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RoundedCorner.h"; path = "ScoreBoard/UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		BE09EFAF145322F10094C38C /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RoundedCorner.m"; path = "ScoreBoard/UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		BE09EFB1145323310094C38C /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Alpha.h"; path = "ScoreBoard/UIImage+Alpha.h"; sourceTree = "<group>"; };
+		BE09EFB2145323310094C38C /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Alpha.m"; path = "ScoreBoard/UIImage+Alpha.m"; sourceTree = "<group>"; };
+		BE16959E1434F7AB001FC88F /* ModelScorePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelScorePlayer.h; path = Model/ModelScorePlayer.h; sourceTree = "<group>"; };
+		BE16959F1434F7AB001FC88F /* ModelScorePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelScorePlayer.m; path = Model/ModelScorePlayer.m; sourceTree = "<group>"; };
+		BE22F85B145D5A8F00210BF8 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		BE2639E0140C14D6006F8C20 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BE3A7FA71416AEDE009A1B0B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		BE3A7FAA1416AEED009A1B0B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		BE3B3928148EB21E00E1023B /* Manual.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Manual.html; sourceTree = "<group>"; };
+		BE3D07031466C645006508BC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "Gimp Score Log/Icon.png"; sourceTree = "<group>"; };
+		BE3D07051466C662006508BC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Gimp Score Log/Icon@2x.png"; sourceTree = "<group>"; };
+		BE3D070B1466C6B3006508BC /* AboutTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AboutTitle.png; path = "Gimp Score Log/AboutTitle.png"; sourceTree = "<group>"; };
+		BE522F6A189C0FE100D760C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		BE68714813FAFC1500E515D8 /* PlayersTableViewContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayersTableViewContoller.h; sourceTree = "<group>"; };
+		BE68714913FAFC1500E515D8 /* PlayersTableViewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayersTableViewContoller.m; sourceTree = "<group>"; };
+		BE68714C13FB069700E515D8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BE76646314404F6E00543CB1 /* ModelScoreBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelScoreBoard.h; path = Model/ModelScoreBoard.h; sourceTree = "<group>"; };
+		BE76646414404F6E00543CB1 /* ModelScoreBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelScoreBoard.m; path = Model/ModelScoreBoard.m; sourceTree = "<group>"; };
+		BE83B020144AD1F9006D6B12 /* HistoryGameCellCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryGameCellCustom.h; sourceTree = "<group>"; };
+		BE83B021144AD1F9006D6B12 /* HistoryGameCellCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryGameCellCustom.m; sourceTree = "<group>"; };
+		BE8DC920142DCDCF00F334DE /* ScoreBoardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScoreBoardModel.xcdatamodel; sourceTree = "<group>"; };
+		BE932AB2142FC75100324CC3 /* ModelPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelPlayer.h; path = Model/ModelPlayer.h; sourceTree = "<group>"; };
+		BE932AB3142FC75100324CC3 /* ModelPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelPlayer.m; path = Model/ModelPlayer.m; sourceTree = "<group>"; };
+		BE934CB71438C1050051B5AA /* No_Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = No_Photo.png; path = ScoreBoard/No_Photo.png; sourceTree = "<group>"; };
+		BE94DD06142BF28E00586B0F /* start a new game-182x59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "start a new game-182x59.png"; path = "ScoreBoard/start a new game-182x59.png"; sourceTree = "<group>"; };
+		BE9589C81441A73600B0D124 /* GameTypeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTypeController.h; sourceTree = "<group>"; };
+		BE9589C91441A73600B0D124 /* GameTypeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTypeController.m; sourceTree = "<group>"; };
+		BE9589D41441D19D00B0D124 /* ModelGameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelGameConfig.h; path = Model/ModelGameConfig.h; sourceTree = "<group>"; };
+		BE9589D51441D19D00B0D124 /* ModelGameConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelGameConfig.m; path = Model/ModelGameConfig.m; sourceTree = "<group>"; };
+		BE9679B5142633A60099374E /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
+		BE9679B6142633A60099374E /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
+		BE9699EC1435665800D0DD59 /* ModelScoreList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelScoreList.h; path = Model/ModelScoreList.h; sourceTree = "<group>"; };
+		BE9699ED1435665800D0DD59 /* ModelScoreList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelScoreList.m; path = Model/ModelScoreList.m; sourceTree = "<group>"; };
+		BE97FDB7189C10C200D4413D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainStoryboard.strings; sourceTree = "<group>"; };
+		BE9D25C71645373F0040A556 /* default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-568h@2x.png"; sourceTree = "<group>"; };
+		BEA2A91A143B8AB100167466 /* PlayersTableViewCellCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayersTableViewCellCustom.h; sourceTree = "<group>"; };
+		BEA2A91B143B8AB100167466 /* PlayersTableViewCellCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayersTableViewCellCustom.m; sourceTree = "<group>"; };
+		BEA410CF145C3DFC0051B4E9 /* About_fr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = About_fr.html; sourceTree = "<group>"; };
+		BEA410D2145C3E040051B4E9 /* About.html */ = {isa = PBXFileReference; explicitFileType = text.html.documentation; fileEncoding = 4; path = About.html; sourceTree = "<group>"; };
+		BEB091BE18941FBB0012CA47 /* MailHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailHelper.h; sourceTree = "<group>"; };
+		BEB091BF18941FBB0012CA47 /* MailHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailHelper.m; sourceTree = "<group>"; };
+		BEB091C1189420F00012CA47 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		BEB091C2189420F00012CA47 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		BEB698921466CE5600F9BE57 /* default@2x. */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default@2x."; sourceTree = "<group>"; };
+		BEBA14151893090B00FD18A8 /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
+		BEBA14161893090B00FD18A8 /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
+		BEBB81631444EB870070F64A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		BEBDD24A1459DFD500855A83 /* ScoreBoardAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoardAboutController.h; sourceTree = "<group>"; };
+		BEBDD24B1459DFD500855A83 /* ScoreBoardAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreBoardAboutController.m; sourceTree = "<group>"; };
+		BEC8977714042E1C00D1F674 /* AddScoreToPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddScoreToPlayerController.h; sourceTree = "<group>"; };
+		BEC8977814042E1C00D1F674 /* AddScoreToPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddScoreToPlayerController.m; sourceTree = "<group>"; };
+		BEC8F6EF13F197650051770E /* ScoreLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC8F6F313F197650051770E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEC8F6F513F197650051770E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BEC8F6F713F197650051770E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BEC8F6FB13F197650051770E /* ScoreBoard-Info.plist */ = {isa = PBXFileReference; path = "ScoreBoard-Info.plist"; sourceTree = "<group>"; };
-		BEC8F6FD13F197650051770E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BEC8F6FB13F197650051770E /* ScoreLog-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ScoreLog-Info.plist"; path = "ScoreBoard/ScoreLog-Info.plist"; sourceTree = "<group>"; };
 		BEC8F6FF13F197650051770E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BEC8F70113F197660051770E /* ScoreBoard-Prefix.pch */ = {isa = PBXFileReference; path = "ScoreBoard-Prefix.pch"; sourceTree = "<group>"; };
-		BEC8F70213F197660051770E /* ScoreBoardAppDelegate.h */ = {isa = PBXFileReference; path = ScoreBoardAppDelegate.h; sourceTree = "<group>"; };
+		BEC8F70113F197660051770E /* ScoreLog-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScoreLog-Prefix.pch"; path = "ScoreBoard/ScoreLog-Prefix.pch"; sourceTree = "<group>"; };
+		BEC8F70213F197660051770E /* ScoreBoardAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreBoardAppDelegate.h; sourceTree = "<group>"; };
 		BEC8F70313F197660051770E /* ScoreBoardAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreBoardAppDelegate.m; sourceTree = "<group>"; };
-		BEC8F70613F197660051770E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		BEC8F70D13F197660051770E /* ScoreBoardTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoreBoardTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEC8F70D13F197660051770E /* ScoreLogTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoreLogTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC8F70E13F197660051770E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		BEC8F71713F197660051770E /* ScoreBoardTests-Info.plist */ = {isa = PBXFileReference; path = "ScoreBoardTests-Info.plist"; sourceTree = "<group>"; };
-		BEC8F71913F197660051770E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BEC8F71713F197660051770E /* ScoreLogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScoreLogTests-Info.plist"; sourceTree = "<group>"; };
 		BEC8F71B13F197660051770E /* ScoreBoardTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreBoardTests.h; sourceTree = "<group>"; };
 		BEC8F71D13F197660051770E /* ScoreBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreBoardTests.m; sourceTree = "<group>"; };
+		BEDF6C641891BB6600A93324 /* ScoreLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreLogViewController.h; sourceTree = "<group>"; };
+		BEDF6C651891BB6600A93324 /* ScoreLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreLogViewController.m; sourceTree = "<group>"; };
+		BEE89FF7143324A200039D87 /* DatabaseAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseAccess.h; sourceTree = "<group>"; };
+		BEE89FF8143324A200039D87 /* DatabaseAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseAccess.m; sourceTree = "<group>"; };
+		BEE98E9213FD858500716683 /* AddPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlayerController.h; sourceTree = "<group>"; };
+		BEE98E9313FD858500716683 /* AddPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlayerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +160,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE22F85C145D5A8F00210BF8 /* iAd.framework in Frameworks */,
+				BEBB81641444EB870070F64A /* MessageUI.framework in Frameworks */,
+				BE3A7FAB1416AEED009A1B0B /* AddressBook.framework in Frameworks */,
+				BE3A7FA81416AEDE009A1B0B /* AddressBookUI.framework in Frameworks */,
+				BE2639E1140C14D6006F8C20 /* MobileCoreServices.framework in Frameworks */,
+				BE68714D13FB069700E515D8 /* CoreData.framework in Frameworks */,
 				BEC8F6F413F197650051770E /* UIKit.framework in Frameworks */,
 				BEC8F6F613F197650051770E /* Foundation.framework in Frameworks */,
 				BEC8F6F813F197650051770E /* CoreGraphics.framework in Frameworks */,
@@ -78,9 +186,149 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE09EFB41453508A0094C38C /* UIImageLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				BE09EFAA145321E80094C38C /* UIImage+Resize.h */,
+				BE09EFAB145321E80094C38C /* UIImage+Resize.m */,
+				BE09EFAE145322F10094C38C /* UIImage+RoundedCorner.h */,
+				BE09EFAF145322F10094C38C /* UIImage+RoundedCorner.m */,
+				BE09EFB1145323310094C38C /* UIImage+Alpha.h */,
+				BE09EFB2145323310094C38C /* UIImage+Alpha.m */,
+			);
+			name = UIImageLibrary;
+			sourceTree = "<group>";
+		};
+		BE6ECF1813F6831800A999CD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE09E7F8189EDD87008FF16A /* Images.xcassets */,
+				BEA410D2145C3E040051B4E9 /* About.html */,
+				BE3B3928148EB21E00E1023B /* Manual.html */,
+				BEA410CF145C3DFC0051B4E9 /* About_fr.html */,
+				BE934CB71438C1050051B5AA /* No_Photo.png */,
+				BE3D070B1466C6B3006508BC /* AboutTitle.png */,
+				BE94DD06142BF28E00586B0F /* start a new game-182x59.png */,
+				BE0348551466CAF50053BB85 /* default.png */,
+				BE03485D1466CE370053BB85 /* default */,
+				BE0348571466CB030053BB85 /* default@2x.png */,
+				BEB698921466CE5600F9BE57 /* default@2x. */,
+				BE3D07031466C645006508BC /* Icon.png */,
+				BE3D07051466C662006508BC /* Icon@2x.png */,
+				BEC8F70113F197660051770E /* ScoreLog-Prefix.pch */,
+				BEC8F6FB13F197650051770E /* ScoreLog-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BE8DC91D142DCD7C00F334DE /* Model and Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BE8DC91F142DCDCF00F334DE /* ScoreBoardModel.xcdatamodeld */,
+				BE9589D41441D19D00B0D124 /* ModelGameConfig.h */,
+				BE9589D51441D19D00B0D124 /* ModelGameConfig.m */,
+				BE76646314404F6E00543CB1 /* ModelScoreBoard.h */,
+				BE76646414404F6E00543CB1 /* ModelScoreBoard.m */,
+				BE9699EC1435665800D0DD59 /* ModelScoreList.h */,
+				BE9699ED1435665800D0DD59 /* ModelScoreList.m */,
+				BE16959E1434F7AB001FC88F /* ModelScorePlayer.h */,
+				BE16959F1434F7AB001FC88F /* ModelScorePlayer.m */,
+				BE932AB2142FC75100324CC3 /* ModelPlayer.h */,
+				BE932AB3142FC75100324CC3 /* ModelPlayer.m */,
+			);
+			name = "Model and Model Classes";
+			sourceTree = "<group>";
+		};
+		BEB091BD18941F970012CA47 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BEB091BE18941FBB0012CA47 /* MailHelper.h */,
+				BEB091BF18941FBB0012CA47 /* MailHelper.m */,
+				BEB091C1189420F00012CA47 /* Utilities.h */,
+				BEB091C2189420F00012CA47 /* Utilities.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		BEBD059F189068E7004A723A /* AddPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				BEE98E9213FD858500716683 /* AddPlayerController.h */,
+				BEE98E9313FD858500716683 /* AddPlayerController.m */,
+			);
+			name = AddPlayer;
+			sourceTree = "<group>";
+		};
+		BEBD05A018906B27004A723A /* AddScoreToPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				BEC8977714042E1C00D1F674 /* AddScoreToPlayerController.h */,
+				BEC8977814042E1C00D1F674 /* AddScoreToPlayerController.m */,
+			);
+			name = AddScoreToPlayer;
+			sourceTree = "<group>";
+		};
+		BEBD05A118906BDD004A723A /* DatabaseAccess */ = {
+			isa = PBXGroup;
+			children = (
+				BEE89FF7143324A200039D87 /* DatabaseAccess.h */,
+				BEE89FF8143324A200039D87 /* DatabaseAccess.m */,
+				BEBA14151893090B00FD18A8 /* DatabaseHelper.h */,
+				BEBA14161893090B00FD18A8 /* DatabaseHelper.m */,
+			);
+			name = DatabaseAccess;
+			path = ScoreBoard;
+			sourceTree = "<group>";
+		};
+		BEBD05A218906C91004A723A /* About */ = {
+			isa = PBXGroup;
+			children = (
+				BEBDD24A1459DFD500855A83 /* ScoreBoardAboutController.h */,
+				BEBDD24B1459DFD500855A83 /* ScoreBoardAboutController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		BEBD05A318906CE4004A723A /* GameType */ = {
+			isa = PBXGroup;
+			children = (
+				BE9589C81441A73600B0D124 /* GameTypeController.h */,
+				BE9589C91441A73600B0D124 /* GameTypeController.m */,
+			);
+			name = GameType;
+			sourceTree = "<group>";
+		};
+		BEBD05A418906E06004A723A /* PlayersTable */ = {
+			isa = PBXGroup;
+			children = (
+				BE68714813FAFC1500E515D8 /* PlayersTableViewContoller.h */,
+				BE68714913FAFC1500E515D8 /* PlayersTableViewContoller.m */,
+				BEA2A91A143B8AB100167466 /* PlayersTableViewCellCustom.h */,
+				BEA2A91B143B8AB100167466 /* PlayersTableViewCellCustom.m */,
+			);
+			name = PlayersTable;
+			sourceTree = "<group>";
+		};
+		BEBD05A5189070D5004A723A /* History */ = {
+			isa = PBXGroup;
+			children = (
+				BE9679B5142633A60099374E /* HistoryTableViewController.h */,
+				BE9679B6142633A60099374E /* HistoryTableViewController.m */,
+				BE83B020144AD1F9006D6B12 /* HistoryGameCellCustom.h */,
+				BE83B021144AD1F9006D6B12 /* HistoryGameCellCustom.m */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
 		BEC8F6E413F197650051770E = {
 			isa = PBXGroup;
 			children = (
+				BE9D25C71645373F0040A556 /* default-568h@2x.png */,
+				BE8DC91D142DCD7C00F334DE /* Model and Model Classes */,
+				BE6ECF1813F6831800A999CD /* Resources */,
+				BE09EFB41453508A0094C38C /* UIImageLibrary */,
+				BEB091BD18941F970012CA47 /* Utilities */,
+				BEBD05A118906BDD004A723A /* DatabaseAccess */,
 				BEC8F6F913F197650051770E /* ScoreBoard */,
 				BEC8F71513F197660051770E /* ScoreBoardTests */,
 				BEC8F6F213F197650051770E /* Frameworks */,
@@ -91,8 +339,8 @@
 		BEC8F6F013F197650051770E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BEC8F6EF13F197650051770E /* ScoreBoard.app */,
-				BEC8F70D13F197660051770E /* ScoreBoardTests.octest */,
+				BEC8F6EF13F197650051770E /* ScoreLog.app */,
+				BEC8F70D13F197660051770E /* ScoreLogTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +348,12 @@
 		BEC8F6F213F197650051770E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE22F85B145D5A8F00210BF8 /* iAd.framework */,
+				BEBB81631444EB870070F64A /* MessageUI.framework */,
+				BE3A7FAA1416AEED009A1B0B /* AddressBook.framework */,
+				BE3A7FA71416AEDE009A1B0B /* AddressBookUI.framework */,
+				BE2639E0140C14D6006F8C20 /* MobileCoreServices.framework */,
+				BE68714C13FB069700E515D8 /* CoreData.framework */,
 				BEC8F6F313F197650051770E /* UIKit.framework */,
 				BEC8F6F513F197650051770E /* Foundation.framework */,
 				BEC8F6F713F197650051770E /* CoreGraphics.framework */,
@@ -111,9 +365,17 @@
 		BEC8F6F913F197650051770E /* ScoreBoard */ = {
 			isa = PBXGroup;
 			children = (
+				BE522F6B189C0FE100D760C1 /* MainStoryboard.storyboard */,
 				BEC8F70213F197660051770E /* ScoreBoardAppDelegate.h */,
 				BEC8F70313F197660051770E /* ScoreBoardAppDelegate.m */,
-				BEC8F70513F197660051770E /* MainWindow.xib */,
+				BEDF6C641891BB6600A93324 /* ScoreLogViewController.h */,
+				BEDF6C651891BB6600A93324 /* ScoreLogViewController.m */,
+				BEBD05A5189070D5004A723A /* History */,
+				BEBD05A418906E06004A723A /* PlayersTable */,
+				BEBD059F189068E7004A723A /* AddPlayer */,
+				BEBD05A018906B27004A723A /* AddScoreToPlayer */,
+				BEBD05A218906C91004A723A /* About */,
+				BEBD05A318906CE4004A723A /* GameType */,
 				BEC8F6FA13F197650051770E /* Supporting Files */,
 			);
 			path = ScoreBoard;
@@ -122,10 +384,7 @@
 		BEC8F6FA13F197650051770E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BEC8F6FB13F197650051770E /* ScoreBoard-Info.plist */,
-				BEC8F6FC13F197650051770E /* InfoPlist.strings */,
 				BEC8F6FF13F197650051770E /* main.m */,
-				BEC8F70113F197660051770E /* ScoreBoard-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -143,8 +402,7 @@
 		BEC8F71613F197660051770E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BEC8F71713F197660051770E /* ScoreBoardTests-Info.plist */,
-				BEC8F71813F197660051770E /* InfoPlist.strings */,
+				BEC8F71713F197660051770E /* ScoreLogTests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,9 +410,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BEC8F6EE13F197650051770E /* ScoreBoard */ = {
+		BEC8F6EE13F197650051770E /* Score Log */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEC8F72113F197660051770E /* Build configuration list for PBXNativeTarget "ScoreBoard" */;
+			buildConfigurationList = BEC8F72113F197660051770E /* Build configuration list for PBXNativeTarget "Score Log" */;
 			buildPhases = (
 				BEC8F6EB13F197650051770E /* Sources */,
 				BEC8F6EC13F197650051770E /* Frameworks */,
@@ -164,14 +422,14 @@
 			);
 			dependencies = (
 			);
-			name = ScoreBoard;
+			name = "Score Log";
 			productName = ScoreBoard;
-			productReference = BEC8F6EF13F197650051770E /* ScoreBoard.app */;
+			productReference = BEC8F6EF13F197650051770E /* ScoreLog.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BEC8F70C13F197660051770E /* ScoreBoardTests */ = {
+		BEC8F70C13F197660051770E /* ScoreLogTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEC8F72413F197660051770E /* Build configuration list for PBXNativeTarget "ScoreBoardTests" */;
+			buildConfigurationList = BEC8F72413F197660051770E /* Build configuration list for PBXNativeTarget "ScoreLogTests" */;
 			buildPhases = (
 				BEC8F70813F197660051770E /* Sources */,
 				BEC8F70913F197660051770E /* Frameworks */,
@@ -183,9 +441,9 @@
 			dependencies = (
 				BEC8F71413F197660051770E /* PBXTargetDependency */,
 			);
-			name = ScoreBoardTests;
+			name = ScoreLogTests;
 			productName = ScoreBoardTests;
-			productReference = BEC8F70D13F197660051770E /* ScoreBoardTests.octest */;
+			productReference = BEC8F70D13F197660051770E /* ScoreLogTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -193,20 +451,32 @@
 /* Begin PBXProject section */
 		BEC8F6E613F197650051770E /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = BEC8F6E913F197650051770E /* Build configuration list for PBXProject "ScoreBoard" */;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					BEC8F6EE13F197650051770E = {
+						DevelopmentTeam = 7VVU8FW2ME;
+					};
+				};
+			};
+			buildConfigurationList = BEC8F6E913F197650051770E /* Build configuration list for PBXProject "ScoreLog" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
+				es,
+				it,
+				Base,
 			);
 			mainGroup = BEC8F6E413F197650051770E;
 			productRefGroup = BEC8F6F013F197650051770E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BEC8F6EE13F197650051770E /* ScoreBoard */,
-				BEC8F70C13F197660051770E /* ScoreBoardTests */,
+				BEC8F6EE13F197650051770E /* Score Log */,
+				BEC8F70C13F197660051770E /* ScoreLogTests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,8 +486,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC8F6FE13F197650051770E /* InfoPlist.strings in Resources */,
-				BEC8F70713F197660051770E /* MainWindow.xib in Resources */,
+				BE94DD07142BF28E00586B0F /* start a new game-182x59.png in Resources */,
+				BE934CB81438C1050051B5AA /* No_Photo.png in Resources */,
+				BEA410D0145C3DFC0051B4E9 /* About_fr.html in Resources */,
+				BEA410D3145C3E040051B4E9 /* About.html in Resources */,
+				BE3D07041466C645006508BC /* Icon.png in Resources */,
+				BE3D07061466C662006508BC /* Icon@2x.png in Resources */,
+				BE09E7F9189EDD87008FF16A /* Images.xcassets in Resources */,
+				BE3D070C1466C6B3006508BC /* AboutTitle.png in Resources */,
+				BE0348561466CAF50053BB85 /* default.png in Resources */,
+				BE0348581466CB030053BB85 /* default@2x.png in Resources */,
+				BE03485E1466CE370053BB85 /* default in Resources */,
+				BE522F69189C0FE100D760C1 /* MainStoryboard.storyboard in Resources */,
+				BEB698931466CE5600F9BE57 /* default@2x. in Resources */,
+				BE3B3929148EB21E00E1023B /* Manual.html in Resources */,
+				BE9D25C81645373F0040A556 /* default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +508,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC8F71A13F197660051770E /* InfoPlist.strings in Resources */,
 				BEC8F71C13F197660051770E /* ScoreBoardTests.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,8 +535,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEBA14171893090B00FD18A8 /* DatabaseHelper.m in Sources */,
 				BEC8F70013F197660051770E /* main.m in Sources */,
+				BEDF6C661891BB6600A93324 /* ScoreLogViewController.m in Sources */,
 				BEC8F70413F197660051770E /* ScoreBoardAppDelegate.m in Sources */,
+				BE68714A13FAFC1500E515D8 /* PlayersTableViewContoller.m in Sources */,
+				BEE98E9413FD858500716683 /* AddPlayerController.m in Sources */,
+				BEC8977914042E1C00D1F674 /* AddScoreToPlayerController.m in Sources */,
+				BE9679B8142633A60099374E /* HistoryTableViewController.m in Sources */,
+				BE8DC921142DCDCF00F334DE /* ScoreBoardModel.xcdatamodeld in Sources */,
+				BE932AB4142FC75100324CC3 /* ModelPlayer.m in Sources */,
+				BEE89FF9143324A200039D87 /* DatabaseAccess.m in Sources */,
+				BE1695A01434F7AB001FC88F /* ModelScorePlayer.m in Sources */,
+				BE9699EE1435665800D0DD59 /* ModelScoreList.m in Sources */,
+				BEA2A91C143B8AB100167466 /* PlayersTableViewCellCustom.m in Sources */,
+				BE76646514404F6E00543CB1 /* ModelScoreBoard.m in Sources */,
+				BE9589CA1441A73600B0D124 /* GameTypeController.m in Sources */,
+				BE9589D61441D19D00B0D124 /* ModelGameConfig.m in Sources */,
+				BE83B022144AD1F9006D6B12 /* HistoryGameCellCustom.m in Sources */,
+				BE09EFAC145321E80094C38C /* UIImage+Resize.m in Sources */,
+				BE09EFB0145322F10094C38C /* UIImage+RoundedCorner.m in Sources */,
+				BE09EFB3145323310094C38C /* UIImage+Alpha.m in Sources */,
+				BEB091C018941FBB0012CA47 /* MailHelper.m in Sources */,
+				BEB091C3189420F00012CA47 /* Utilities.m in Sources */,
+				BEBDD24C1459DFD500855A83 /* ScoreBoardAboutController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,34 +575,19 @@
 /* Begin PBXTargetDependency section */
 		BEC8F71413F197660051770E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BEC8F6EE13F197650051770E /* ScoreBoard */;
+			target = BEC8F6EE13F197650051770E /* Score Log */;
 			targetProxy = BEC8F71313F197660051770E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BEC8F6FC13F197650051770E /* InfoPlist.strings */ = {
+		BE522F6B189C0FE100D760C1 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BEC8F6FD13F197650051770E /* en */,
+				BE522F6A189C0FE100D760C1 /* Base */,
+				BE97FDB7189C10C200D4413D /* fr */,
 			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		BEC8F70513F197660051770E /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BEC8F70613F197660051770E /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		BEC8F71813F197660051770E /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BEC8F71913F197660051770E /* en */,
-			);
-			name = InfoPlist.strings;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -308,8 +597,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -323,7 +612,9 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -332,16 +623,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "Score Log";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -350,10 +644,21 @@
 		BEC8F72213F197660051770E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ScoreBoard/ScoreBoard-Prefix.pch";
-				INFOPLIST_FILE = "ScoreBoard/ScoreBoard-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ScoreBoard/ScoreLog-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "ScoreBoard/ScoreLog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = ScoreLog;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -361,10 +666,21 @@
 		BEC8F72313F197660051770E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ScoreBoard/ScoreBoard-Prefix.pch";
-				INFOPLIST_FILE = "ScoreBoard/ScoreBoard-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ScoreBoard/ScoreLog-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "ScoreBoard/ScoreLog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = ScoreLog;
+				PROVISIONING_PROFILE = "B1EC0B6A-6B28-4BB7-B4E5-D6CD4B4BEACB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1EC0B6A-6B28-4BB7-B4E5-D6CD4B4BEACB";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -378,9 +694,10 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ScoreBoard/ScoreBoard-Prefix.pch";
-				INFOPLIST_FILE = "ScoreBoardTests/ScoreBoardTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ScoreBoard/ScoreLog-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "ScoreBoardTests/ScoreLogTests-Info.plist";
+				PRODUCT_NAME = ScoreLogTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -395,9 +712,10 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ScoreBoard/ScoreBoard-Prefix.pch";
-				INFOPLIST_FILE = "ScoreBoardTests/ScoreBoardTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ScoreBoard/ScoreLog-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "ScoreBoardTests/ScoreLogTests-Info.plist";
+				PRODUCT_NAME = ScoreLogTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -406,7 +724,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BEC8F6E913F197650051770E /* Build configuration list for PBXProject "ScoreBoard" */ = {
+		BEC8F6E913F197650051770E /* Build configuration list for PBXProject "ScoreLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEC8F71F13F197660051770E /* Debug */,
@@ -415,23 +733,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEC8F72113F197660051770E /* Build configuration list for PBXNativeTarget "ScoreBoard" */ = {
+		BEC8F72113F197660051770E /* Build configuration list for PBXNativeTarget "Score Log" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEC8F72213F197660051770E /* Debug */,
 				BEC8F72313F197660051770E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		BEC8F72413F197660051770E /* Build configuration list for PBXNativeTarget "ScoreBoardTests" */ = {
+		BEC8F72413F197660051770E /* Build configuration list for PBXNativeTarget "ScoreLogTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEC8F72513F197660051770E /* Debug */,
 				BEC8F72613F197660051770E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BE8DC91F142DCDCF00F334DE /* ScoreBoardModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BE8DC920142DCDCF00F334DE /* ScoreBoardModel.xcdatamodel */,
+			);
+			currentVersion = BE8DC920142DCDCF00F334DE /* ScoreBoardModel.xcdatamodel */;
+			path = ScoreBoardModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BEC8F6E613F197650051770E /* Project object */;
 }
