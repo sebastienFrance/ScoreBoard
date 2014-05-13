@@ -1,0 +1,72 @@
+
+/* Class = "IBUISegmentedControl"; 0DG-SF-RkV.segmentTitles[0] = "+ (Positive)"; ObjectID = "0DG-SF-RkV"; */
+"0DG-SF-RkV.segmentTitles[0]" = "+ (Positive)";
+
+/* Class = "IBUISegmentedControl"; 0DG-SF-RkV.segmentTitles[1] = "- (Minus)"; ObjectID = "0DG-SF-RkV"; */
+"0DG-SF-RkV.segmentTitles[1]" = "- (Minus)";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Information"; ObjectID = "0Dc-OA-lAR"; */
+"0Dc-OA-lAR.headerTitle" = "Information";
+
+/* Class = "IBUILabel"; text = "Player Name"; ObjectID = "4ov-1o-kbw"; */
+"4ov-1o-kbw.text" = "Player Name";
+
+/* Class = "IBUIBarButtonItem"; title = "Add"; ObjectID = "8Sk-jS-g3u"; */
+"8Sk-jS-g3u.title" = "Add";
+
+/* Class = "IBUILabel"; text = "Best score win"; ObjectID = "BxM-qY-usc"; */
+"BxM-qY-usc.text" = "Best score win";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "DUX-Zw-erR"; */
+"DUX-Zw-erR.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Game Name Label"; ObjectID = "K6q-rc-MYj"; */
+"K6q-rc-MYj.text" = "Game Name Label";
+
+/* Class = "IBUILabel"; text = "Score history"; ObjectID = "OJ0-kx-8k4"; */
+"OJ0-kx-8k4.text" = "Score history";
+
+/* Class = "IBUILabel"; text = "Negative score"; ObjectID = "Rk0-Pk-oUT"; */
+"Rk0-Pk-oUT.text" = "Negative score";
+
+/* Class = "IBUIButton"; normalTitle = "Start a new Game!"; ObjectID = "XZQ-4l-Pjm"; */
+"XZQ-4l-Pjm.normalTitle" = "Start a new Game!";
+
+/* Class = "IBUIBarButtonItem"; title = "Add Score"; ObjectID = "aI3-vd-XhD"; */
+"aI3-vd-XhD.title" = "Add Score";
+
+/* Class = "IBUILabel"; text = "10"; ObjectID = "bzK-tK-Fux"; */
+"bzK-tK-Fux.text" = "10";
+
+/* Class = "IBUIButton"; normalTitle = "Continue a Game"; ObjectID = "dSN-2W-xz5"; */
+"dSN-2W-xz5.normalTitle" = "Continue a Game";
+
+/* Class = "IBUILabel"; text = "Round:"; ObjectID = "eUI-fT-rcQ"; */
+"eUI-fT-rcQ.text" = "Round:";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Configuration"; ObjectID = "ejd-Rh-fut"; */
+"ejd-Rh-fut.headerTitle" = "Configuration";
+
+/* Class = "IBUITextField"; placeholder = "Score"; ObjectID = "fcE-KW-Rz9"; */
+"fcE-KW-Rz9.placeholder" = "Score";
+
+/* Class = "IBUITextField"; placeholder = "Game name"; ObjectID = "k7a-Vn-jxz"; */
+"k7a-Vn-jxz.placeholder" = "Game name";
+
+/* Class = "IBUITextField"; placeholder = "Name"; ObjectID = "oXy-Ob-3LA"; */
+"oXy-Ob-3LA.placeholder" = "Name";
+
+/* Class = "IBUILabel"; text = "About"; ObjectID = "ovY-y6-k5d"; */
+"ovY-y6-k5d.text" = "About";
+
+/* Class = "IBUIBarButtonItem"; title = "Cancel"; ObjectID = "rTK-go-Nzp"; */
+"rTK-go-Nzp.title" = "Cancel";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "rlO-K4-wJf"; */
+"rlO-K4-wJf.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Game Date Label"; ObjectID = "tZj-PC-s4y"; */
+"tZj-PC-s4y.text" = "Game Date Label";
+
+/* Class = "IBUILabel"; text = "Score:"; ObjectID = "uel-Qh-076"; */
+"uel-Qh-076.text" = "Score:";
