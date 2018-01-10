@@ -15,10 +15,8 @@
     NSInteger rank = 1;
     NSMutableSet* scoreSet = [NSMutableSet setWithCapacity:modelScorePlayerList.count];
     NSNumber* scoreObject = Nil;
-    for (int i =0; i < modelScorePlayerList.count; i++) {
-        ModelScorePlayer* player = (ModelScorePlayer*) [modelScorePlayerList objectAtIndex:i];
-        
-        // avoid to count the same score twice
+    for (ModelScorePlayer* player in modelScorePlayerList) {
+         // avoid to count the same score twice
         scoreObject = [NSNumber numberWithInteger:player.totalScore];
         if ([scoreSet containsObject:scoreObject] == FALSE) {
             

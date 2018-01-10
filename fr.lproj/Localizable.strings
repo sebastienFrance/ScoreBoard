@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  ScoreLog
+
+  Created by sébastien brugalières on 02/10/2014.
+
+*/
+
+"Current Game" = "Partie en cours";
+"Game" = "Partie";
+"Historical Game" = "Historique";
+"Display current game" = "Afficher la partie en cours";
+"Options" = "Options";
+"Start a new game" = "Nouvelle partie";
+"Duplicate game" = "Dupliquer une partie";
+"Edit historical games" = "Modifier l'historique";
+"Error" = "Erreur";
+"Options cannot be configured while a game is not started." = "La partie doit d'abord être démarrée pour configurer les options.";

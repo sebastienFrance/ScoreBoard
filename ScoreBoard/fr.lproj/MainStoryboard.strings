@@ -1,9 +1,9 @@
 
 /* Class = "IBUISegmentedControl"; 0DG-SF-RkV.segmentTitles[0] = "+ (Positive)"; ObjectID = "0DG-SF-RkV"; */
-"0DG-SF-RkV.segmentTitles[0]" = "+ (Positif)";
+"eex-Nr-nU2.segmentTitles[0]" = "+ (Positif)";
 
 /* Class = "IBUISegmentedControl"; 0DG-SF-RkV.segmentTitles[1] = "- (Minus)"; ObjectID = "0DG-SF-RkV"; */
-"0DG-SF-RkV.segmentTitles[1]" = "- (Negatif)";
+"eex-Nr-nU2.segmentTitles[1]" = "- (Negatif)";
 
 /* Class = "IBUITableViewSection"; headerTitle = "Information"; ObjectID = "0Dc-OA-lAR"; */
 "0Dc-OA-lAR.headerTitle" = "Information";
@@ -72,4 +72,6 @@
 "uel-Qh-076.text" = "Score:";
 
 "NwG-Cy-vNw.text" = "ou selectionner un contact";
+
+
 

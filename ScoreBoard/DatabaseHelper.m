@@ -112,7 +112,7 @@
     [scoreList setScore:[NSNumber numberWithInteger:NewScore]];
     [scoreList setScorePlayer:player];
     [player addScoreListObject:scoreList];
-    [scoreList setDisplayOrder:[NSNumber numberWithInt:[player.ScoreList count]]];
+    [scoreList setDisplayOrder:[NSNumber numberWithUnsignedInteger:[player.ScoreList count]]];
     
     NSError *error = nil;
     if (![managedContext save:&error]) {

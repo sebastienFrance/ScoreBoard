@@ -9,8 +9,8 @@
 #import "ScoreBoardAppDelegate.h"
 #import "ModelScoreBoard.h"
 #import "DatabaseAccess.h"
-#import "PlayersTableViewContoller.h"
-#import "HistoryTableViewController.h"
+#import "SBPlayersViewContoller.h"
+#import "SBHistoryViewController.h"
 
 @implementation ScoreBoardAppDelegate
 
@@ -19,10 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSLog(@"Test GitHub");
     // Customize the status bar 
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[UIApplication sharedApplication] setStatusBarHidden:FALSE withAnimation:UIStatusBarAnimationFade];    
+ //   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+ //   [[UIApplication sharedApplication] setStatusBarHidden:FALSE withAnimation:UIStatusBarAnimationFade];
 
     // Create ADBannerView
     [self createBannerView];
@@ -44,6 +43,7 @@
     CGRect bannerFrame = self.adBanner.frame;
     bannerFrame.origin = CGPointMake(CGRectGetMinX(screenBounds), CGRectGetMaxY(screenBounds));
     self.adBanner.frame = bannerFrame;
+    
 }
 
 
