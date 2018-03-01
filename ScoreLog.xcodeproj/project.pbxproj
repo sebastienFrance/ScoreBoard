@@ -12,7 +12,6 @@
 		BE09EFB0145322F10094C38C /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09EFAF145322F10094C38C /* UIImage+RoundedCorner.m */; };
 		BE09EFB3145323310094C38C /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09EFB2145323310094C38C /* UIImage+Alpha.m */; };
 		BE1695A01434F7AB001FC88F /* ModelScorePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE16959F1434F7AB001FC88F /* ModelScorePlayer.m */; };
-		BE22F85C145D5A8F00210BF8 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE22F85B145D5A8F00210BF8 /* iAd.framework */; };
 		BE2639E1140C14D6006F8C20 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2639E0140C14D6006F8C20 /* MobileCoreServices.framework */; };
 		BE3A7FA81416AEDE009A1B0B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A7FA71416AEDE009A1B0B /* AddressBookUI.framework */; };
 		BE3A7FAB1416AEED009A1B0B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A7FAA1416AEED009A1B0B /* AddressBook.framework */; };
@@ -60,6 +59,8 @@
 		BED9C7CB19DAA04900CC9D81 /* SBGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BED9C7CA19DAA04900CC9D81 /* SBGameManager.m */; };
 		BEE89FF9143324A200039D87 /* DatabaseAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE89FF8143324A200039D87 /* DatabaseAccess.m */; };
 		BEE98E9413FD858500716683 /* SBAddPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE98E9313FD858500716683 /* SBAddPlayerViewController.m */; };
+		BEFF5E3220489016006823FC /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFF5E3020489015006823FC /* Contacts.framework */; };
+		BEFF5E3320489016006823FC /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFF5E3120489016006823FC /* ContactsUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,8 @@
 		BEE89FF8143324A200039D87 /* DatabaseAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseAccess.m; sourceTree = "<group>"; };
 		BEE98E9213FD858500716683 /* SBAddPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBAddPlayerViewController.h; sourceTree = "<group>"; };
 		BEE98E9313FD858500716683 /* SBAddPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBAddPlayerViewController.m; sourceTree = "<group>"; };
+		BEFF5E3020489015006823FC /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		BEFF5E3120489016006823FC /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +164,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE22F85C145D5A8F00210BF8 /* iAd.framework in Frameworks */,
+				BEFF5E3220489016006823FC /* Contacts.framework in Frameworks */,
+				BEFF5E3320489016006823FC /* ContactsUI.framework in Frameworks */,
 				BEBB81641444EB870070F64A /* MessageUI.framework in Frameworks */,
 				BE3A7FAB1416AEED009A1B0B /* AddressBook.framework in Frameworks */,
 				BE3A7FA81416AEDE009A1B0B /* AddressBookUI.framework in Frameworks */,
@@ -371,6 +375,8 @@
 		BEC8F6F213F197650051770E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEFF5E3020489015006823FC /* Contacts.framework */,
+				BEFF5E3120489016006823FC /* ContactsUI.framework */,
 				BE22F85B145D5A8F00210BF8 /* iAd.framework */,
 				BEBB81631444EB870070F64A /* MessageUI.framework */,
 				BE3A7FAA1416AEED009A1B0B /* AddressBook.framework */,

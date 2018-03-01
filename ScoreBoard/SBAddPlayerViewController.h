@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SBPlayersViewContoller.h"
-#import <AddressBook/AddressBook.h>
-#import <AddressBookUI/AddressBookUI.h>
 #import <CoreData/CoreData.h>
+#import <ContactsUI/ContactsUI.h>
 
 
 
-@interface SBAddPlayerViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate> 
+@interface SBAddPlayerViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, CNContactPickerDelegate>
 
 @end

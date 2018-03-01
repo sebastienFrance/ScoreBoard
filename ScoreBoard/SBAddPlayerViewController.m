@@ -15,6 +15,7 @@
 #import "UIImage+Resize.h"
 #import "DatabaseHelper.h"
 #import "SBGameManager.h"
+#import <ContactsUI/ContactsUI.h>
 
 @interface SBAddPlayerViewController()
 
@@ -88,12 +89,10 @@
 
 
 - (IBAction)contactButtonPressed:(UIButton *)sender {
-    ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
-    picker.peoplePickerDelegate = self;
+    CNContactPickerViewController *picker = [[CNContactPickerViewController alloc] init];
+    picker.delegate = self;
     
-	// Show the picker
-	[self presentViewController:picker animated:YES completion:Nil];
-
+    [self presentViewController:picker animated:YES completion:Nil];
 }
 
 - (IBAction)cameraButtonPressed:(UIBarButtonItem *)sender {
@@ -167,39 +166,32 @@
     return TRUE;    
 }
 
-#pragma mark - ABPeoplePickerNavigationControllerDelegate
+#pragma mark - CNContactPickerDelegate
 
-// The user has selected a Player from the Address Book. Just extract the data (firstName, lastName and picture)
-- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker
-                         didSelectPerson:(ABRecordRef)person {
-
-    NSString *firstName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
-    NSString *lastName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
-    ABMultiValueRef *emails = (ABMultiValueRef *)ABRecordCopyValue(person, kABPersonEmailProperty);
-    if (ABMultiValueGetCount(emails) > 0) {
-        self.email = (__bridge NSString*) ABMultiValueCopyValueAtIndex(emails, 0);
-    } else {
-        self.email = Nil;
+- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact {
+    NSString *firstName = contact.givenName;
+    NSString *lastName = contact.familyName;
+    
+    NSString *email = Nil;
+    if (contact.emailAddresses.count > 0) {
+        email = contact.emailAddresses[0].value;
     }
-
-    // Get the picture
-    if (ABPersonHasImageData(person) == TRUE) {
-        CFDataRef imgData = ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail);
-        UIImage* image = [UIImage imageWithData:(__bridge NSData *)imgData];
-        
-        self.playerPicture.image = [SBAddPlayerViewController resizeImage:image];
-        CFRelease(imgData);
+    
+    if (contact.imageDataAvailable) {
+        self.playerPicture.image =  [[UIImage alloc] initWithData:contact.imageData];
     } else {
-        self.playerPicture.image = [UIImage imageNamed:@"No_Photo.png"];;
+        self.playerPicture.image = [UIImage imageNamed:@"No_Photo.png"];
     }
     
     // build the player name and close the Address Book picker
     self.playerName.text = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
- 	[self  dismissViewControllerAnimated:YES completion:Nil];
+    [self  dismissViewControllerAnimated:YES completion:Nil];
     
     // enable the save button because the Player Name is not empty
     self.addButton.enabled = TRUE;
+
 }
+
 
 
 @end

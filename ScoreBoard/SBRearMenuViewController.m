@@ -227,8 +227,15 @@ static const NSUInteger SECTION_HISTORICAL = 2;
             if ([SBGameManager sharedInstance].playerController.isGameStarted) {
                 [self performSegueWithIdentifier:@"showOptions" sender:Nil];
             } else {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", Nil) message:NSLocalizedString(@"Options cannot be configured while a game is not started.", Nil) delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-                [alert show];
+                UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Error", Nil)
+                                                                               message:NSLocalizedString(@"Options cannot be configured while a game is not started.", Nil)
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                      handler:^(UIAlertAction * action) {}];
+                
+                [alert addAction:defaultAction];
+                [self presentViewController:alert animated:YES completion:nil];
             }
             break;
         }
