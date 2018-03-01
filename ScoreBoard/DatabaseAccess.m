@@ -57,8 +57,9 @@ static DatabaseAccess *sharedDatabaseAccess = nil;
 	
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [NSManagedObjectContext new];
-        [_managedObjectContext setPersistentStoreCoordinator: coordinator];
+        // since iOS 9
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _managedObjectContext;
 }
