@@ -6,6 +6,7 @@
     <dependencies>
         <deployment version="4352" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -449,10 +450,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P7h-Tz-Sb0">
-                                <rect key="frame" x="0.0" y="64" width="375" height="146.5"/>
+                                <rect key="frame" x="8" y="64" width="359" height="146.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="V14-lm-DqE">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="82"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_Photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="bWR-eo-WL5">
                                                 <rect key="frame" x="0.0" y="0.0" width="71" height="82"/>
@@ -462,21 +463,21 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Score" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="fcE-KW-Rz9">
-                                                <rect key="frame" x="79" y="17" width="296" height="65"/>
+                                                <rect key="frame" x="79" y="17" width="280" height="65"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="54"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eex-Nr-nU2">
-                                        <rect key="frame" x="0.0" y="90" width="375" height="29"/>
+                                        <rect key="frame" x="0.0" y="90" width="359" height="29"/>
                                         <segments>
                                             <segment title="+ (Positive)"/>
                                             <segment title="- (Minus)"/>
                                         </segments>
                                     </segmentedControl>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score history" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJ0-kx-8k4">
-                                        <rect key="frame" x="0.0" y="126" width="375" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="126" width="359" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -502,10 +503,10 @@
                         <constraints>
                             <constraint firstItem="P7h-Tz-Sb0" firstAttribute="top" secondItem="dFm-8S-Ovj" secondAttribute="top" id="1RE-Iz-W3v"/>
                             <constraint firstAttribute="trailing" secondItem="jRW-x4-OoT" secondAttribute="trailing" id="1We-bw-hmG"/>
-                            <constraint firstItem="dFm-8S-Ovj" firstAttribute="trailing" secondItem="P7h-Tz-Sb0" secondAttribute="trailing" id="25P-98-zdv"/>
+                            <constraint firstItem="dFm-8S-Ovj" firstAttribute="trailing" secondItem="P7h-Tz-Sb0" secondAttribute="trailingMargin" constant="8" id="25P-98-zdv"/>
                             <constraint firstItem="jRW-x4-OoT" firstAttribute="top" secondItem="P7h-Tz-Sb0" secondAttribute="bottom" id="7Bb-JG-4nS"/>
                             <constraint firstItem="jRW-x4-OoT" firstAttribute="leading" secondItem="dFm-8S-Ovj" secondAttribute="leading" id="N4f-SB-U2g"/>
-                            <constraint firstItem="P7h-Tz-Sb0" firstAttribute="leading" secondItem="dFm-8S-Ovj" secondAttribute="leading" id="gOv-Jx-0Bu"/>
+                            <constraint firstItem="P7h-Tz-Sb0" firstAttribute="leadingMargin" secondItem="dFm-8S-Ovj" secondAttribute="leading" constant="8" id="gOv-Jx-0Bu"/>
                             <constraint firstItem="jRW-x4-OoT" firstAttribute="bottom" secondItem="dFm-8S-Ovj" secondAttribute="bottom" id="lai-Dv-zge"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dFm-8S-Ovj"/>
