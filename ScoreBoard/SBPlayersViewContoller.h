@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
-#import <iAd/ADBannerView.h>
 #import "ScoreBoardAppDelegate.h"
 
 @class SBHistoryViewController;
@@ -20,8 +19,8 @@
 @class SBPlayersCell;
 @class MFMailComposeViewController;
 
-@interface SBPlayersViewContoller : UIViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate, ADBannerViewContainer> {
-    
+@interface SBPlayersViewContoller : UIViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate> {
+
 }
 
 @property (nonatomic) ModelScoreBoard *scoreBoardModel;

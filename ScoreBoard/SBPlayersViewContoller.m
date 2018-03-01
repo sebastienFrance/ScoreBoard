@@ -43,13 +43,6 @@
 @implementation SBPlayersViewContoller
 
 
-//- (id)init {
-//    self = [super init];   
-//    return self;
-//}
-//
-//
-
 
 -(Boolean) isGameStarted {
     if (self.gameConfig != Nil) {
@@ -88,13 +81,6 @@
 // When a modal view is closed then this method is called. Use it to re-display the ADBanner view
 // but only if an Ad was previously loaded
 - (void)viewWillAppear:(BOOL)animated {
-    
-    ADBannerView *bannerView = [ (ScoreBoardAppDelegate*)[[UIApplication sharedApplication] delegate] adBanner];
-    if (bannerView.bannerLoaded) {
-        [self showBanner:bannerView];
-    } else {
-        [self hideBanner:bannerView];
-    }
     [super viewWillAppear:animated];
 }
 
@@ -107,8 +93,6 @@
 // hide the bannerview
 - (void)viewWillDisappear:(BOOL)animated
 {
-    ADBannerView *bannerView = [ (ScoreBoardAppDelegate*)[[UIApplication sharedApplication] delegate] adBanner];
-    [self hideBanner:bannerView];
     [super viewWillDisappear:animated];
 }
 
@@ -175,63 +159,7 @@
     }
 }
 
-#pragma mark - ADBannerViewContainer protocol
-// Resize the TableView inside the view to put the ADBannerView and animate the change
-- (void)showBanner:(ADBannerView*) adBanner {
-    
-    // Add the ADBannerView in the view that contains the tableView
-    [self.tbView addSubview:adBanner];
-    
-    // gives height of the view that contains the tableView
-    CGFloat fullViewHeight = self.tbView.frame.size.height;
-    
-    CGRect tableFrame = self.tv.frame;
-    CGRect bannerFrame = adBanner.frame;
-    
-    // Shrink the tableview to create space for banner
-    tableFrame.size.height = fullViewHeight - bannerFrame.size.height;
-    self.tableViewBottonProperties.constant = bannerFrame.size.height;
-    
-    // Move banner onscreen
-    bannerFrame.origin.y = fullViewHeight - bannerFrame.size.height; 
-	
-    [UIView beginAnimations:@"showBanner" context:NULL];
-    self.tv.frame = tableFrame;
-    adBanner.frame = bannerFrame;
-    [UIView commitAnimations];
-}
 
-// Resize the TableView to use all space from the parent view and put the ADBanner view offscreen.
-- (void)hideBanner:(ADBannerView*) adBanner {
-    
-    // Grow the tableview to occupy space left by banner, it's the size of the parent view
-    CGFloat fullViewHeight = self.tbView.frame.size.height;
-    CGRect tableFrame = self.tv.frame;
-    tableFrame.size.height = fullViewHeight;
-    self.tableViewBottonProperties.constant = 0.0;
-	
-    // Move the banner view offscreen
-    CGRect bannerFrame = adBanner.frame;
-    
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    bannerFrame.origin = CGPointMake(CGRectGetMinX(screenBounds), CGRectGetMaxY(screenBounds));
-	
-    self.tv.frame = tableFrame;
-    adBanner.frame = bannerFrame;
-    [adBanner removeFromSuperview];
-}
-
-
-// This method should stop all user interaction while the banner action is running
-- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
-    // Nothing need to be stopped for Score Board
-    return TRUE;
-}
-
-// This method should resume the activities from the application
-- (void)bannerViewActionDidFinish:(ADBannerView *)banner {
-    // Nothing to be done for Score Board!
-}
 
 #pragma mark - Buttons callback
 
