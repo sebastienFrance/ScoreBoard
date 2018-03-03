@@ -13,6 +13,8 @@
 
 @interface MailHelper : NSObject
 
++ (MFMailComposeViewController*) prepareContactEmail:(id<MFMailComposeViewControllerDelegate>) delegate;
+
 + (MFMailComposeViewController*) prepareEmail:(id<MFMailComposeViewControllerDelegate>) delegate
                                    scoreBoard:(ModelScoreBoard*) scoreBoardModel
                                    playerList:(NSArray*) modelScorePlayerList;

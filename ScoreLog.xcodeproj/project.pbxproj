@@ -41,7 +41,6 @@
 		BEB091C3189420F00012CA47 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB091C2189420F00012CA47 /* Utilities.m */; };
 		BEBA14171893090B00FD18A8 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBA14161893090B00FD18A8 /* DatabaseHelper.m */; };
 		BEBB81641444EB870070F64A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBB81631444EB870070F64A /* MessageUI.framework */; };
-		BEBDD24C1459DFD500855A83 /* SBAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDD24B1459DFD500855A83 /* SBAboutViewController.m */; };
 		BEC8977914042E1C00D1F674 /* SBAddScoreToPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC8977814042E1C00D1F674 /* SBAddScoreToPlayerViewController.m */; };
 		BEC8F6F413F197650051770E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8F6F313F197650051770E /* UIKit.framework */; };
 		BEC8F6F613F197650051770E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC8F6F513F197650051770E /* Foundation.framework */; };
@@ -128,8 +127,6 @@
 		BEBA14151893090B00FD18A8 /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
 		BEBA14161893090B00FD18A8 /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
 		BEBB81631444EB870070F64A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		BEBDD24A1459DFD500855A83 /* SBAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBAboutViewController.h; sourceTree = "<group>"; };
-		BEBDD24B1459DFD500855A83 /* SBAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBAboutViewController.m; sourceTree = "<group>"; };
 		BEC8977714042E1C00D1F674 /* SBAddScoreToPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBAddScoreToPlayerViewController.h; sourceTree = "<group>"; };
 		BEC8977814042E1C00D1F674 /* SBAddScoreToPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBAddScoreToPlayerViewController.m; sourceTree = "<group>"; };
 		BEC8F6EF13F197650051770E /* ScoreLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +152,8 @@
 		BEE89FF8143324A200039D87 /* DatabaseAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseAccess.m; sourceTree = "<group>"; };
 		BEE98E9213FD858500716683 /* SBAddPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBAddPlayerViewController.h; sourceTree = "<group>"; };
 		BEE98E9313FD858500716683 /* SBAddPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBAddPlayerViewController.m; sourceTree = "<group>"; };
+		BEF51727204A9C6700C5B583 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		BEF51729204AA11300C5B583 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		BEFF5E3020489015006823FC /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		BEFF5E3120489016006823FC /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -212,7 +211,6 @@
 				BED9C7C419D9BB1600CC9D81 /* SBRearMenuCell.h */,
 				BED9C7C519D9BB1600CC9D81 /* SBRearMenuCell.m */,
 				BEBD05A318906CE4004A723A /* GameType */,
-				BEBD05A218906C91004A723A /* About */,
 				BEBD05A5189070D5004A723A /* History */,
 			);
 			name = RearMenu;
@@ -304,15 +302,6 @@
 			path = ScoreBoard;
 			sourceTree = "<group>";
 		};
-		BEBD05A218906C91004A723A /* About */ = {
-			isa = PBXGroup;
-			children = (
-				BEBDD24A1459DFD500855A83 /* SBAboutViewController.h */,
-				BEBDD24B1459DFD500855A83 /* SBAboutViewController.m */,
-			);
-			name = About;
-			sourceTree = "<group>";
-		};
 		BEBD05A318906CE4004A723A /* GameType */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +364,8 @@
 		BEC8F6F213F197650051770E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEF51729204AA11300C5B583 /* SafariServices.framework */,
+				BEF51727204A9C6700C5B583 /* WebKit.framework */,
 				BEFF5E3020489015006823FC /* Contacts.framework */,
 				BEFF5E3120489016006823FC /* ContactsUI.framework */,
 				BE22F85B145D5A8F00210BF8 /* iAd.framework */,
@@ -477,7 +468,7 @@
 		BEC8F6E613F197650051770E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				TargetAttributes = {
 					BEC8F6EE13F197650051770E = {
 						DevelopmentTeam = 7VVU8FW2ME;
@@ -583,7 +574,6 @@
 				BE09EFB3145323310094C38C /* UIImage+Alpha.m in Sources */,
 				BEB091C018941FBB0012CA47 /* MailHelper.m in Sources */,
 				BEB091C3189420F00012CA47 /* Utilities.m in Sources */,
-				BEBDD24C1459DFD500855A83 /* SBAboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +672,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -707,6 +698,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -731,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ScoreBoard.app/ScoreBoard";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -750,6 +743,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ScoreBoard.app/ScoreBoard";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",

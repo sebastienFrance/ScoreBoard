@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 @class SBPlayersViewContoller;
 @class ModelGameConfig;
 
-@interface SBGameTypeViewController : UITableViewController
+@interface SBGameTypeViewController : UITableViewController<MFMailComposeViewControllerDelegate>
 
 
 @end

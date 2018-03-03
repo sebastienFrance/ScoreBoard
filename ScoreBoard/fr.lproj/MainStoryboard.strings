@@ -58,6 +58,7 @@
 
 /* Class = "IBUILabel"; text = "About"; ObjectID = "ovY-y6-k5d"; */
 "ovY-y6-k5d.text" = "A propos";
+"krE-qL-87a.text" = "contactez moi!"
 
 /* Class = "IBUIBarButtonItem"; title = "Cancel"; ObjectID = "rTK-go-Nzp"; */
 "rTK-go-Nzp.title" = "Annuler";

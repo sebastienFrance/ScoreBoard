@@ -19,6 +19,22 @@
 @implementation MailHelper
 
 
+
++ (MFMailComposeViewController*) prepareContactEmail:(id<MFMailComposeViewControllerDelegate>) delegate {
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+
+    picker.mailComposeDelegate = delegate;
+
+    [picker setSubject:@"ScoreLog"];
+
+    // Set up the recipients.
+    NSArray<NSString*>* emails = @[@"sebastienothers@gmail.com"];
+    [picker setToRecipients:emails];
+
+    return picker;
+}
+
+
 + (MFMailComposeViewController*) prepareEmail:(id<MFMailComposeViewControllerDelegate>) delegate
                                    scoreBoard:(ModelScoreBoard*) scoreBoardModel
                                    playerList:(NSArray*) modelScorePlayerList {

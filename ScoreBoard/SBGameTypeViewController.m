@@ -11,9 +11,11 @@
 #import "ModelGameConfig.h"
 #import "DatabaseAccess.h"
 #import "ModelScoreBoard.h"
-#import "SBAboutViewController.h"
 #import "SWRevealViewController.h"
 #import "SBGameManager.h"
+#import "MailHelper.h"
+
+#import <MessageUI/MFMailComposeViewController.h>
 
 @interface SBGameTypeViewController()
 
@@ -68,6 +70,18 @@
     [[SBGameManager sharedInstance].playerController endGameType];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        MFMailComposeViewController *picker = [MailHelper prepareContactEmail:self];
+        [self presentViewController:picker animated:YES completion:Nil];
+    }
+}
+
+
+#pragma mark - MFMailComposeViewControllerDelegate protocol
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [self  dismissViewControllerAnimated:YES completion:Nil];
+}
 
 
 @end
