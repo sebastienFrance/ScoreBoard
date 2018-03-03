@@ -19,7 +19,7 @@
 #import "ScoreBoardAppDelegate.h"
 #import "SBHistoryCell.h"
 #import "SBPlayersViewContoller.h"
-#import "SWRevealViewController.h"
+
 #import "SBGameManager.h"
 #import "SBPlayersViewContoller.h"
 #import "SBGameTypeViewController.h"
@@ -52,9 +52,6 @@ static const NSUInteger SECTION_HISTORICAL = 2;
     
     self.theTableView.delegate = self;
     self.theTableView.dataSource = self;
-    
-    self.gameNavigationController = (UINavigationController *)self.revealViewController.frontViewController;
-    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -220,7 +217,8 @@ static const NSUInteger SECTION_HISTORICAL = 2;
     
     switch (theRow) {
         case SECTION_CURRENT_GAME_DISPLAY_IT: {
-            [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
+            //TODO: SEB
+//            [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
             break;
         }
         case SECTION_CURRENT_GAME_OPTIONS: {
@@ -251,14 +249,16 @@ static const NSUInteger SECTION_HISTORICAL = 2;
         case SECTION_GAME_ROW_NEW_GAME: {
             SBPlayersViewContoller* controller = [SBGameManager sharedInstance].playerController;
             [controller startNewGame];
-            [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
+            //TODO: SEB
+//            [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
             break;
             
         }
         case SECTION_GAME_ROW_DUPLICATE_GAME: {
             SBPlayersViewContoller* controller = [SBGameManager sharedInstance].playerController;
             [controller startNewGameWithSamePlayer];
-            [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
+            //TODO: SEB
+//            [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
             break;
             
         }
@@ -279,7 +279,8 @@ static const NSUInteger SECTION_HISTORICAL = 2;
     
     [controller updateWithHistoricalGame:getScorePlayer config:getScorePlayer.GameConfig];
     
-    [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
+    //TODO: SEB
+//    [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
 }
 
 

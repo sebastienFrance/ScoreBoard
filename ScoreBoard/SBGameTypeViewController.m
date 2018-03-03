@@ -11,7 +11,6 @@
 #import "ModelGameConfig.h"
 #import "DatabaseAccess.h"
 #import "ModelScoreBoard.h"
-#import "SWRevealViewController.h"
 #import "SBGameManager.h"
 #import "MailHelper.h"
 
@@ -39,10 +38,6 @@
     self.gameNameTextField.text = [SBGameManager sharedInstance].playerController.scoreBoardModel.GameName;
     
     [super viewDidLoad];
-}
-
-- (IBAction)menuButtonPushed:(UIBarButtonItem *)sender {
-    [self.revealViewController revealToggle:Nil];
 }
 
 - (void) viewWillDisappear:(BOOL)animated {

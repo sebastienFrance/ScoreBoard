@@ -15,7 +15,6 @@
 		BE2639E1140C14D6006F8C20 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2639E0140C14D6006F8C20 /* MobileCoreServices.framework */; };
 		BE3A7FA81416AEDE009A1B0B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A7FA71416AEDE009A1B0B /* AddressBookUI.framework */; };
 		BE3A7FAB1416AEED009A1B0B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A7FAA1416AEED009A1B0B /* AddressBook.framework */; };
-		BE3B3929148EB21E00E1023B /* Manual.html in Resources */ = {isa = PBXBuildFile; fileRef = BE3B3928148EB21E00E1023B /* Manual.html */; };
 		BE3D07041466C645006508BC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D07031466C645006508BC /* Icon.png */; };
 		BE3D07061466C662006508BC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D07051466C662006508BC /* Icon@2x.png */; };
 		BE522F69189C0FE100D760C1 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE522F6B189C0FE100D760C1 /* MainStoryboard.storyboard */; };
@@ -33,9 +32,6 @@
 		BE9699EE1435665800D0DD59 /* ModelScoreList.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9699ED1435665800D0DD59 /* ModelScoreList.m */; };
 		BE9D25C81645373F0040A556 /* default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE9D25C71645373F0040A556 /* default-568h@2x.png */; };
 		BEA2A91C143B8AB100167466 /* SBPlayersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA2A91B143B8AB100167466 /* SBPlayersCell.m */; };
-		BEA410D0145C3DFC0051B4E9 /* About_fr.html in Resources */ = {isa = PBXBuildFile; fileRef = BEA410CF145C3DFC0051B4E9 /* About_fr.html */; };
-		BEA410D3145C3E040051B4E9 /* About.html in Resources */ = {isa = PBXBuildFile; fileRef = BEA410D2145C3E040051B4E9 /* About.html */; };
-		BEAC1D8119D7FB0F0019D87A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC1D8019D7FB0F0019D87A /* SWRevealViewController.m */; };
 		BEAC1D8619D8026B0019D87A /* SBRearMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC1D8519D8026A0019D87A /* SBRearMenuViewController.m */; };
 		BEB091C018941FBB0012CA47 /* MailHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB091BF18941FBB0012CA47 /* MailHelper.m */; };
 		BEB091C3189420F00012CA47 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB091C2189420F00012CA47 /* Utilities.m */; };
@@ -86,7 +82,6 @@
 		BE2639E0140C14D6006F8C20 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		BE3A7FA71416AEDE009A1B0B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		BE3A7FAA1416AEED009A1B0B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		BE3B3928148EB21E00E1023B /* Manual.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Manual.html; sourceTree = "<group>"; };
 		BE3D07031466C645006508BC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "Gimp Score Log/Icon.png"; sourceTree = "<group>"; };
 		BE3D07051466C662006508BC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Gimp Score Log/Icon@2x.png"; sourceTree = "<group>"; };
 		BE522F6A189C0FE100D760C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -114,10 +109,6 @@
 		BE9D25C71645373F0040A556 /* default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-568h@2x.png"; sourceTree = "<group>"; };
 		BEA2A91A143B8AB100167466 /* SBPlayersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBPlayersCell.h; sourceTree = "<group>"; };
 		BEA2A91B143B8AB100167466 /* SBPlayersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPlayersCell.m; sourceTree = "<group>"; };
-		BEA410CF145C3DFC0051B4E9 /* About_fr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = About_fr.html; sourceTree = "<group>"; };
-		BEA410D2145C3E040051B4E9 /* About.html */ = {isa = PBXFileReference; explicitFileType = text.html.documentation; fileEncoding = 4; path = About.html; sourceTree = "<group>"; };
-		BEAC1D7F19D7FB0F0019D87A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		BEAC1D8019D7FB0F0019D87A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		BEAC1D8419D8026A0019D87A /* SBRearMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBRearMenuViewController.h; sourceTree = "<group>"; };
 		BEAC1D8519D8026A0019D87A /* SBRearMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBRearMenuViewController.m; sourceTree = "<group>"; };
 		BEB091BE18941FBB0012CA47 /* MailHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailHelper.h; sourceTree = "<group>"; };
@@ -220,10 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				BE09E7F8189EDD87008FF16A /* Images.xcassets */,
-				BEA410D2145C3E040051B4E9 /* About.html */,
 				BE63BC3E19DC1FCE008F9993 /* Launch.jpg */,
-				BE3B3928148EB21E00E1023B /* Manual.html */,
-				BEA410CF145C3DFC0051B4E9 /* About_fr.html */,
 				BE934CB71438C1050051B5AA /* No_Photo.png */,
 				BE3D07031466C645006508BC /* Icon.png */,
 				BE3D07051466C662006508BC /* Icon@2x.png */,
@@ -250,15 +238,6 @@
 				BE932AB3142FC75100324CC3 /* ModelPlayer.m */,
 			);
 			name = "Model and Model Classes";
-			sourceTree = "<group>";
-		};
-		BEAC1D7E19D7FAE30019D87A /* SWRevealViewController */ = {
-			isa = PBXGroup;
-			children = (
-				BEAC1D7F19D7FB0F0019D87A /* SWRevealViewController.h */,
-				BEAC1D8019D7FB0F0019D87A /* SWRevealViewController.m */,
-			);
-			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		BEB091BD18941F970012CA47 /* Utilities */ = {
@@ -341,7 +320,6 @@
 				BE9D25C71645373F0040A556 /* default-568h@2x.png */,
 				BE8DC91D142DCD7C00F334DE /* Model and Model Classes */,
 				BE6ECF1813F6831800A999CD /* Resources */,
-				BEAC1D7E19D7FAE30019D87A /* SWRevealViewController */,
 				BE09EFB41453508A0094C38C /* UIImageLibrary */,
 				BEB091BD18941F970012CA47 /* Utilities */,
 				BEBD05A118906BDD004A723A /* DatabaseAccess */,
@@ -504,15 +482,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE934CB81438C1050051B5AA /* No_Photo.png in Resources */,
-				BEA410D0145C3DFC0051B4E9 /* About_fr.html in Resources */,
 				BED2828C19DDB1480005C7FC /* Localizable.strings in Resources */,
-				BEA410D3145C3E040051B4E9 /* About.html in Resources */,
 				BE3D07041466C645006508BC /* Icon.png in Resources */,
 				BE3D07061466C662006508BC /* Icon@2x.png in Resources */,
 				BE09E7F9189EDD87008FF16A /* Images.xcassets in Resources */,
 				BE63BC3F19DC1FCE008F9993 /* Launch.jpg in Resources */,
 				BE522F69189C0FE100D760C1 /* MainStoryboard.storyboard in Resources */,
-				BE3B3929148EB21E00E1023B /* Manual.html in Resources */,
 				BE9D25C81645373F0040A556 /* default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,7 +535,6 @@
 				BE932AB4142FC75100324CC3 /* ModelPlayer.m in Sources */,
 				BEE89FF9143324A200039D87 /* DatabaseAccess.m in Sources */,
 				BE1695A01434F7AB001FC88F /* ModelScorePlayer.m in Sources */,
-				BEAC1D8119D7FB0F0019D87A /* SWRevealViewController.m in Sources */,
 				BED9C7C619D9BB1600CC9D81 /* SBRearMenuCell.m in Sources */,
 				BE9699EE1435665800D0DD59 /* ModelScoreList.m in Sources */,
 				BEAC1D8619D8026B0019D87A /* SBRearMenuViewController.m in Sources */,

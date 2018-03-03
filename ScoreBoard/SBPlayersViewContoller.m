@@ -23,7 +23,6 @@
 #import "DatabaseHelper.h"
 #import "Utilities.h"
 #import "MailHelper.h"
-#import "SWRevealViewController.h"
 #import "SBGameManager.h"
 
 @interface SBPlayersViewContoller()
@@ -63,20 +62,9 @@
     self.tv.dataSource = self;
     self.tv.delegate = self;
     
-    [self customSetup];
-    
     [self initializeNewGame];
 }
 
-- (void)customSetup
-{
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if (revealViewController) {
-        [self.revealButton setTarget: self.revealViewController];
-        [self.revealButton setAction: @selector( revealToggle: )];
-        [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
-}
 
 // When a modal view is closed then this method is called. Use it to re-display the ADBanner view
 // but only if an Ad was previously loaded
@@ -347,7 +335,8 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"OpenAddScore"]) {
-        SBAddScoreToPlayerViewController *addController = segue.destinationViewController;
+        UINavigationController* navController = segue.destinationViewController;
+        SBAddScoreToPlayerViewController *addController = (SBAddScoreToPlayerViewController*) navController.topViewController;
         ModelScorePlayer* getScorePlayer = (ModelScorePlayer*) [self.modelScorePlayerList objectAtIndex:[self.tv indexPathForSelectedRow].row];
         addController.scorePlayer = getScorePlayer;
     }
