@@ -68,7 +68,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
         MFMailComposeViewController *picker = [MailHelper prepareContactEmail:self];
-        [self presentViewController:picker animated:YES completion:Nil];
+        [self showViewController:picker sender:Nil];
+       // [self presentViewController:picker animated:YES completion:Nil];
     }
 }
 

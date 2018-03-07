@@ -37,14 +37,11 @@
 
 @implementation SBRearMenuViewController
 
-static const NSUInteger SECTION_CURRENT_GAME = 0;
-static const NSUInteger SECTION_CURRENT_GAME_DISPLAY_IT = 0;
-static const NSUInteger SECTION_CURRENT_GAME_OPTIONS = 1;
-static const NSUInteger SECTION_GAME = 1;
+static const NSUInteger SECTION_GAME = 0;
 static const NSUInteger SECTION_GAME_ROW_NEW_GAME = 0;
 static const NSUInteger SECTION_GAME_ROW_DUPLICATE_GAME = 1;
 static const NSUInteger SECTION_GAME_ROW_EDIT_HISTORICAL = 2;
-static const NSUInteger SECTION_HISTORICAL = 2;
+static const NSUInteger SECTION_HISTORICAL = 1;
 
 
 - (void)viewDidLoad {
@@ -52,6 +49,7 @@ static const NSUInteger SECTION_HISTORICAL = 2;
     
     self.theTableView.delegate = self;
     self.theTableView.dataSource = self;
+    self.theTableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -67,25 +65,14 @@ static const NSUInteger SECTION_HISTORICAL = 2;
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
-}
-
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == SECTION_HISTORICAL) {
-        return 62.0;
-    } else {
-        return 38.0;
-    }
-  
+    return 2;
 }
 
 
-// The number of rows is the number of players in the game
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
-        case SECTION_CURRENT_GAME:
-            return 2;
         case SECTION_GAME:
             return 3;
         case SECTION_HISTORICAL:
@@ -98,8 +85,6 @@ static const NSUInteger SECTION_HISTORICAL = 2;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
-        case SECTION_CURRENT_GAME:
-            return  NSLocalizedString(@"Current Game", @"(RearMenu) Title Current Game section");
         case SECTION_GAME:
             return  NSLocalizedString(@"Game", @"(RearMenu) Title Game section");
         case SECTION_HISTORICAL:
@@ -113,9 +98,6 @@ static const NSUInteger SECTION_HISTORICAL = 2;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
-        case SECTION_CURRENT_GAME: {
-            return [self cellForCurrentGame:tableView row:indexPath.row];
-        }
         case SECTION_GAME: {
             return [self cellForGame:tableView row:indexPath.row];
         }
@@ -130,29 +112,7 @@ static const NSUInteger SECTION_HISTORICAL = 2;
     
 }
 
--(UITableViewCell*) cellForCurrentGame:(UITableView *)tableView row:(NSUInteger) theRow {
-    static NSString* currentGameId = @"StartNewGameCellId";
-    SBRearMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:currentGameId];
-    if (cell == nil) {
-        cell = [[SBRearMenuCell alloc] init];
-    }
-    
-    switch (theRow) {
-        case SECTION_CURRENT_GAME_DISPLAY_IT: {
-            cell.label.text = NSLocalizedString(@"Display current game", @"(RearMenu) Title Display current game row");
-            break;
-        }
-        case SECTION_CURRENT_GAME_OPTIONS: {
-            cell.label.text = NSLocalizedString(@"Options", @"(RearMenu) Title Options current game row");
-            break;
-        }
-        default: {
-            NSLog(@"%s unknown case", __PRETTY_FUNCTION__);
-        }
-    }
-    
-    return cell;
-}
+
 
 - (UITableViewCell*) cellForGame:(UITableView *)tableView row:(NSUInteger) theRow {
     static NSString* newGameId = @"StartNewGameCellId";
@@ -198,10 +158,6 @@ static const NSUInteger SECTION_HISTORICAL = 2;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
-        case SECTION_CURRENT_GAME: {
-            [self currentGameRowSelected:indexPath.row];
-            break;
-        }
         case SECTION_GAME: {
             [self gameRowSelected:indexPath.row];
             break;
@@ -213,35 +169,6 @@ static const NSUInteger SECTION_HISTORICAL = 2;
     }
 }
 
--(void) currentGameRowSelected:(NSUInteger) theRow {
-    
-    switch (theRow) {
-        case SECTION_CURRENT_GAME_DISPLAY_IT: {
-            //TODO: SEB
-//            [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
-            break;
-        }
-        case SECTION_CURRENT_GAME_OPTIONS: {
-            if ([SBGameManager sharedInstance].playerController.isGameStarted) {
-                [self performSegueWithIdentifier:@"showOptions" sender:Nil];
-            } else {
-                UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Error", Nil)
-                                                                               message:NSLocalizedString(@"Options cannot be configured while a game is not started.", Nil)
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
-                
-                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                      handler:^(UIAlertAction * action) {}];
-                
-                [alert addAction:defaultAction];
-                [self presentViewController:alert animated:YES completion:nil];
-            }
-            break;
-        }
-        default: {
-            NSLog(@"%s unknown case", __PRETTY_FUNCTION__);
-        }
-    }
-}
 
 
 - (void) gameRowSelected:(NSUInteger) theRow {
@@ -249,6 +176,8 @@ static const NSUInteger SECTION_HISTORICAL = 2;
         case SECTION_GAME_ROW_NEW_GAME: {
             SBPlayersViewContoller* controller = [SBGameManager sharedInstance].playerController;
             [controller startNewGame];
+            self.tabBarController.selectedIndex = 0;
+
             //TODO: SEB
 //            [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
             break;
@@ -278,9 +207,9 @@ static const NSUInteger SECTION_HISTORICAL = 2;
     ModelScoreBoard* getScorePlayer = [self.scorePlayerList objectAtIndex:[self.theTableView indexPathForSelectedRow].row];
     
     [controller updateWithHistoricalGame:getScorePlayer config:getScorePlayer.GameConfig];
-    
-    //TODO: SEB
-//    [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
+
+
+    self.tabBarController.selectedIndex = 0;
 }
 
 

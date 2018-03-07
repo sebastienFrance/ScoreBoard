@@ -335,8 +335,9 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"OpenAddScore"]) {
-        UINavigationController* navController = segue.destinationViewController;
-        SBAddScoreToPlayerViewController *addController = (SBAddScoreToPlayerViewController*) navController.topViewController;
+        //UINavigationController* navController = segue.destinationViewController;
+        //SBAddScoreToPlayerViewController *addController = (SBAddScoreToPlayerViewController*) navController.topViewController;
+        SBAddScoreToPlayerViewController *addController = (SBAddScoreToPlayerViewController*) segue.destinationViewController;
         ModelScorePlayer* getScorePlayer = (ModelScorePlayer*) [self.modelScorePlayerList objectAtIndex:[self.tv indexPathForSelectedRow].row];
         addController.scorePlayer = getScorePlayer;
     }
