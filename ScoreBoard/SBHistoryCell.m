@@ -1,9 +1,8 @@
 //
-//  HistoryGameCellCustom.m
-//  ScoreBoard
+//  SBHistoryCell.m
+//  Score Log
 //
-//  Created by sébastien brugalières on 16/10/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Created by Sébastien Brugalières on 11/03/2018.
 //
 
 #import "SBHistoryCell.h"
@@ -23,7 +22,7 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -34,10 +33,11 @@
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     NSString* stringDate = [dateFormatter stringFromDate:currentDate];
-
+    
     self.gameDateLabel.text = stringDate;
     self.gameNameLabel.text = argPlayer.GameName;
 }
 
 
 @end
+

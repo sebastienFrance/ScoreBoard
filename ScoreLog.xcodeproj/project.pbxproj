@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0921C9205540B2002F071E /* AddPlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0921C8205540B2002F071E /* AddPlayerTableViewCell.m */; };
+		BE0921CC2055B060002F071E /* SBHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0921CB2055B060002F071E /* SBHistoryCell.m */; };
 		BE09E7F9189EDD87008FF16A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE09E7F8189EDD87008FF16A /* Images.xcassets */; };
 		BE09EFAC145321E80094C38C /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09EFAB145321E80094C38C /* UIImage+Resize.m */; };
 		BE09EFB0145322F10094C38C /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09EFAF145322F10094C38C /* UIImage+RoundedCorner.m */; };
@@ -22,13 +24,11 @@
 		BE68714A13FAFC1500E515D8 /* SBPlayersViewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = BE68714913FAFC1500E515D8 /* SBPlayersViewContoller.m */; };
 		BE68714D13FB069700E515D8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE68714C13FB069700E515D8 /* CoreData.framework */; };
 		BE76646514404F6E00543CB1 /* ModelScoreBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = BE76646414404F6E00543CB1 /* ModelScoreBoard.m */; };
-		BE83B022144AD1F9006D6B12 /* SBHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE83B021144AD1F9006D6B12 /* SBHistoryCell.m */; };
 		BE8DC921142DCDCF00F334DE /* ScoreBoardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE8DC91F142DCDCF00F334DE /* ScoreBoardModel.xcdatamodeld */; };
 		BE932AB4142FC75100324CC3 /* ModelPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE932AB3142FC75100324CC3 /* ModelPlayer.m */; };
 		BE934CB81438C1050051B5AA /* No_Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = BE934CB71438C1050051B5AA /* No_Photo.png */; };
 		BE9589CA1441A73600B0D124 /* SBGameTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9589C91441A73600B0D124 /* SBGameTypeViewController.m */; };
 		BE9589D61441D19D00B0D124 /* ModelGameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9589D51441D19D00B0D124 /* ModelGameConfig.m */; };
-		BE9679B8142633A60099374E /* SBHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9679B6142633A60099374E /* SBHistoryViewController.m */; };
 		BE9699EE1435665800D0DD59 /* ModelScoreList.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9699ED1435665800D0DD59 /* ModelScoreList.m */; };
 		BE9D25C81645373F0040A556 /* default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE9D25C71645373F0040A556 /* default-568h@2x.png */; };
 		BEA2A91C143B8AB100167466 /* SBPlayersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA2A91B143B8AB100167466 /* SBPlayersCell.m */; };
@@ -69,6 +69,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE0921C7205540B2002F071E /* AddPlayerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPlayerTableViewCell.h; sourceTree = "<group>"; };
+		BE0921C8205540B2002F071E /* AddPlayerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPlayerTableViewCell.m; sourceTree = "<group>"; };
+		BE0921CA2055B060002F071E /* SBHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBHistoryCell.h; sourceTree = "<group>"; };
+		BE0921CB2055B060002F071E /* SBHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBHistoryCell.m; sourceTree = "<group>"; };
 		BE09E7F8189EDD87008FF16A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Score Log/Images.xcassets"; sourceTree = "<group>"; };
 		BE09EFAA145321E80094C38C /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Resize.h"; path = "ScoreBoard/UIImage+Resize.h"; sourceTree = "<group>"; };
 		BE09EFAB145321E80094C38C /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "ScoreBoard/UIImage+Resize.m"; sourceTree = "<group>"; };
@@ -91,8 +95,6 @@
 		BE68714C13FB069700E515D8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BE76646314404F6E00543CB1 /* ModelScoreBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelScoreBoard.h; path = Model/ModelScoreBoard.h; sourceTree = "<group>"; };
 		BE76646414404F6E00543CB1 /* ModelScoreBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelScoreBoard.m; path = Model/ModelScoreBoard.m; sourceTree = "<group>"; };
-		BE83B020144AD1F9006D6B12 /* SBHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBHistoryCell.h; sourceTree = "<group>"; };
-		BE83B021144AD1F9006D6B12 /* SBHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBHistoryCell.m; sourceTree = "<group>"; };
 		BE8DC920142DCDCF00F334DE /* ScoreBoardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScoreBoardModel.xcdatamodel; sourceTree = "<group>"; };
 		BE932AB2142FC75100324CC3 /* ModelPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelPlayer.h; path = Model/ModelPlayer.h; sourceTree = "<group>"; };
 		BE932AB3142FC75100324CC3 /* ModelPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelPlayer.m; path = Model/ModelPlayer.m; sourceTree = "<group>"; };
@@ -101,8 +103,6 @@
 		BE9589C91441A73600B0D124 /* SBGameTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBGameTypeViewController.m; sourceTree = "<group>"; };
 		BE9589D41441D19D00B0D124 /* ModelGameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelGameConfig.h; path = Model/ModelGameConfig.h; sourceTree = "<group>"; };
 		BE9589D51441D19D00B0D124 /* ModelGameConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelGameConfig.m; path = Model/ModelGameConfig.m; sourceTree = "<group>"; };
-		BE9679B5142633A60099374E /* SBHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBHistoryViewController.h; sourceTree = "<group>"; };
-		BE9679B6142633A60099374E /* SBHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBHistoryViewController.m; sourceTree = "<group>"; };
 		BE9699EC1435665800D0DD59 /* ModelScoreList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelScoreList.h; path = Model/ModelScoreList.h; sourceTree = "<group>"; };
 		BE9699ED1435665800D0DD59 /* ModelScoreList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelScoreList.m; path = Model/ModelScoreList.m; sourceTree = "<group>"; };
 		BE97FDB7189C10C200D4413D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainStoryboard.strings; sourceTree = "<group>"; };
@@ -201,8 +201,9 @@
 				BEAC1D8519D8026A0019D87A /* SBRearMenuViewController.m */,
 				BED9C7C419D9BB1600CC9D81 /* SBRearMenuCell.h */,
 				BED9C7C519D9BB1600CC9D81 /* SBRearMenuCell.m */,
+				BE0921CA2055B060002F071E /* SBHistoryCell.h */,
+				BE0921CB2055B060002F071E /* SBHistoryCell.m */,
 				BEBD05A318906CE4004A723A /* GameType */,
-				BEBD05A5189070D5004A723A /* History */,
 			);
 			name = RearMenu;
 			sourceTree = "<group>";
@@ -297,21 +298,12 @@
 				BE68714913FAFC1500E515D8 /* SBPlayersViewContoller.m */,
 				BEA2A91A143B8AB100167466 /* SBPlayersCell.h */,
 				BEA2A91B143B8AB100167466 /* SBPlayersCell.m */,
+				BE0921C7205540B2002F071E /* AddPlayerTableViewCell.h */,
+				BE0921C8205540B2002F071E /* AddPlayerTableViewCell.m */,
 				BEBD05A018906B27004A723A /* AddScoreToPlayer */,
 				BEBD059F189068E7004A723A /* AddPlayer */,
 			);
 			name = PlayersTable;
-			sourceTree = "<group>";
-		};
-		BEBD05A5189070D5004A723A /* History */ = {
-			isa = PBXGroup;
-			children = (
-				BE9679B5142633A60099374E /* SBHistoryViewController.h */,
-				BE9679B6142633A60099374E /* SBHistoryViewController.m */,
-				BE83B020144AD1F9006D6B12 /* SBHistoryCell.h */,
-				BE83B021144AD1F9006D6B12 /* SBHistoryCell.m */,
-			);
-			name = History;
 			sourceTree = "<group>";
 		};
 		BEC8F6E413F197650051770E = {
@@ -530,7 +522,6 @@
 				BED9C7CB19DAA04900CC9D81 /* SBGameManager.m in Sources */,
 				BEE98E9413FD858500716683 /* SBAddPlayerViewController.m in Sources */,
 				BEC8977914042E1C00D1F674 /* SBAddScoreToPlayerViewController.m in Sources */,
-				BE9679B8142633A60099374E /* SBHistoryViewController.m in Sources */,
 				BE8DC921142DCDCF00F334DE /* ScoreBoardModel.xcdatamodeld in Sources */,
 				BE932AB4142FC75100324CC3 /* ModelPlayer.m in Sources */,
 				BEE89FF9143324A200039D87 /* DatabaseAccess.m in Sources */,
@@ -542,11 +533,12 @@
 				BE76646514404F6E00543CB1 /* ModelScoreBoard.m in Sources */,
 				BE9589CA1441A73600B0D124 /* SBGameTypeViewController.m in Sources */,
 				BE9589D61441D19D00B0D124 /* ModelGameConfig.m in Sources */,
-				BE83B022144AD1F9006D6B12 /* SBHistoryCell.m in Sources */,
 				BE09EFAC145321E80094C38C /* UIImage+Resize.m in Sources */,
 				BE09EFB0145322F10094C38C /* UIImage+RoundedCorner.m in Sources */,
+				BE0921CC2055B060002F071E /* SBHistoryCell.m in Sources */,
 				BE09EFB3145323310094C38C /* UIImage+Alpha.m in Sources */,
 				BEB091C018941FBB0012CA47 /* MailHelper.m in Sources */,
+				BE0921C9205540B2002F071E /* AddPlayerTableViewCell.m in Sources */,
 				BEB091C3189420F00012CA47 /* Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

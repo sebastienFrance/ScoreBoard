@@ -33,6 +33,9 @@
     
     self.navigationItem.title = NSLocalizedString(@"Game Options", @"(GameTypeController) Title of view to configure game options");
     
+    
+    self.gameNameTextField.delegate = self;
+    
     self.negativeScoreSwitch.on = [gameConfig.NegativeScore boolValue];
     self.bestScorceWinSwitch.on = [gameConfig.HighestScoreWin boolValue];
     self.gameNameTextField.text = [SBGameManager sharedInstance].playerController.scoreBoardModel.GameName;
@@ -69,7 +72,6 @@
     if (indexPath.section == 1) {
         MFMailComposeViewController *picker = [MailHelper prepareContactEmail:self];
         [self showViewController:picker sender:Nil];
-       // [self presentViewController:picker animated:YES completion:Nil];
     }
 }
 
@@ -77,6 +79,14 @@
 #pragma mark - MFMailComposeViewControllerDelegate protocol
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     [self  dismissViewControllerAnimated:YES completion:Nil];
+}
+
+
+#pragma mark - UITextFieldDelegate
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    return YES;
 }
 
 

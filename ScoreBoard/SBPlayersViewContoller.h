@@ -28,8 +28,6 @@
 
 @property (nonatomic, readonly) Boolean isGameStarted;
 
-//- (id)init;
-
 
 - (void) updateWithHistoricalGame:(ModelScoreBoard*) scoreBoardModel config:(ModelGameConfig*) gameConfig;
 - (void) startNewGame;

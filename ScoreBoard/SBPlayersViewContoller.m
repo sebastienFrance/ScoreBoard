@@ -10,6 +10,7 @@
 #import "SBPlayersViewContoller.h"
 #import "SBAddPlayerViewController.h"
 #import "SBAddScoreToPlayerViewController.h"
+#import "AddPlayerTableViewCell.h"
 #import "ModelPlayer.h"
 #import "ModelScoreList.h"
 #import "ModelScoreBoard.h"
@@ -28,14 +29,9 @@
 @interface SBPlayersViewContoller()
 
 @property (nonatomic, retain) IBOutlet UITableView *tv;
-@property (nonatomic, retain) IBOutlet UIView *tbView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *mailButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *reorderPlayersButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *revealButton;
-
-@property (retain, nonatomic) IBOutlet NSLayoutConstraint *tableViewBottonProperties;
-@property (nonatomic) NSMutableArray* modelScorePlayerList;
-
+@property (nonatomic) NSMutableArray<ModelScorePlayer*>* modelScorePlayerList;
 
 @end
 
@@ -44,11 +40,7 @@
 
 
 -(Boolean) isGameStarted {
-    if (self.gameConfig != Nil) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
+    return self.gameConfig != Nil;
 }
 
 #pragma mark - View lifecycle
@@ -61,28 +53,12 @@
     
     self.tv.dataSource = self;
     self.tv.delegate = self;
+    self.tv.rowHeight = UITableViewAutomaticDimension;
+    self.tv.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
     
     [self initializeNewGame];
 }
 
-
-// When a modal view is closed then this method is called. Use it to re-display the ADBanner view
-// but only if an Ad was previously loaded
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-// the current view will disappear because a new modal will be displayed or we quit the game
-// hide the bannerview
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
 
 - (void) initializeScorePlayerListMember {
     if (self.scoreBoardModel != Nil) {
@@ -105,7 +81,6 @@
         self.gameConfig = self.scoreBoardModel.GameConfig;
         
         [self initializeScorePlayerListMember];
-        self.title = self.scoreBoardModel.GameName;
         
         NSIndexSet* sectionIndex = [NSIndexSet indexSetWithIndex:0];
         [self.tv reloadSections:sectionIndex withRowAnimation:UITableViewRowAnimationRight];
@@ -113,7 +88,6 @@
 }
 
 -(void) initializeNewGame {
-    self.title = NSLocalizedString(@"Game", @"(PlayersTableViewContoller) Default game name");
     self.modelScorePlayerList = [[NSMutableArray alloc] init];
     [self enableDisableButton];
 }
@@ -122,7 +96,6 @@
     self.scoreBoardModel = scoreBoardModel;
     self.gameConfig = gameConfig;
     
-    self.title = self.scoreBoardModel.GameName;
     self.modelScorePlayerList =[DatabaseHelper loadScorePlayerList:self.scoreBoardModel];
     
     [self enableDisableButton];
@@ -133,7 +106,6 @@
 #pragma mark - Utilities
 -(void) enableDisableButton {
     if ((self.scoreBoardModel != Nil) && (self.scoreBoardModel.ScoreList.count > 0)) {
-        self.tv.hidden = FALSE;
         self.mailButton.enabled = TRUE;
         if (self.scoreBoardModel.ScoreList.count > 1) {
             self.reorderPlayersButton.enabled = TRUE;
@@ -141,7 +113,6 @@
             self.reorderPlayersButton.enabled = FALSE;
         }
     } else {
-        self.tv.hidden = true;
         self.mailButton.enabled = FALSE;
         self.reorderPlayersButton.enabled = FALSE;
     }
@@ -159,19 +130,23 @@
 
 - (IBAction) reorderPlayersTapped {
     
-    NSMutableArray *sortedModelScorePlayer = [DatabaseHelper reorderPlayer:self.modelScorePlayerList
+    NSMutableArray<ModelScorePlayer*> *sortedModelScorePlayer = [DatabaseHelper reorderPlayer:self.modelScorePlayerList
                                                            highestScoreWin:self.gameConfig.HighestScoreWin.boolValue];
 
-    NSArray* visibleCells = [self.tv indexPathsForVisibleRows];
-    NSMutableArray* cellsToBeRefreshed = [[NSMutableArray alloc] initWithCapacity:visibleCells.count];
+    NSArray<NSIndexPath*>* visibleCells = [self.tv indexPathsForVisibleRows];
+    NSMutableArray<NSIndexPath*>* cellsToBeRefreshed = [[NSMutableArray alloc] initWithCapacity:visibleCells.count];
     NSIndexPath* currIndex = Nil;
     ModelScorePlayer* currModelScorePlayer = Nil;
     ModelScorePlayer* currOrderdModelScorePlayer = Nil;
     
     for (NSUInteger i = 0; i < visibleCells.count; i++) {
-        currIndex = (NSIndexPath*) [visibleCells objectAtIndex:i];
-        currModelScorePlayer = (ModelScorePlayer* ) [self.modelScorePlayerList objectAtIndex:currIndex.row];
-        currOrderdModelScorePlayer = (ModelScorePlayer* ) [sortedModelScorePlayer objectAtIndex:currIndex.row];
+        currIndex = [visibleCells objectAtIndex:i];
+        if (currIndex.section != 0) {
+            continue;
+        }
+        
+        currModelScorePlayer =  [self.modelScorePlayerList objectAtIndex:currIndex.row];
+        currOrderdModelScorePlayer = [sortedModelScorePlayer objectAtIndex:currIndex.row];
         
         if (currModelScorePlayer != currOrderdModelScorePlayer) {
             [cellsToBeRefreshed addObject:currIndex];
@@ -208,7 +183,6 @@
 // Method called when the view to configure the game is closed
 // Need to refresh the table view because the content can be displayed differently
 - (void) endGameType {
-    self.title = self.scoreBoardModel.GameName;
     [self.tv reloadData];
 }
 
@@ -252,6 +226,9 @@
     
     for (NSUInteger i = 0 , j = 0; i < visibleCells.count; i++) {
         NSIndexPath* tempIndexPath = [visibleCells objectAtIndex:i];
+        if (tempIndexPath.section != 0) {
+            continue;
+        }
         
         SBPlayersCell* currentCell = (SBPlayersCell*) [self.tv cellForRowAtIndexPath:tempIndexPath];
         NSInteger currentScore = [currentCell.scoreLabel.text integerValue]; 
@@ -271,40 +248,83 @@
 
 #pragma mark - UITableViewDataSource protocol
 
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return section == 0 ? self.scoreBoardModel.GameName : Nil;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 // The number of rows is the number of players in the game
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        [self enableDisableButton];
+        return self.modelScorePlayerList.count;
+    } else {
+        return 3;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
 {
-    [self enableDisableButton];
-    return self.modelScorePlayerList.count;
+    if(section == 0 && [view isKindOfClass:[UITableViewHeaderFooterView class]]){
+        UITableViewHeaderFooterView *tableViewHeaderFooterView = (UITableViewHeaderFooterView *) view;
+        tableViewHeaderFooterView.textLabel.textColor  = [UIColor whiteColor];
+        tableViewHeaderFooterView.contentView.backgroundColor = [UIColor colorWithRed:0.15 green:0.64 blue:0.08 alpha:1.0];
+    }
 }
 
 // Return the cell of a Player from the game
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CellPlayerList";
-    ModelScorePlayer* player = [self.modelScorePlayerList objectAtIndex:indexPath.row];
-    
-    SBPlayersCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[SBPlayersCell alloc] init];
-    } else {
+    if (indexPath.section == 0) {
+        static NSString *CellIdentifier = @"CellPlayerList";
+        ModelScorePlayer* player = [self.modelScorePlayerList objectAtIndex:indexPath.row];
+        
+        SBPlayersCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         // Make sure the rank is visible. Could be hidden if the cell was in edit mode and then re-use
         cell.rankLabel.alpha = 1.0;
-        cell.rankSharp.alpha = 1.0;
+        
+        NSInteger rank = [Utilities computePlayerRank:player
+                                      scorePlayerList:self.modelScorePlayerList
+                                     isHigherScoreWin:[self.gameConfig.HighestScoreWin boolValue]];
+        [cell initializeWith:player rank:rank];
+        return cell;
+    } else {
+        if (indexPath.row == 0) {
+            return [tableView dequeueReusableCellWithIdentifier:@"AddPlayerCellId" forIndexPath:indexPath];
+        } else {
+            if (indexPath.row == 1) {
+                return [tableView dequeueReusableCellWithIdentifier:@"NewGameCellId" forIndexPath:indexPath];
+            } else {
+                return [tableView dequeueReusableCellWithIdentifier:@"DuplicateGameCellId" forIndexPath:indexPath];
+            }
+        }
     }
-
-     NSInteger rank = [Utilities computePlayerRank:player
-                                   scorePlayerList:self.modelScorePlayerList
-                                  isHigherScoreWin:[self.gameConfig.HighestScoreWin boolValue]];
-    [cell initializeWith:player rank:rank];
-    return cell;
 }
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
+    return indexPath.section == 0;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        
+        if (indexPath.row == 0) {
+        // It's a workaround to avoid latency when opening a Modal from a TableView in a Tabbar... see: https://stackoverflow.com/questions/26469268/delay-in-presenting-a-modal-view-controller
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"openAddPlayer" sender:Nil];
+        });
+        } else if (indexPath.row == 1) {
+            [self startNewGame];
+        } else {
+            [self startNewGameWithSamePlayer];
+        }
+    }
+}
 
 // deleteScorePlayerAndReorder
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -329,16 +349,12 @@
     }   
 }
 
-
-
 #pragma mark - Segue
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"OpenAddScore"]) {
-        //UINavigationController* navController = segue.destinationViewController;
-        //SBAddScoreToPlayerViewController *addController = (SBAddScoreToPlayerViewController*) navController.topViewController;
         SBAddScoreToPlayerViewController *addController = (SBAddScoreToPlayerViewController*) segue.destinationViewController;
-        ModelScorePlayer* getScorePlayer = (ModelScorePlayer*) [self.modelScorePlayerList objectAtIndex:[self.tv indexPathForSelectedRow].row];
+        ModelScorePlayer* getScorePlayer = [self.modelScorePlayerList objectAtIndex:[self.tv indexPathForSelectedRow].row];
         addController.scorePlayer = getScorePlayer;
     }
 }

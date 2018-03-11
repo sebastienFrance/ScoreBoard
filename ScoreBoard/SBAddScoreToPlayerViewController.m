@@ -39,13 +39,13 @@
 {
     // Configure the navigation bar
      self.navigationItem.title = [[self.scorePlayer Player] lastName];
-
 	
     // set the image of the player
     self.photoOfPlayer.image = [[self.scorePlayer Player] picture];
- 
+
     // Configure the table height for the score history
-    self.tableViewScoreHistory.rowHeight = 37.0;
+    self.tableViewScoreHistory.rowHeight = UITableViewAutomaticDimension;
+    self.tableViewScoreHistory.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
     self.tableViewScoreHistory.delegate = self;
     self.tableViewScoreHistory.dataSource = self;
     
@@ -57,18 +57,11 @@
     self.scoreToAdd.placeholder = NSLocalizedString(@"Score", @"(AddScoreToPlayerController) score placeholder for AddScore view");
     
     // Display the +/- sign only if we can have negative score in the game.
-    
-    
     self.segmentedControl.hidden = ![[SBGameManager sharedInstance].playerController.gameConfig.NegativeScore boolValue];
     
     [self.scoreToAdd becomeFirstResponder];
     
-    
-    UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
-    tgr.delegate = self;
-    [self.tableViewScoreHistory addGestureRecognizer:tgr];
 
-    
     [super viewDidLoad];
 }
 
@@ -87,9 +80,6 @@
     [self.scoreToAdd resignFirstResponder];
     return TRUE;
 }
-
-- (void)viewTapped:(UITapGestureRecognizer *)tgr {
- }
 
 
 -(void) initializeHighestAndLowestScore {
