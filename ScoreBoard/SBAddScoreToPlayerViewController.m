@@ -167,7 +167,7 @@
 // Initialize the row with the score
 - (void) initCellWithScoreHistory:(UITableViewCell*) cell scoreIndexPath:(NSIndexPath *)indexPath {
 
-    ModelScoreList* scoreList = (ModelScoreList*) [self.modelScoreList objectAtIndex:indexPath.row];
+    ModelScoreList* scoreList = [self.modelScoreList objectAtIndex:indexPath.row];
     NSInteger score = [scoreList.Score integerValue];
     
     UILabel* textLabel = cell.textLabel;

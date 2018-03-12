@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SBPlayersViewContoller.h"
+#import "ModelScoreList.h"
 
 @class ModelScorePlayer;
 @class ModelGameConfig;
@@ -16,6 +17,6 @@
 @interface SBAddScoreToPlayerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIGestureRecognizerDelegate>
 
 @property(nonatomic) ModelScorePlayer *scorePlayer;
-@property(nonatomic) NSMutableArray* modelScoreList;
+@property(nonatomic) NSMutableArray<ModelScoreList*>* modelScoreList;
 
 @end

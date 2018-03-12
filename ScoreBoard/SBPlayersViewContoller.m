@@ -31,13 +31,15 @@
 @property (nonatomic, retain) IBOutlet UITableView *tv;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *mailButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *reorderPlayersButton;
+
 @property (nonatomic) NSMutableArray<ModelScorePlayer*>* modelScorePlayerList;
 
 @end
 
 @implementation SBPlayersViewContoller
 
-
+static NSUInteger const SECTION_PLAYERS = 0;
+static NSUInteger const SECTION_ACTIONS = 1;
 
 -(Boolean) isGameStarted {
     return self.gameConfig != Nil;
@@ -59,38 +61,34 @@
     [self initializeNewGame];
 }
 
-
-- (void) initializeScorePlayerListMember {
-    if (self.scoreBoardModel != Nil) {
-        // Fetch the data from the coreData and store it in a table. Result is ordered by parameter DisplayOrder
-        self.modelScorePlayerList =[DatabaseHelper loadScorePlayerList:self.scoreBoardModel];
-    } else {
-        self.modelScorePlayerList = [[NSMutableArray alloc] init];
-    }
-}
-
+// Start a new game and cleanup the tableview
 - (void) startNewGame {
     [self initializeNewGame];
     [self.tv reloadData];
 }
 
+-(void) initializeNewGame {
+    self.modelScorePlayerList = [[NSMutableArray alloc] init];
+    self.scoreBoardModel = Nil;
+    self.gameConfig = Nil;
+    [self refreshButtonState];
+}
 
+// Start a new game with the list of players from the current game
 -(void) startNewGameWithSamePlayer {
     if (self.scoreBoardModel != Nil) {
+        // Duplicate the list of players of the current game
         self.scoreBoardModel = [DatabaseHelper duplicateGame:self.scoreBoardModel];
         self.gameConfig = self.scoreBoardModel.GameConfig;
         
-        [self initializeScorePlayerListMember];
+        self.modelScorePlayerList =[DatabaseHelper loadScorePlayerList:self.scoreBoardModel];
         
+        // Cleanup the tableview content with the list of players
         NSIndexSet* sectionIndex = [NSIndexSet indexSetWithIndex:0];
         [self.tv reloadSections:sectionIndex withRowAnimation:UITableViewRowAnimationRight];
     }
 }
 
--(void) initializeNewGame {
-    self.modelScorePlayerList = [[NSMutableArray alloc] init];
-    [self enableDisableButton];
-}
 
 - (void) updateWithHistoricalGame:(ModelScoreBoard*) scoreBoardModel config:(ModelGameConfig*) gameConfig {
     self.scoreBoardModel = scoreBoardModel;
@@ -98,13 +96,13 @@
     
     self.modelScorePlayerList =[DatabaseHelper loadScorePlayerList:self.scoreBoardModel];
     
-    [self enableDisableButton];
+    [self refreshButtonState];
     
     [self.tv reloadData];
 }
 
 #pragma mark - Utilities
--(void) enableDisableButton {
+-(void) refreshButtonState {
     if ((self.scoreBoardModel != Nil) && (self.scoreBoardModel.ScoreList.count > 0)) {
         self.mailButton.enabled = TRUE;
         if (self.scoreBoardModel.ScoreList.count > 1) {
@@ -141,7 +139,7 @@
     
     for (NSUInteger i = 0; i < visibleCells.count; i++) {
         currIndex = [visibleCells objectAtIndex:i];
-        if (currIndex.section != 0) {
+        if (currIndex.section != SECTION_PLAYERS) {
             continue;
         }
         
@@ -207,26 +205,26 @@
     [self.modelScorePlayerList insertObject:newScorePlayer atIndex:[self.modelScorePlayerList count]];
 
     
-    NSArray *insertIndexPaths = [NSArray arrayWithObjects:
+    NSArray<NSIndexPath*> *insertIndexPaths = [NSArray arrayWithObjects:
                                  [NSIndexPath indexPathForRow:[self.modelScorePlayerList count]-1 inSection:0],
-                                 nil];
-
+                                               nil];
+    
     // need to refresh also the visible screen because maybe the game already started and we need to update the rank
     // for example if highestScore win == false then the new player with score = 0 could have a better rank than others players
     
     // need to get all visible cells and compare with the new player for the score.
     // Get Score from the cell to be removed to compute the cell for which the rank must be updated
-     NSInteger newPlayerDefaultScore = 0;  
+    NSInteger newPlayerDefaultScore = 0;
     
     BOOL highestScoreWin = self.gameConfig.HighestScoreWin.boolValue;
     
     // Get the list of visible cells to build from this list the cells that must be refreshed
-    NSArray* visibleCells = [self.tv indexPathsForVisibleRows];
-    NSMutableArray* cellsTorefresh = [[NSMutableArray alloc] initWithCapacity:(visibleCells.count) ];
+    NSArray<NSIndexPath*>* visibleCells = [self.tv indexPathsForVisibleRows];
+    NSMutableArray<NSIndexPath*>* cellsTorefresh = [[NSMutableArray alloc] initWithCapacity:(visibleCells.count) ];
     
     for (NSUInteger i = 0 , j = 0; i < visibleCells.count; i++) {
         NSIndexPath* tempIndexPath = [visibleCells objectAtIndex:i];
-        if (tempIndexPath.section != 0) {
+        if (tempIndexPath.section != SECTION_PLAYERS) {
             continue;
         }
         
@@ -250,7 +248,7 @@
 
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return section == 0 ? self.scoreBoardModel.GameName : Nil;
+    return section == SECTION_PLAYERS ? self.scoreBoardModel.GameName : Nil;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -259,16 +257,15 @@
 
 // The number of rows is the number of players in the game
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        [self enableDisableButton];
+    if (section == SECTION_PLAYERS) {
+        [self refreshButtonState];
         return self.modelScorePlayerList.count;
     } else {
         return 3;
     }
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
-{
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     if(section == 0 && [view isKindOfClass:[UITableViewHeaderFooterView class]]){
         UITableViewHeaderFooterView *tableViewHeaderFooterView = (UITableViewHeaderFooterView *) view;
         tableViewHeaderFooterView.textLabel.textColor  = [UIColor whiteColor];
@@ -279,7 +276,7 @@
 // Return the cell of a Player from the game
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
+    if (indexPath.section == SECTION_PLAYERS) {
         static NSString *CellIdentifier = @"CellPlayerList";
         ModelScorePlayer* player = [self.modelScorePlayerList objectAtIndex:indexPath.row];
         
@@ -293,35 +290,63 @@
         [cell initializeWith:player rank:rank];
         return cell;
     } else {
+        UITableViewCell* theCell = Nil;
         if (indexPath.row == 0) {
-            return [tableView dequeueReusableCellWithIdentifier:@"AddPlayerCellId" forIndexPath:indexPath];
+            theCell = [tableView dequeueReusableCellWithIdentifier:@"AddPlayerCellId" forIndexPath:indexPath];
+        } else if (indexPath.row == 1) {
+            theCell = [tableView dequeueReusableCellWithIdentifier:@"NewGameCellId" forIndexPath:indexPath];
         } else {
-            if (indexPath.row == 1) {
-                return [tableView dequeueReusableCellWithIdentifier:@"NewGameCellId" forIndexPath:indexPath];
-            } else {
-                return [tableView dequeueReusableCellWithIdentifier:@"DuplicateGameCellId" forIndexPath:indexPath];
-            }
+            theCell = [tableView dequeueReusableCellWithIdentifier:@"DuplicateGameCellId" forIndexPath:indexPath];
         }
+        
+        theCell.separatorInset = UIEdgeInsetsMake(0.0, theCell.bounds.size.width, 0.0, -theCell.bounds.size.width);
+        return theCell;
     }
 }
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return indexPath.section == 0;
+    return indexPath.section == SECTION_PLAYERS;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1) {
+    if (indexPath.section == SECTION_ACTIONS) {
         
         if (indexPath.row == 0) {
-        // It's a workaround to avoid latency when opening a Modal from a TableView in a Tabbar... see: https://stackoverflow.com/questions/26469268/delay-in-presenting-a-modal-view-controller
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self performSegueWithIdentifier:@"openAddPlayer" sender:Nil];
-        });
+            // It's a workaround to avoid latency when opening a Modal from a TableView in a Tabbar... see: https://stackoverflow.com/questions/26469268/delay-in-presenting-a-modal-view-controller
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self performSegueWithIdentifier:@"openAddPlayer" sender:Nil];
+            });
         } else if (indexPath.row == 1) {
-            [self startNewGame];
+            
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Start new game"
+                                                                           message:@"Do you want to start a new game?"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                       handler:^(UIAlertAction * action) {[self startNewGame];}];
+            
+            UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:startNewGameAction];
+            [alert addAction:cancelNewGame];
+            [self presentViewController:alert animated:YES completion:nil];
+
         } else {
-            [self startNewGameWithSamePlayer];
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Duplicate game"
+                                                                           message:@"Do you want to create a new game with the same players?"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                       handler:^(UIAlertAction * action) {[self startNewGameWithSamePlayer];}];
+            
+            UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:startNewGameAction];
+            [alert addAction:cancelNewGame];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }
 }
