@@ -10,7 +10,6 @@
 #import "SBPlayersViewContoller.h"
 #import "SBAddPlayerViewController.h"
 #import "SBAddScoreToPlayerViewController.h"
-#import "AddPlayerTableViewCell.h"
 #import "ModelPlayer.h"
 #import "ModelScoreList.h"
 #import "ModelScoreBoard.h"
@@ -25,6 +24,7 @@
 #import "Utilities.h"
 #import "MailHelper.h"
 #import "SBGameManager.h"
+#import "SBActionsTableViewCell.h"
 
 @interface SBPlayersViewContoller()
 
@@ -175,6 +175,12 @@ static NSUInteger const SECTION_ACTIONS = 1;
     }
    
     [self showPlayer:newPlayer];
+    
+    if (self.modelScorePlayerList.count == 1) {
+        // When we have at least one player we can display the buttons to create new empty game and duplicate game
+        NSIndexSet* indexes = [[NSIndexSet alloc] initWithIndex:1];
+        [self.tv reloadSections:indexes withRowAnimation:UITableViewRowAnimationNone];
+    }
 }
 
 
@@ -242,6 +248,46 @@ static NSUInteger const SECTION_ACTIONS = 1;
     [self.tv endUpdates];
 }
 
+- (IBAction)addNewPlayer:(UIButton *)sender {
+    // It's a workaround to avoid latency when opening a Modal from a TableView in a Tabbar... see: https://stackoverflow.com/questions/26469268/delay-in-presenting-a-modal-view-controller
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"openAddPlayer" sender:Nil];
+    });
+}
+
+- (IBAction)startNewEmptyGame:(UIButton *)sender {
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Start new game"
+                                                                   message:@"Do you want to start a new game?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction * action) {[self startNewGame];}];
+    
+    UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:startNewGameAction];
+    [alert addAction:cancelNewGame];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (IBAction)startNewGameWithSamePlayers:(UIButton *)sender {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Duplicate game"
+                                                                   message:@"Do you want to create a new game with the same players?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction * action) {[self startNewGameWithSamePlayer];}];
+    
+    UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:startNewGameAction];
+    [alert addAction:cancelNewGame];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
 
 
 #pragma mark - UITableViewDataSource protocol
@@ -261,7 +307,7 @@ static NSUInteger const SECTION_ACTIONS = 1;
         [self refreshButtonState];
         return self.modelScorePlayerList.count;
     } else {
-        return 3;
+        return 1;
     }
 }
 
@@ -290,65 +336,20 @@ static NSUInteger const SECTION_ACTIONS = 1;
         [cell initializeWith:player rank:rank];
         return cell;
     } else {
-        UITableViewCell* theCell = Nil;
-        if (indexPath.row == 0) {
-            theCell = [tableView dequeueReusableCellWithIdentifier:@"AddPlayerCellId" forIndexPath:indexPath];
-        } else if (indexPath.row == 1) {
-            theCell = [tableView dequeueReusableCellWithIdentifier:@"NewGameCellId" forIndexPath:indexPath];
-        } else {
-            theCell = [tableView dequeueReusableCellWithIdentifier:@"DuplicateGameCellId" forIndexPath:indexPath];
-        }
+        SBActionsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CellWithActionsId" forIndexPath:indexPath];
         
-        theCell.separatorInset = UIEdgeInsetsMake(0.0, theCell.bounds.size.width, 0.0, -theCell.bounds.size.width);
-        return theCell;
+        if (self.modelScorePlayerList.count > 0) {
+            [cell initWithNewGameButton];
+        } else {
+            [cell initWithoutNewGameButton];
+        }
+        return cell;
     }
 }
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return indexPath.section == SECTION_PLAYERS;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == SECTION_ACTIONS) {
-        
-        if (indexPath.row == 0) {
-            // It's a workaround to avoid latency when opening a Modal from a TableView in a Tabbar... see: https://stackoverflow.com/questions/26469268/delay-in-presenting-a-modal-view-controller
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self performSegueWithIdentifier:@"openAddPlayer" sender:Nil];
-            });
-        } else if (indexPath.row == 1) {
-            
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Start new game"
-                                                                           message:@"Do you want to start a new game?"
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                       handler:^(UIAlertAction * action) {[self startNewGame];}];
-            
-            UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
-                                                                  handler:^(UIAlertAction * action) {}];
-            
-            [alert addAction:startNewGameAction];
-            [alert addAction:cancelNewGame];
-            [self presentViewController:alert animated:YES completion:nil];
-
-        } else {
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Duplicate game"
-                                                                           message:@"Do you want to create a new game with the same players?"
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                       handler:^(UIAlertAction * action) {[self startNewGameWithSamePlayer];}];
-            
-            UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
-                                                                  handler:^(UIAlertAction * action) {}];
-            
-            [alert addAction:startNewGameAction];
-            [alert addAction:cancelNewGame];
-            [self presentViewController:alert animated:YES completion:nil];
-        }
-    }
 }
 
 // deleteScorePlayerAndReorder
@@ -367,7 +368,10 @@ static NSUInteger const SECTION_ACTIONS = 1;
          [self.tv deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
          [self.tv reloadRowsAtIndexPaths:cellToBeRefreshed withRowAnimation:UITableViewRowAnimationNone];
          
-         
+         if (self.modelScorePlayerList.count == 0) {
+             NSIndexSet* indexes = [[NSIndexSet alloc] initWithIndex:1];
+             [self.tv reloadSections:indexes withRowAnimation:UITableViewRowAnimationNone];
+         }
      }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
