@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bVJ-82-USl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Cdc-Gj-31K">
+            <objects>
+                <viewController id="YyD-3H-VqF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="agZ-9I-Oci">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ScN-lt-EsY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-time-machine-75" id="7dq-1e-Xfd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ed-Gd-aZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-505" y="581"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nsG-1f-iRX">
+            <objects>
+                <viewController id="bFG-qS-gB2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aTS-kv-QAN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fZb-Eo-Kcv"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-cards-75" id="zNr-Tz-MV3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vQu-p2-2On" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-505" y="-84"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="C9o-7n-5Xq">
+            <objects>
+                <tabBarController id="bVJ-82-USl" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aUR-wb-M7o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bFG-qS-gB2" kind="relationship" relationship="viewControllers" id="gfW-8Q-rUb"/>
+                        <segue destination="YyD-3H-VqF" kind="relationship" relationship="viewControllers" id="2vx-5U-35I"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H5e-rO-mcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1457" y="248"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-cards-75" width="25" height="25"/>
+        <image name="icons8-time-machine-75" width="25" height="25"/>
+    </resources>
+</document>

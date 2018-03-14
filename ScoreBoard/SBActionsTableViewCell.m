@@ -26,8 +26,8 @@
 }
 
 - (void) initWithoutNewGameButton {
-    self.emptyGameButton.hidden = true;
-    self.gameWithSamePlayersButton.hidden = true;
+  //  self.emptyGameButton.hidden = true;
+  //  self.gameWithSamePlayersButton.hidden = true;
 }
 
 - (void) initWithNewGameButton {

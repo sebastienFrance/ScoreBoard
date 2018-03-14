@@ -42,16 +42,17 @@
     self.theTableView.delegate = self;
     self.theTableView.dataSource = self;
     self.theTableView.rowHeight = UITableViewAutomaticDimension;
+    self.theTableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
+    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
- 
+    
+    // when the view is re-displayed (when the user has selected the tab)
+    // we need to reload the content of the table and to refresh it (because it may have changed)
     self.scorePlayerList = [DatabaseHelper loadHistory];
     [self.theTableView reloadData];
-    [self.theTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
-                          atScrollPosition:UITableViewScrollPositionTop
-                                  animated:FALSE];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -94,7 +95,14 @@
 //
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
+    // The current game cannot be deleted
+    ModelScoreBoard* scoreBoardModel = (ModelScoreBoard*) [self.scorePlayerList objectAtIndex:indexPath.row];
+    
+    SBPlayersViewContoller* controller = [SBGameManager sharedInstance].playerController;
+    ModelScoreBoard* currentScoreBoardModel = controller.scoreBoardModel;
+    
+    // When there's no current game or when the current game is not the current row, then the current row could be deleted
+    return (currentScoreBoardModel == Nil || scoreBoardModel.objectID != currentScoreBoardModel.objectID);
 }
 
 // To be analysed!!!!

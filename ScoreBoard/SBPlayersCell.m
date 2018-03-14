@@ -44,7 +44,7 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"score: %ld", (long)argScorePlayer.totalScore];
     self.scoreLabel.textColor = [UIColor blueColor];
     
-    self.roundLabel.text = [NSString stringWithFormat:@"round: %lu", (unsigned long)scoreList.count];
+    self.roundLabel.text = [NSString stringWithFormat:NSLocalizedString(@"round: %lu", Nil), (unsigned long)scoreList.count];
     self.roundLabel.textColor = [UIColor blueColor];
     
     

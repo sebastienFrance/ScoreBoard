@@ -257,14 +257,14 @@ static NSUInteger const SECTION_ACTIONS = 1;
 
 - (IBAction)startNewEmptyGame:(UIButton *)sender {
     
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Start new game"
-                                                                   message:@"Do you want to start a new game?"
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Start a new game", Nil)
+                                                                   message:NSLocalizedString(@"Do you want to start a new game?", Nil)
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+    UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK",Nil) style:UIAlertActionStyleDefault
                                                                handler:^(UIAlertAction * action) {[self startNewGame];}];
     
-    UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+    UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",Nil) style:UIAlertActionStyleCancel
                                                           handler:^(UIAlertAction * action) {}];
     
     [alert addAction:startNewGameAction];
@@ -273,20 +273,19 @@ static NSUInteger const SECTION_ACTIONS = 1;
 }
 
 - (IBAction)startNewGameWithSamePlayers:(UIButton *)sender {
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Duplicate game"
-                                                                   message:@"Do you want to create a new game with the same players?"
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Duplicate game", Nil)
+                                                                   message:NSLocalizedString(@"Do you want to create a new game with the same players?", Nil)
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+    UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK",Nil) style:UIAlertActionStyleDefault
                                                                handler:^(UIAlertAction * action) {[self startNewGameWithSamePlayer];}];
     
-    UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+    UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",Nil) style:UIAlertActionStyleCancel
                                                           handler:^(UIAlertAction * action) {}];
     
     [alert addAction:startNewGameAction];
     [alert addAction:cancelNewGame];
     [self presentViewController:alert animated:YES completion:nil];
-    
 }
 
 

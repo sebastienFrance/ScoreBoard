@@ -14,6 +14,7 @@
 		BE09EFB3145323310094C38C /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = BE09EFB2145323310094C38C /* UIImage+Alpha.m */; };
 		BE1695A01434F7AB001FC88F /* ModelScorePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE16959F1434F7AB001FC88F /* ModelScorePlayer.m */; };
 		BE2639E1140C14D6006F8C20 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2639E0140C14D6006F8C20 /* MobileCoreServices.framework */; };
+		BE2F12A52059C05100F55695 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2F12A42059C05100F55695 /* Launch Screen.storyboard */; };
 		BE3A7FA81416AEDE009A1B0B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A7FA71416AEDE009A1B0B /* AddressBookUI.framework */; };
 		BE3A7FAB1416AEED009A1B0B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A7FAA1416AEED009A1B0B /* AddressBook.framework */; };
 		BE3D07041466C645006508BC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D07031466C645006508BC /* Icon.png */; };
@@ -82,6 +83,8 @@
 		BE16959F1434F7AB001FC88F /* ModelScorePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelScorePlayer.m; path = Model/ModelScorePlayer.m; sourceTree = "<group>"; };
 		BE22F85B145D5A8F00210BF8 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		BE2639E0140C14D6006F8C20 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BE2F12A32059B1A400F55695 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainStoryboard.strings; sourceTree = "<group>"; };
+		BE2F12A42059C05100F55695 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BE3A7FA71416AEDE009A1B0B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		BE3A7FAA1416AEED009A1B0B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		BE3D07031466C645006508BC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "Gimp Score Log/Icon.png"; sourceTree = "<group>"; };
@@ -105,7 +108,6 @@
 		BE9589D51441D19D00B0D124 /* ModelGameConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelGameConfig.m; path = Model/ModelGameConfig.m; sourceTree = "<group>"; };
 		BE9699EC1435665800D0DD59 /* ModelScoreList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelScoreList.h; path = Model/ModelScoreList.h; sourceTree = "<group>"; };
 		BE9699ED1435665800D0DD59 /* ModelScoreList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelScoreList.m; path = Model/ModelScoreList.m; sourceTree = "<group>"; };
-		BE97FDB7189C10C200D4413D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainStoryboard.strings; sourceTree = "<group>"; };
 		BE9D25C71645373F0040A556 /* default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-568h@2x.png"; sourceTree = "<group>"; };
 		BEA2A91A143B8AB100167466 /* SBPlayersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBPlayersCell.h; sourceTree = "<group>"; };
 		BEA2A91B143B8AB100167466 /* SBPlayersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPlayersCell.m; sourceTree = "<group>"; };
@@ -194,7 +196,7 @@
 			name = UIImageLibrary;
 			sourceTree = "<group>";
 		};
-		BE63BC4019DC21AD008F9993 /* RearMenu */ = {
+		BE63BC4019DC21AD008F9993 /* Historical Games */ = {
 			isa = PBXGroup;
 			children = (
 				BEAC1D8419D8026A0019D87A /* SBRearMenuViewController.h */,
@@ -203,9 +205,8 @@
 				BED9C7C519D9BB1600CC9D81 /* SBRearMenuCell.m */,
 				BE0921CA2055B060002F071E /* SBHistoryCell.h */,
 				BE0921CB2055B060002F071E /* SBHistoryCell.m */,
-				BEBD05A318906CE4004A723A /* GameType */,
 			);
-			name = RearMenu;
+			name = "Historical Games";
 			sourceTree = "<group>";
 		};
 		BE6ECF1813F6831800A999CD /* Resources */ = {
@@ -302,6 +303,7 @@
 				BEA2A91B143B8AB100167466 /* SBPlayersCell.m */,
 				BEBD05A018906B27004A723A /* AddScoreToPlayer */,
 				BEBD059F189068E7004A723A /* AddPlayer */,
+				BEBD05A318906CE4004A723A /* GameType */,
 			);
 			name = PlayersTable;
 			sourceTree = "<group>";
@@ -356,11 +358,12 @@
 			isa = PBXGroup;
 			children = (
 				BE522F6B189C0FE100D760C1 /* MainStoryboard.storyboard */,
+				BE2F12A42059C05100F55695 /* Launch Screen.storyboard */,
 				BED9C7C919DAA04900CC9D81 /* SBGameManager.h */,
 				BED9C7CA19DAA04900CC9D81 /* SBGameManager.m */,
 				BEC8F70213F197660051770E /* ScoreBoardAppDelegate.h */,
 				BEC8F70313F197660051770E /* ScoreBoardAppDelegate.m */,
-				BE63BC4019DC21AD008F9993 /* RearMenu */,
+				BE63BC4019DC21AD008F9993 /* Historical Games */,
 				BEBD05A418906E06004A723A /* PlayersTable */,
 				BEC8F6FA13F197650051770E /* Supporting Files */,
 			);
@@ -476,6 +479,7 @@
 				BE934CB81438C1050051B5AA /* No_Photo.png in Resources */,
 				BED2828C19DDB1480005C7FC /* Localizable.strings in Resources */,
 				BE3D07041466C645006508BC /* Icon.png in Resources */,
+				BE2F12A52059C05100F55695 /* Launch Screen.storyboard in Resources */,
 				BE3D07061466C662006508BC /* Icon@2x.png in Resources */,
 				BE09E7F9189EDD87008FF16A /* Images.xcassets in Resources */,
 				BE63BC3F19DC1FCE008F9993 /* Launch.jpg in Resources */,
@@ -566,7 +570,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BE522F6A189C0FE100D760C1 /* Base */,
-				BE97FDB7189C10C200D4413D /* fr */,
+				BE2F12A32059B1A400F55695 /* fr */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";

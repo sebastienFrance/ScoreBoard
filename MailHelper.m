@@ -42,7 +42,7 @@
     
     picker.mailComposeDelegate = delegate;
     
-    NSString* HTMLfixedTitle = NSLocalizedString(@"Game result for", "(PlayersTableViewContoller) HTML fixed part of the title email");
+    NSString* HTMLfixedTitle = NSLocalizedString(@"Game results for", "(PlayersTableViewContoller) HTML fixed part of the title email");
     NSString* mailTitle = [NSString stringWithFormat:@"%@: %@", HTMLfixedTitle,[scoreBoardModel GameName]];
     [picker setSubject:mailTitle];
     
