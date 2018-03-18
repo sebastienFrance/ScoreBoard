@@ -39,7 +39,7 @@
 {
     // Configure the navigation bar
      self.navigationItem.title = [[self.scorePlayer Player] lastName];
-	
+    
     // set the image of the player
     self.photoOfPlayer.image = [[self.scorePlayer Player] picture];
 

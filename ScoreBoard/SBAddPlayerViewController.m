@@ -39,10 +39,10 @@
  
     // Configure the navigation bar
    // self.navigationItem.title = NSLocalizedString(@"Add Player", "(AddPlayerController) View title for Add a new player");
-	
+    
     [self setDefaultPlayerName];
     // Open the keyboard directly on the Player Name
- 	[self.playerName becomeFirstResponder];
+     [self.playerName becomeFirstResponder];
     self.playerName.delegate = self;
 }
 
@@ -67,10 +67,10 @@
 
 // To be analyzed !!!
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	if (textField == self.playerName) {
-		[self.playerName resignFirstResponder];
-	}
-	return YES;
+    if (textField == self.playerName) {
+        [self.playerName resignFirstResponder];
+    }
+    return YES;
 }
 
 

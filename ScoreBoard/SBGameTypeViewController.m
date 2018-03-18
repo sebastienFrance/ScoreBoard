@@ -64,7 +64,7 @@
         // Handle the error.
         NSLog(@"GameTypeController::doneButtonCalled -> Save ERROR");
     }
- 	
+     
     [[SBGameManager sharedInstance].playerController endGameType];
 }
 
