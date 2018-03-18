@@ -1,78 +1,95 @@
 
-/* Class = "IBUISegmentedControl"; 0DG-SF-RkV.segmentTitles[0] = "+ (Positive)"; ObjectID = "0DG-SF-RkV"; */
-"eex-Nr-nU2.segmentTitles[0]" = "+ (Positif)";
-
-/* Class = "IBUISegmentedControl"; 0DG-SF-RkV.segmentTitles[1] = "- (Minus)"; ObjectID = "0DG-SF-RkV"; */
-"eex-Nr-nU2.segmentTitles[1]" = "- (Negatif)";
-
-/* Class = "IBUITableViewSection"; headerTitle = "Information"; ObjectID = "0Dc-OA-lAR"; */
+/* Class = "UITableViewSection"; headerTitle = "Information"; ObjectID = "0Dc-OA-lAR"; */
 "0Dc-OA-lAR.headerTitle" = "Information";
 
-/* Class = "IBUILabel"; text = "Player Name"; ObjectID = "4ov-1o-kbw"; */
-"4ov-1o-kbw.text" = "Nom";
+/* Class = "UIButton"; normalTitle = "New empty game"; ObjectID = "2Zv-RN-OcJ"; */
+"2Zv-RN-OcJ.normalTitle" = "Nouvelle partie";
 
-/* Class = "IBUIBarButtonItem"; title = "Add"; ObjectID = "8Sk-jS-g3u"; */
+/* Class = "UILabel"; text = "Label"; ObjectID = "4D7-vb-gUA"; */
+"4D7-vb-gUA.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Add"; ObjectID = "8Sk-jS-g3u"; */
 "8Sk-jS-g3u.title" = "Ajouter";
 
-/* Class = "IBUILabel"; text = "Best score win"; ObjectID = "BxM-qY-usc"; */
-"BxM-qY-usc.text" = "Le meilleur score gagne";
+/* Class = "UITabBarItem"; title = "Game"; ObjectID = "93U-xA-oiu"; */
+"93U-xA-oiu.title" = "Partie";
 
-/* Class = "IBUILabel"; text = "Label"; ObjectID = "DUX-Zw-erR"; */
-"DUX-Zw-erR.text" = "Label";
+/* Class = "UILabel"; text = "Best score win"; ObjectID = "BxM-qY-usc"; */
+"BxM-qY-usc.text" = "Le plus haut score gagne";
 
-/* Class = "IBUILabel"; text = "Game Name Label"; ObjectID = "K6q-rc-MYj"; */
-"K6q-rc-MYj.text" = "Game Name Label";
+/* Class = "UILabel"; text = "Game Name Label"; ObjectID = "ITS-ng-qva"; */
+"ITS-ng-qva.text" = "Game Name Label";
 
-/* Class = "IBUILabel"; text = "Score history"; ObjectID = "OJ0-kx-8k4"; */
-"OJ0-kx-8k4.text" = "Historique";
+/* Class = "UITabBarItem"; title = "Options"; ObjectID = "KGi-se-tIw"; */
+"KGi-se-tIw.title" = "Options";
 
-/* Class = "IBUILabel"; text = "Negative score"; ObjectID = "Rk0-Pk-oUT"; */
+/* Class = "UIButton"; normalTitle = "Add Player"; ObjectID = "MG4-TJ-RFa"; */
+"MG4-TJ-RFa.normalTitle" = "Ajouter un joueur";
+
+/* Class = "UILabel"; text = "Player name"; ObjectID = "NJx-l6-Php"; */
+"NJx-l6-Php.text" = "Nom du joueur";
+
+/* Class = "UILabel"; text = "or select a contact"; ObjectID = "NwG-Cy-vNw"; */
+"NwG-Cy-vNw.text" = "ou selectionnez un contact";
+
+/* Class = "UILabel"; text = "Score history"; ObjectID = "OJ0-kx-8k4"; */
+"OJ0-kx-8k4.text" = "Historique de la partie";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Q1R-eK-OTX"; */
+"Q1R-eK-OTX.title" = "Item";
+
+/* Class = "UILabel"; text = "Negative score"; ObjectID = "Rk0-Pk-oUT"; */
 "Rk0-Pk-oUT.text" = "Score négatif";
 
-/* Class = "IBUIButton"; normalTitle = "Start a new Game!"; ObjectID = "XZQ-4l-Pjm"; */
-"XZQ-4l-Pjm.normalTitle" = "Nouvelle Partie!";
+/* Class = "UILabel"; text = "Score"; ObjectID = "S2M-jJ-0Je"; */
+"S2M-jJ-0Je.text" = "Score";
 
-/* Class = "IBUIBarButtonItem"; title = "Add Score"; ObjectID = "aI3-vd-XhD"; */
-"aI3-vd-XhD.title" = "Ajouter score";
+/* Class = "UITabBarItem"; title = "History"; ObjectID = "UcN-QU-mbP"; */
+"UcN-QU-mbP.title" = "Historique";
 
-/* Class = "IBUILabel"; text = "10"; ObjectID = "bzK-tK-Fux"; */
-"bzK-tK-Fux.text" = "10";
+/* Class = "UILabel"; text = "Round"; ObjectID = "WGE-NN-QlM"; */
+"WGE-NN-QlM.text" = "Tour";
 
-/* Class = "IBUIButton"; normalTitle = "Continue a Game"; ObjectID = "dSN-2W-xz5"; */
-"dSN-2W-xz5.normalTitle" = "Continuer une partie";
+/* Class = "UIBarButtonItem"; title = "Add Score"; ObjectID = "aI3-vd-XhD"; */
+"aI3-vd-XhD.title" = "Ajouter un score";
 
-/* Class = "IBUILabel"; text = "Round:"; ObjectID = "eUI-fT-rcQ"; */
-"eUI-fT-rcQ.text" = "Round:";
+/* Class = "UISegmentedControl"; eex-Nr-nU2.segmentTitles[0] = "+ (Positive)"; ObjectID = "eex-Nr-nU2"; */
+"eex-Nr-nU2.segmentTitles[0]" = "+ (Positif)";
 
-/* Class = "IBUITableViewSection"; headerTitle = "Configuration"; ObjectID = "ejd-Rh-fut"; */
+/* Class = "UISegmentedControl"; eex-Nr-nU2.segmentTitles[1] = "- (Minus)"; ObjectID = "eex-Nr-nU2"; */
+"eex-Nr-nU2.segmentTitles[1]" = "- (Négatif)";
+
+/* Class = "UITableViewSection"; headerTitle = "Configuration"; ObjectID = "ejd-Rh-fut"; */
 "ejd-Rh-fut.headerTitle" = "Configuration";
 
-/* Class = "IBUITextField"; placeholder = "Score"; ObjectID = "fcE-KW-Rz9"; */
+/* Class = "UITextField"; placeholder = "Score"; ObjectID = "fcE-KW-Rz9"; */
 "fcE-KW-Rz9.placeholder" = "Score";
 
-/* Class = "IBUITextField"; placeholder = "Game name"; ObjectID = "k7a-Vn-jxz"; */
+/* Class = "UITextField"; placeholder = "Game name"; ObjectID = "k7a-Vn-jxz"; */
 "k7a-Vn-jxz.placeholder" = "Nom de la partie";
 
-/* Class = "IBUITextField"; placeholder = "Name"; ObjectID = "oXy-Ob-3LA"; */
+/* Class = "UITextField"; text = "text"; ObjectID = "k7a-Vn-jxz"; */
+"k7a-Vn-jxz.text" = "text";
+
+/* Class = "UILabel"; text = "Contact me!"; ObjectID = "krE-qL-87a"; */
+"krE-qL-87a.text" = "Contactez moi!";
+
+/* Class = "UILabel"; text = "Game Date Label"; ObjectID = "mVi-va-EfG"; */
+"mVi-va-EfG.text" = "Game Date Label";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "oXy-Ob-3LA"; */
 "oXy-Ob-3LA.placeholder" = "Nom";
 
-/* Class = "IBUILabel"; text = "About"; ObjectID = "ovY-y6-k5d"; */
-"ovY-y6-k5d.text" = "A propos";
-"krE-qL-87a.text" = "contactez moi!"
+/* Class = "UILabel"; text = "Code & Design: Sébastien Brugalières"; ObjectID = "ovY-y6-k5d"; */
+"ovY-y6-k5d.text" = "Code & Design: Sébastien Brugalières";
 
-/* Class = "IBUIBarButtonItem"; title = "Cancel"; ObjectID = "rTK-go-Nzp"; */
+/* Class = "UILabel"; text = "10"; ObjectID = "qfz-zv-Qx5"; */
+"qfz-zv-Qx5.text" = "10";
+
+/* Class = "UIButton"; normalTitle = "New game with same players"; ObjectID = "qpP-go-G8N"; */
+"qpP-go-G8N.normalTitle" = "Nouvelle partie, même joueurs";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "rTK-go-Nzp"; */
 "rTK-go-Nzp.title" = "Annuler";
 
-/* Class = "IBUILabel"; text = "Label"; ObjectID = "rlO-K4-wJf"; */
-"rlO-K4-wJf.text" = "Label";
-
-/* Class = "IBUILabel"; text = "Game Date Label"; ObjectID = "tZj-PC-s4y"; */
-"tZj-PC-s4y.text" = "Game Date Label";
-
-/* Class = "IBUILabel"; text = "Score:"; ObjectID = "uel-Qh-076"; */
-"uel-Qh-076.text" = "Score:";
-
-"NwG-Cy-vNw.text" = "ou selectionner un contact";
-
-
-
+"7OJ-Mg-ylb.text" = "Partie en cours";

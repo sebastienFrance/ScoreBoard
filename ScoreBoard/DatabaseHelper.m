@@ -84,6 +84,8 @@
     
     [theScoreBoardModel addScoreListObject:newScorePlayer];
     [newScorePlayer setScoreBoard:theScoreBoardModel];
+    
+    //Append the new player at the end of the list
     [newScorePlayer setDisplayOrder:[NSNumber numberWithInteger:[theScoreBoardModel.ScoreList count]]];
     
     NSError *error = nil;
@@ -95,12 +97,12 @@
     return newScorePlayer;
 }
 
-+(NSMutableArray*) getSortedScoreList:(ModelScorePlayer*) scorePlayer {
++(NSMutableArray<ModelScoreList*>*) getSortedScoreList:(ModelScorePlayer*) scorePlayer {
     // Fetch data from the CoreData and store it in a table. Result is ordered by parameter OrderOfDisplay
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"DisplayOrder" ascending:YES];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:&sortDescriptor count:1];
 	
-	NSMutableArray *sortedModelScoreList = [[NSMutableArray alloc] initWithArray:[scorePlayer.ScoreList allObjects]];
+	NSMutableArray<ModelScoreList*> *sortedModelScoreList = [[NSMutableArray alloc] initWithArray:[scorePlayer.ScoreList allObjects]];
 	[sortedModelScoreList sortUsingDescriptors:sortDescriptors];
     return sortedModelScoreList;
 }

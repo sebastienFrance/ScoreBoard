@@ -23,29 +23,6 @@
     return self;
 }
 
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-//{
-//    [super setSelected:selected animated:animated];
-//
-//    // Configure the view for the selected state
-//}
-
-//- (void)willTransitionToState:(UITableViewCellStateMask)state {
-//    [super willTransitionToState:state];
-//    if ((state == UITableViewCellStateShowingDeleteConfirmationMask) || (state == UITableViewCellStateShowingEditControlMask)) {
-//        [UIView animateWithDuration:0.5
-//                         animations:^{self.rankLabel.alpha = 0.0;self.rankSharp.alpha = 0.0;}];
-//    }
-//}
-//
-//- (void)didTransitionToState:(UITableViewCellStateMask)state {
-//    [super didTransitionToState:state];
-//    if (state == UITableViewCellStateDefaultMask) {
-//        [UIView animateWithDuration:0.5
-//                         animations:^{self.rankLabel.alpha = 1.0;self.rankSharp.alpha = 1.0;}];
-//    } 
-//}
-
 
 // Configure the cell for a Player. It computes also the player rank
 - (void) initializeWith:(ModelScorePlayer*) argScorePlayer rank:(NSUInteger) theRank {
@@ -64,10 +41,10 @@
     NSSet* scoreList = [argScorePlayer ScoreList];
     
     // update the score
-    self.scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)argScorePlayer.totalScore];
+    self.scoreLabel.text = [NSString stringWithFormat:@"score: %ld", (long)argScorePlayer.totalScore];
     self.scoreLabel.textColor = [UIColor blueColor];
     
-    self.roundLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)scoreList.count];
+    self.roundLabel.text = [NSString stringWithFormat:NSLocalizedString(@"round: %lu", Nil), (unsigned long)scoreList.count];
     self.roundLabel.textColor = [UIColor blueColor];
     
     

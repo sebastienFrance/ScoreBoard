@@ -13,7 +13,7 @@
 @class SBPlayersViewContoller;
 @class ModelGameConfig;
 
-@interface SBGameTypeViewController : UITableViewController<MFMailComposeViewControllerDelegate>
+@interface SBGameTypeViewController : UITableViewController<MFMailComposeViewControllerDelegate, UITextFieldDelegate>
 
 
 @end

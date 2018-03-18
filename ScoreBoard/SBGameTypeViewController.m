@@ -11,7 +11,6 @@
 #import "ModelGameConfig.h"
 #import "DatabaseAccess.h"
 #import "ModelScoreBoard.h"
-#import "SWRevealViewController.h"
 #import "SBGameManager.h"
 #import "MailHelper.h"
 
@@ -34,15 +33,14 @@
     
     self.navigationItem.title = NSLocalizedString(@"Game Options", @"(GameTypeController) Title of view to configure game options");
     
+    
+    self.gameNameTextField.delegate = self;
+    
     self.negativeScoreSwitch.on = [gameConfig.NegativeScore boolValue];
     self.bestScorceWinSwitch.on = [gameConfig.HighestScoreWin boolValue];
     self.gameNameTextField.text = [SBGameManager sharedInstance].playerController.scoreBoardModel.GameName;
     
     [super viewDidLoad];
-}
-
-- (IBAction)menuButtonPushed:(UIBarButtonItem *)sender {
-    [self.revealViewController revealToggle:Nil];
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
@@ -73,7 +71,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
         MFMailComposeViewController *picker = [MailHelper prepareContactEmail:self];
-        [self presentViewController:picker animated:YES completion:Nil];
+        [self showViewController:picker sender:Nil];
     }
 }
 
@@ -81,6 +79,14 @@
 #pragma mark - MFMailComposeViewControllerDelegate protocol
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     [self  dismissViewControllerAnimated:YES completion:Nil];
+}
+
+
+#pragma mark - UITextFieldDelegate
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    return YES;
 }
 
 

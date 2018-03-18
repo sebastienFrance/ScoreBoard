@@ -110,12 +110,8 @@
 
 
 + (UIImage*) resizeImage:(UIImage*) theImage {
-    CGSize newSize;
-    newSize.width = 71;
-    newSize.height = 82; 
-    
     return [theImage resizedImageWithContentMode:UIViewContentModeScaleAspectFit
-                                          bounds:newSize
+                                          bounds:CGSizeMake(250, 250)
                             interpolationQuality:kCGInterpolationDefault];
 }
 

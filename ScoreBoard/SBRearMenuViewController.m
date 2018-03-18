@@ -9,17 +9,15 @@
 #import "SBRearMenuViewController.h"
 #import "SBRearMenuCell.h"
 #import "DatabaseHelper.h"
-#import "SBHistoryCell.h"
 #import "DatabaseAccess.h"
-
+#import "SBHistoryCell.h"
 
 #import "ModelPlayer.h"
 #import "ModelScoreBoard.h"
 #import "ModelGameConfig.h"
 #import "ScoreBoardAppDelegate.h"
-#import "SBHistoryCell.h"
 #import "SBPlayersViewContoller.h"
-#import "SWRevealViewController.h"
+
 #import "SBGameManager.h"
 #import "SBPlayersViewContoller.h"
 #import "SBGameTypeViewController.h"
@@ -37,152 +35,40 @@
 
 @implementation SBRearMenuViewController
 
-static const NSUInteger SECTION_CURRENT_GAME = 0;
-static const NSUInteger SECTION_CURRENT_GAME_DISPLAY_IT = 0;
-static const NSUInteger SECTION_CURRENT_GAME_OPTIONS = 1;
-static const NSUInteger SECTION_GAME = 1;
-static const NSUInteger SECTION_GAME_ROW_NEW_GAME = 0;
-static const NSUInteger SECTION_GAME_ROW_DUPLICATE_GAME = 1;
-static const NSUInteger SECTION_GAME_ROW_EDIT_HISTORICAL = 2;
-static const NSUInteger SECTION_HISTORICAL = 2;
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.theTableView.delegate = self;
     self.theTableView.dataSource = self;
-    
-    self.gameNavigationController = (UINavigationController *)self.revealViewController.frontViewController;
+    self.theTableView.rowHeight = UITableViewAutomaticDimension;
+    self.theTableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
     
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
- 
+    
+    // when the view is re-displayed (when the user has selected the tab)
+    // we need to reload the content of the table and to refresh it (because it may have changed)
     self.scorePlayerList = [DatabaseHelper loadHistory];
     [self.theTableView reloadData];
-    [self.theTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
-                          atScrollPosition:UITableViewScrollPositionTop
-                                  animated:FALSE];
 }
-
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 1;
 }
 
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == SECTION_HISTORICAL) {
-        return 62.0;
-    } else {
-        return 38.0;
-    }
-  
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.scorePlayerList.count;
 }
 
-
-// The number of rows is the number of players in the game
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    switch (section) {
-        case SECTION_CURRENT_GAME:
-            return 2;
-        case SECTION_GAME:
-            return 3;
-        case SECTION_HISTORICAL:
-            return [self.scorePlayerList count];
-        default: {
-            NSLog(@"%s : unknown section",__PRETTY_FUNCTION__);
-            return 0;
-        }
-    }
-}
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case SECTION_CURRENT_GAME:
-            return  NSLocalizedString(@"Current Game", @"(RearMenu) Title Current Game section");
-        case SECTION_GAME:
-            return  NSLocalizedString(@"Game", @"(RearMenu) Title Game section");
-        case SECTION_HISTORICAL:
-            return NSLocalizedString(@"Historical Game", @"(RearMenu) Title Historical section");
-        default: {
-            NSLog(@"%s : unknown section",__PRETTY_FUNCTION__);
-            return @"";
-        }
-    }
+     return NSLocalizedString(@"Historical Game", @"(RearMenu) Title Historical section");
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.section) {
-        case SECTION_CURRENT_GAME: {
-            return [self cellForCurrentGame:tableView row:indexPath.row];
-        }
-        case SECTION_GAME: {
-            return [self cellForGame:tableView row:indexPath.row];
-        }
-        case SECTION_HISTORICAL: {
-            return [self cellForHistorical:tableView row:indexPath.row];
-        }
-        default: {
-            NSLog(@"%s : unknown section",__PRETTY_FUNCTION__);
-            return Nil;
-        }
-    }
-    
-}
-
--(UITableViewCell*) cellForCurrentGame:(UITableView *)tableView row:(NSUInteger) theRow {
-    static NSString* currentGameId = @"StartNewGameCellId";
-    SBRearMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:currentGameId];
-    if (cell == nil) {
-        cell = [[SBRearMenuCell alloc] init];
-    }
-    
-    switch (theRow) {
-        case SECTION_CURRENT_GAME_DISPLAY_IT: {
-            cell.label.text = NSLocalizedString(@"Display current game", @"(RearMenu) Title Display current game row");
-            break;
-        }
-        case SECTION_CURRENT_GAME_OPTIONS: {
-            cell.label.text = NSLocalizedString(@"Options", @"(RearMenu) Title Options current game row");
-            break;
-        }
-        default: {
-            NSLog(@"%s unknown case", __PRETTY_FUNCTION__);
-        }
-    }
-    
-    return cell;
-}
-
-- (UITableViewCell*) cellForGame:(UITableView *)tableView row:(NSUInteger) theRow {
-    static NSString* newGameId = @"StartNewGameCellId";
-    SBRearMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:newGameId];
-    if (cell == nil) {
-        cell = [[SBRearMenuCell alloc] init];
-    }
-
-    switch (theRow) {
-        case SECTION_GAME_ROW_NEW_GAME: {
-            cell.label.text = NSLocalizedString(@"Start a new game", @"(RearMenu) Title new empty Game row");
-            break;
-        }
-        case SECTION_GAME_ROW_DUPLICATE_GAME: {
-            cell.label.text = NSLocalizedString(@"Duplicate game", @"(RearMenu) Title Duplicate Game row");
-            break;
-        }
-        case SECTION_GAME_ROW_EDIT_HISTORICAL: {
-            cell.label.text = NSLocalizedString(@"Edit historical games", @"(RearMenu) Title Edit Historical Game row");
-            break;
-        }
-        default: {
-            NSLog(@"%s unknown rows", __PRETTY_FUNCTION__);
-            return Nil;
-        }
-    }
-    return cell;
+    return [self cellForHistorical:tableView row:indexPath.row];
 }
 
 -(UITableViewCell*) cellForHistorical:(UITableView *)tableView row:(NSUInteger) theRow {
@@ -195,82 +81,66 @@ static const NSUInteger SECTION_HISTORICAL = 2;
         cell = [[SBHistoryCell alloc] init];
     }
     
-    [cell initCellWithPlayer:getScorePlayer];
+    ModelScoreBoard* currentGame = [SBGameManager sharedInstance].playerController.scoreBoardModel;
+    BOOL isOngoingGame = currentGame!= Nil && currentGame.objectID == getScorePlayer.objectID;
+    
+    [cell initCellWithPlayer:getScorePlayer isOngoingGame:isOngoingGame];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.section) {
-        case SECTION_CURRENT_GAME: {
-            [self currentGameRowSelected:indexPath.row];
-            break;
-        }
-        case SECTION_GAME: {
-            [self gameRowSelected:indexPath.row];
-            break;
-        }
-        case SECTION_HISTORICAL: {
-            [self historicalRowSelected:indexPath.row];
-            break;
-        }
-    }
+    [self historicalRowSelected:indexPath.row];
 }
 
--(void) currentGameRowSelected:(NSUInteger) theRow {
+//***************
+
+//// Method called when the "Edit" button is pressed to delete or move a row from the table
+//
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // The current game cannot be deleted
+    ModelScoreBoard* scoreBoardModel = (ModelScoreBoard*) [self.scorePlayerList objectAtIndex:indexPath.row];
     
-    switch (theRow) {
-        case SECTION_CURRENT_GAME_DISPLAY_IT: {
-            [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
-            break;
-        }
-        case SECTION_CURRENT_GAME_OPTIONS: {
-            if ([SBGameManager sharedInstance].playerController.isGameStarted) {
-                [self performSegueWithIdentifier:@"showOptions" sender:Nil];
-            } else {
-                UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Error", Nil)
-                                                                               message:NSLocalizedString(@"Options cannot be configured while a game is not started.", Nil)
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
-                
-                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                      handler:^(UIAlertAction * action) {}];
-                
-                [alert addAction:defaultAction];
-                [self presentViewController:alert animated:YES completion:nil];
-            }
-            break;
-        }
-        default: {
-            NSLog(@"%s unknown case", __PRETTY_FUNCTION__);
+    SBPlayersViewContoller* controller = [SBGameManager sharedInstance].playerController;
+    ModelScoreBoard* currentScoreBoardModel = controller.scoreBoardModel;
+    
+    // When there's no current game or when the current game is not the current row, then the current row could be deleted
+    return (currentScoreBoardModel == Nil || scoreBoardModel.objectID != currentScoreBoardModel.objectID);
+}
+
+// To be analysed!!!!
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    //[super setEditing:editing animated:animated];
+
+
+    if (!editing) {
+        NSManagedObjectContext* context = [[DatabaseAccess sharedManager] managedObjectContext];
+
+        NSError *error = nil;
+        if (![context save:&error]) {
+            NSLog(@"PlayerTableViewController::setEditing -> Error Save!");
+            // Handle the error.
         }
     }
 }
 
+//
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
 
-- (void) gameRowSelected:(NSUInteger) theRow {
-    switch (theRow) {
-        case SECTION_GAME_ROW_NEW_GAME: {
-            SBPlayersViewContoller* controller = [SBGameManager sharedInstance].playerController;
-            [controller startNewGame];
-            [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
-            break;
-            
-        }
-        case SECTION_GAME_ROW_DUPLICATE_GAME: {
-            SBPlayersViewContoller* controller = [SBGameManager sharedInstance].playerController;
-            [controller startNewGameWithSamePlayer];
-            [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
-            break;
-            
-        }
-        case SECTION_GAME_ROW_EDIT_HISTORICAL: {
-            [self performSegueWithIdentifier:@"presentHistoricalEditor" sender:Nil];
-            break;
-        }
-        default: {
-            NSLog(@"%s unknown rows", __PRETTY_FUNCTION__);
-        }
+        // Delete the row from the data source
+        ModelScoreBoard* scoreBoardModel = (ModelScoreBoard*) [self.scorePlayerList objectAtIndex:indexPath.row];
+
+        [DatabaseHelper deleteScoreBoard:scoreBoardModel];
+        self.scorePlayerList = [DatabaseHelper loadHistory];
+
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
- }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+}
 
 -(void) historicalRowSelected:(NSUInteger) theRow {
     SBPlayersViewContoller* controller = [SBGameManager sharedInstance].playerController;
@@ -278,10 +148,34 @@ static const NSUInteger SECTION_HISTORICAL = 2;
     ModelScoreBoard* getScorePlayer = [self.scorePlayerList objectAtIndex:[self.theTableView indexPathForSelectedRow].row];
     
     [controller updateWithHistoricalGame:getScorePlayer config:getScorePlayer.GameConfig];
+
+    // Animate the transation from the History tab to the Game tab
     
-    [self.revealViewController pushFrontViewController:self.gameNavigationController animated:TRUE];
+    // Get the views to animate.
+    UIView * fromView = self.tabBarController.selectedViewController.view;
+    UIView * toView = [[self.tabBarController.viewControllers objectAtIndex:0] view];
+    
+    // Get the size of the view.
+    CGRect viewSize = fromView.frame;
+    
+    // Add the view that we want to display to superview of currently visible view.
+    [fromView.superview addSubview:toView];
+    
+    // Position it off screen. We will animate it left to right slide.
+    toView.frame = CGRectMake(-self.view.bounds.size.width, viewSize.origin.y, toView.bounds.size.width, viewSize.size.height);
+    
+    // Animate transition
+    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionTransitionNone animations:^{
+        // Animate the views with slide.
+        fromView.frame = CGRectMake(self.view.bounds.size.width, viewSize.origin.y, toView.bounds.size.width, viewSize.size.height);
+        toView.frame = CGRectMake(0, viewSize.origin.y, toView.bounds.size.width, viewSize.size.height);
+    } completion:^(BOOL finished) {
+        if (finished) {
+            // Remove the old view.
+            [fromView removeFromSuperview];
+            self.tabBarController.selectedIndex = 0;
+        }
+    }];
 }
-
-
 
 @end

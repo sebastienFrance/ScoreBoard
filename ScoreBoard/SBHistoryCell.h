@@ -1,9 +1,8 @@
 //
-//  HistoryGameCellCustom.h
-//  ScoreBoard
+//  SBHistoryCell.h
+//  Score Log
 //
-//  Created by sébastien brugalières on 16/10/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Created by Sébastien Brugalières on 11/03/2018.
 //
 
 #import <UIKit/UIKit.h>
@@ -15,6 +14,7 @@
 @property (nonatomic, retain) IBOutlet UILabel* gameNameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* gameDateLabel;
 
-- (void) initCellWithPlayer:(ModelScoreBoard*) argPlayer;
+- (void) initCellWithPlayer:(ModelScoreBoard*) argPlayer isOngoingGame:(BOOL) isOngoingGame;
 
 @end
+

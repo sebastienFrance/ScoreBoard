@@ -10,7 +10,6 @@
 #import "ModelScoreBoard.h"
 #import "DatabaseAccess.h"
 #import "SBPlayersViewContoller.h"
-#import "SBHistoryViewController.h"
 
 @implementation ScoreBoardAppDelegate
 
