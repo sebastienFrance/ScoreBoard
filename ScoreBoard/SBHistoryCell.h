@@ -14,7 +14,7 @@
 @property (nonatomic, retain) IBOutlet UILabel* gameNameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* gameDateLabel;
 
-- (void) initCellWithPlayer:(ModelScoreBoard*) argPlayer;
+- (void) initCellWithPlayer:(ModelScoreBoard*) argPlayer isOngoingGame:(BOOL) isOngoingGame;
 
 @end
 

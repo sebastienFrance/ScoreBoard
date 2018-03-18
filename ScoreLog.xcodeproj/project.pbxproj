@@ -53,6 +53,8 @@
 		BED2828C19DDB1480005C7FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BED2828E19DDB1480005C7FC /* Localizable.strings */; };
 		BED9C7C619D9BB1600CC9D81 /* SBRearMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BED9C7C519D9BB1600CC9D81 /* SBRearMenuCell.m */; };
 		BED9C7CB19DAA04900CC9D81 /* SBGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BED9C7CA19DAA04900CC9D81 /* SBGameManager.m */; };
+		BEDC2FC1205D3B4400F35646 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDC2FC0205D3B4400F35646 /* MainTabBarViewController.m */; };
+		BEE631D0205E670700BB4673 /* Screenshots in Resources */ = {isa = PBXBuildFile; fileRef = BEE631CF205E670700BB4673 /* Screenshots */; };
 		BEE89FF9143324A200039D87 /* DatabaseAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE89FF8143324A200039D87 /* DatabaseAccess.m */; };
 		BEE98E9413FD858500716683 /* SBAddPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE98E9313FD858500716683 /* SBAddPlayerViewController.m */; };
 		BEFF5E3220489016006823FC /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFF5E3020489015006823FC /* Contacts.framework */; };
@@ -141,6 +143,10 @@
 		BED9C7C519D9BB1600CC9D81 /* SBRearMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBRearMenuCell.m; sourceTree = "<group>"; };
 		BED9C7C919DAA04900CC9D81 /* SBGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBGameManager.h; sourceTree = "<group>"; };
 		BED9C7CA19DAA04900CC9D81 /* SBGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBGameManager.m; sourceTree = "<group>"; };
+		BEDC2FBF205D3B4400F35646 /* MainTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
+		BEDC2FC0205D3B4400F35646 /* MainTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
+		BEE631CF205E670700BB4673 /* Screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Screenshots; sourceTree = "<group>"; };
+		BEE631D1205E671D00BB4673 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BEE89FF7143324A200039D87 /* DatabaseAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseAccess.h; sourceTree = "<group>"; };
 		BEE89FF8143324A200039D87 /* DatabaseAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseAccess.m; sourceTree = "<group>"; };
 		BEE98E9213FD858500716683 /* SBAddPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBAddPlayerViewController.h; sourceTree = "<group>"; };
@@ -321,6 +327,8 @@
 				BEC8F71513F197660051770E /* ScoreBoardTests */,
 				BEC8F6F213F197650051770E /* Frameworks */,
 				BEC8F6F013F197650051770E /* Products */,
+				BEE631D1205E671D00BB4673 /* README.md */,
+				BEE631CF205E670700BB4673 /* Screenshots */,
 			);
 			sourceTree = "<group>";
 		};
@@ -357,6 +365,7 @@
 		BEC8F6F913F197650051770E /* ScoreBoard */ = {
 			isa = PBXGroup;
 			children = (
+				BEDC2FBE205D3B0D00F35646 /* MainTabBarController */,
 				BE522F6B189C0FE100D760C1 /* MainStoryboard.storyboard */,
 				BE2F12A42059C05100F55695 /* Launch Screen.storyboard */,
 				BED9C7C919DAA04900CC9D81 /* SBGameManager.h */,
@@ -394,6 +403,15 @@
 				BEC8F71713F197660051770E /* ScoreLogTests-Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEDC2FBE205D3B0D00F35646 /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				BEDC2FBF205D3B4400F35646 /* MainTabBarViewController.h */,
+				BEDC2FC0205D3B4400F35646 /* MainTabBarViewController.m */,
+			);
+			name = MainTabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +465,10 @@
 						DevelopmentTeam = 7VVU8FW2ME;
 						ProvisioningStyle = Automatic;
 					};
+					BEC8F70C13F197660051770E = {
+						DevelopmentTeam = 7VVU8FW2ME;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = BEC8F6E913F197650051770E /* Build configuration list for PBXProject "ScoreLog" */;
@@ -456,8 +478,6 @@
 			knownRegions = (
 				en,
 				fr,
-				es,
-				it,
 				Base,
 			);
 			mainGroup = BEC8F6E413F197650051770E;
@@ -480,6 +500,7 @@
 				BED2828C19DDB1480005C7FC /* Localizable.strings in Resources */,
 				BE3D07041466C645006508BC /* Icon.png in Resources */,
 				BE2F12A52059C05100F55695 /* Launch Screen.storyboard in Resources */,
+				BEE631D0205E670700BB4673 /* Screenshots in Resources */,
 				BE3D07061466C662006508BC /* Icon@2x.png in Resources */,
 				BE09E7F9189EDD87008FF16A /* Images.xcassets in Resources */,
 				BE63BC3F19DC1FCE008F9993 /* Launch.jpg in Resources */,
@@ -538,6 +559,7 @@
 				BE9589CA1441A73600B0D124 /* SBGameTypeViewController.m in Sources */,
 				BE9589D61441D19D00B0D124 /* ModelGameConfig.m in Sources */,
 				BE09EFAC145321E80094C38C /* UIImage+Resize.m in Sources */,
+				BEDC2FC1205D3B4400F35646 /* MainTabBarViewController.m in Sources */,
 				BE09EFB0145322F10094C38C /* UIImage+RoundedCorner.m in Sources */,
 				BE0921CC2055B060002F071E /* SBHistoryCell.m in Sources */,
 				BE66A93320586EC700BF0127 /* SBActionsTableViewCell.m in Sources */,
@@ -646,7 +668,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7VVU8FW2ME;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScoreBoard/ScoreLog-Prefix.pch";
@@ -672,7 +694,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7VVU8FW2ME;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScoreBoard/ScoreLog-Prefix.pch";
@@ -682,7 +704,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ScoreLog;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1EC0B6A-6B28-4BB7-B4E5-D6CD4B4BEACB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -694,6 +716,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ScoreBoard.app/ScoreBoard";
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7VVU8FW2ME;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -704,6 +729,7 @@
 				INFOPLIST_FILE = "ScoreBoardTests/ScoreLogTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ScoreLogTests;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -714,6 +740,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ScoreBoard.app/ScoreBoard";
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7VVU8FW2ME;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -724,6 +753,7 @@
 				INFOPLIST_FILE = "ScoreBoardTests/ScoreLogTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "SebCompany.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = ScoreLogTests;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};

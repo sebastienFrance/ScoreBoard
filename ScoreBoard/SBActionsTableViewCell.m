@@ -26,13 +26,16 @@
 }
 
 - (void) initWithoutNewGameButton {
-  //  self.emptyGameButton.hidden = true;
-  //  self.gameWithSamePlayersButton.hidden = true;
+  self.emptyGameButton.hidden = true;
+  self.gameWithSamePlayersButton.hidden = true;
 }
 
 - (void) initWithNewGameButton {
-    self.emptyGameButton.hidden = false;
-    self.gameWithSamePlayersButton.hidden = false;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.emptyGameButton.hidden = false;
+        self.gameWithSamePlayersButton.hidden = false;
+    }];
+    
 }
 
 

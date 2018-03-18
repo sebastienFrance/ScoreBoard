@@ -8,6 +8,12 @@
 #import "SBHistoryCell.h"
 #import "ModelScoreBoard.h"
 
+@interface SBHistoryCell()
+
+@property (weak, nonatomic) IBOutlet UILabel *onGoingGameLabel;
+
+@end
+
 @implementation SBHistoryCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -26,7 +32,7 @@
     // Configure the view for the selected state
 }
 
-- (void) initCellWithPlayer:(ModelScoreBoard*) argPlayer {
+- (void) initCellWithPlayer:(ModelScoreBoard*) argPlayer isOngoingGame:(BOOL) isOngoingGame {
     
     NSDate* currentDate = [argPlayer GameDate];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -36,6 +42,9 @@
     
     self.gameDateLabel.text = stringDate;
     self.gameNameLabel.text = argPlayer.GameName;
+    
+    self.onGoingGameLabel.hidden = !isOngoingGame;
+    
 }
 
 

@@ -14,10 +14,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="OXG-TG-NGF">
             <objects>
-                <tabBarController id="Nsl-gg-uvM" sceneMemberID="viewController">
+                <tabBarController id="Nsl-gg-uvM" customClass="MainTabBarViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TeZ-6D-nra">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -466,12 +466,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="126.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tHL-UN-bPh">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="tHL-UN-bPh">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="126.5"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MG4-TJ-RFa">
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
-                                                                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                                                     <state key="normal" title="Add Player">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -482,7 +482,7 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zv-RN-OcJ">
                                                                     <rect key="frame" x="0.0" y="42" width="375" height="42.5"/>
-                                                                    <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                                                     <state key="normal" title="New empty game">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -493,7 +493,7 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpP-go-G8N">
                                                                     <rect key="frame" x="0.0" y="84.5" width="375" height="42"/>
-                                                                    <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                                                     <state key="normal" title="New game with same players">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -545,7 +545,7 @@
                                     <action selector="SendMail" destination="Swn-Pb-Y22" id="kVh-rY-u3a"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="icons8-services-75" id="Q1R-eK-OTX">
+                            <barButtonItem image="icons8-services-75" id="Q1R-eK-OTX">
                                 <connections>
                                     <segue destination="olj-cP-gS6" kind="show" id="g93-AJ-bzf"/>
                                 </connections>
@@ -617,35 +617,47 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="85.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hqt-qF-s6w">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fVl-HR-xOw">
                                                     <rect key="frame" x="15" y="11" width="319" height="64"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Game Name Label" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ITS-ng-qva">
-                                                            <rect key="frame" x="0.0" y="0.0" width="319" height="38"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hqt-qF-s6w">
+                                                            <rect key="frame" x="0.0" y="0.0" width="190" height="64"/>
+                                                            <subviews>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Game Name Label" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ITS-ng-qva">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="190" height="38"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Game Date Label" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mVi-va-EfG">
+                                                                    <rect key="frame" x="0.0" y="46" width="190" height="18"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On going game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OJ-Mg-ylb">
+                                                            <rect key="frame" x="198" y="0.0" width="121" height="64"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Game Date Label" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mVi-va-EfG">
-                                                            <rect key="frame" x="0.0" y="46" width="319" height="18"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="hqt-qF-s6w" firstAttribute="top" secondItem="wwg-f8-cHd" secondAttribute="topMargin" id="1Vc-FX-0Y4"/>
-                                                <constraint firstItem="hqt-qF-s6w" firstAttribute="leading" secondItem="wwg-f8-cHd" secondAttribute="leadingMargin" id="SD5-cN-e55"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="hqt-qF-s6w" secondAttribute="trailing" id="jut-ao-6hN"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="hqt-qF-s6w" secondAttribute="bottom" id="mZ5-tW-3W9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="fVl-HR-xOw" secondAttribute="bottom" id="8wC-iw-0eL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fVl-HR-xOw" secondAttribute="trailing" id="cxU-y1-D87"/>
+                                                <constraint firstItem="fVl-HR-xOw" firstAttribute="leading" secondItem="wwg-f8-cHd" secondAttribute="leadingMargin" id="deL-KS-bKl"/>
+                                                <constraint firstItem="fVl-HR-xOw" firstAttribute="top" secondItem="wwg-f8-cHd" secondAttribute="topMargin" id="wY1-Ga-kqN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <connections>
                                             <outlet property="gameDateLabel" destination="mVi-va-EfG" id="IzU-B9-Prg"/>
                                             <outlet property="gameNameLabel" destination="ITS-ng-qva" id="hGi-5C-HG7"/>
+                                            <outlet property="onGoingGameLabel" destination="7OJ-Mg-ylb" id="jqi-4l-9LS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

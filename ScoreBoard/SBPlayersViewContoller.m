@@ -39,7 +39,7 @@
 @implementation SBPlayersViewContoller
 
 static NSUInteger const SECTION_PLAYERS = 0;
-static NSUInteger const SECTION_ACTIONS = 1;
+//static NSUInteger const SECTION_ACTIONS = 1;
 
 -(Boolean) isGameStarted {
     return self.gameConfig != Nil;
@@ -64,7 +64,21 @@ static NSUInteger const SECTION_ACTIONS = 1;
 // Start a new game and cleanup the tableview
 - (void) startNewGame {
     [self initializeNewGame];
-    [self.tv reloadData];
+
+    // Animate the change when a new game is started
+    [self.tv beginUpdates];
+
+    // Cleanup the section 0 that contains the list of players
+    NSIndexSet* sectionIndex = [NSIndexSet indexSetWithIndex:0];
+    [self.tv reloadSections:sectionIndex withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    // Update the cell with the Action buttons to display only "add players"
+    SBActionsTableViewCell* actionCell = [self.tv cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    if (actionCell != nil) {
+        [actionCell initWithoutNewGameButton];
+    }
+    
+    [self.tv endUpdates];
 }
 
 -(void) initializeNewGame {
@@ -262,7 +276,9 @@ static NSUInteger const SECTION_ACTIONS = 1;
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK",Nil) style:UIAlertActionStyleDefault
-                                                               handler:^(UIAlertAction * action) {[self startNewGame];}];
+                                                               handler:^(UIAlertAction * action) {
+                                                                   [self startNewGame];
+                                                               }];
     
     UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",Nil) style:UIAlertActionStyleCancel
                                                           handler:^(UIAlertAction * action) {}];
@@ -278,7 +294,9 @@ static NSUInteger const SECTION_ACTIONS = 1;
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK",Nil) style:UIAlertActionStyleDefault
-                                                               handler:^(UIAlertAction * action) {[self startNewGameWithSamePlayer];}];
+                                                               handler:^(UIAlertAction * action) {
+                                                                   [self startNewGameWithSamePlayer];
+                                                               }];
     
     UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",Nil) style:UIAlertActionStyleCancel
                                                           handler:^(UIAlertAction * action) {}];
