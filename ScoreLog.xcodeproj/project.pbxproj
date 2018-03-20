@@ -55,6 +55,7 @@
 		BED9C7CB19DAA04900CC9D81 /* SBGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BED9C7CA19DAA04900CC9D81 /* SBGameManager.m */; };
 		BEDC2FC1205D3B4400F35646 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDC2FC0205D3B4400F35646 /* MainTabBarViewController.m */; };
 		BEE631D0205E670700BB4673 /* Screenshots in Resources */ = {isa = PBXBuildFile; fileRef = BEE631CF205E670700BB4673 /* Screenshots */; };
+		BEE63217205EA51200BB4673 /* MainSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE63216205EA51200BB4673 /* MainSplitViewController.m */; };
 		BEE89FF9143324A200039D87 /* DatabaseAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE89FF8143324A200039D87 /* DatabaseAccess.m */; };
 		BEE98E9413FD858500716683 /* SBAddPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE98E9313FD858500716683 /* SBAddPlayerViewController.m */; };
 		BEFF5E3220489016006823FC /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFF5E3020489015006823FC /* Contacts.framework */; };
@@ -147,6 +148,8 @@
 		BEDC2FC0205D3B4400F35646 /* MainTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		BEE631CF205E670700BB4673 /* Screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Screenshots; sourceTree = "<group>"; };
 		BEE631D1205E671D00BB4673 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BEE63215205EA51200BB4673 /* MainSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainSplitViewController.h; sourceTree = "<group>"; };
+		BEE63216205EA51200BB4673 /* MainSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainSplitViewController.m; sourceTree = "<group>"; };
 		BEE89FF7143324A200039D87 /* DatabaseAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseAccess.h; sourceTree = "<group>"; };
 		BEE89FF8143324A200039D87 /* DatabaseAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseAccess.m; sourceTree = "<group>"; };
 		BEE98E9213FD858500716683 /* SBAddPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBAddPlayerViewController.h; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 		BEBD05A418906E06004A723A /* PlayersTable */ = {
 			isa = PBXGroup;
 			children = (
+				BEE63215205EA51200BB4673 /* MainSplitViewController.h */,
+				BEE63216205EA51200BB4673 /* MainSplitViewController.m */,
 				BE68714813FAFC1500E515D8 /* SBPlayersViewContoller.h */,
 				BE68714913FAFC1500E515D8 /* SBPlayersViewContoller.m */,
 				BE66A93120586EC700BF0127 /* SBActionsTableViewCell.h */,
@@ -562,6 +567,7 @@
 				BEDC2FC1205D3B4400F35646 /* MainTabBarViewController.m in Sources */,
 				BE09EFB0145322F10094C38C /* UIImage+RoundedCorner.m in Sources */,
 				BE0921CC2055B060002F071E /* SBHistoryCell.m in Sources */,
+				BEE63217205EA51200BB4673 /* MainSplitViewController.m in Sources */,
 				BE66A93320586EC700BF0127 /* SBActionsTableViewCell.m in Sources */,
 				BE09EFB3145323310094C38C /* UIImage+Alpha.m in Sources */,
 				BEB091C018941FBB0012CA47 /* MailHelper.m in Sources */,
@@ -680,7 +686,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -706,7 +712,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

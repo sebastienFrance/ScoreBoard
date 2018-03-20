@@ -195,6 +195,10 @@ static NSUInteger const SECTION_PLAYERS = 0;
         NSIndexSet* indexes = [[NSIndexSet alloc] initWithIndex:1];
         [self.tv reloadSections:indexes withRowAnimation:UITableViewRowAnimationNone];
     }
+    
+    if (!self.splitViewController.isCollapsed) {
+        [self performSegueWithIdentifier:@"openAddScore" sender:[NSIndexPath indexPathForRow:[self.modelScorePlayerList count] - 1 inSection:0]];
+    }
 }
 
 
@@ -385,9 +389,17 @@ static NSUInteger const SECTION_PLAYERS = 0;
          [self.tv deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
          [self.tv reloadRowsAtIndexPaths:cellToBeRefreshed withRowAnimation:UITableViewRowAnimationNone];
          
+         // When there's no more player we reload the section 1 to display only the "Add Player" buttons and to hide buttons to
+         // create new games
+         // We also update the Details view of the SplitViewControllers to show an "EmptyGamme" details ViewController
          if (self.modelScorePlayerList.count == 0) {
              NSIndexSet* indexes = [[NSIndexSet alloc] initWithIndex:1];
              [self.tv reloadSections:indexes withRowAnimation:UITableViewRowAnimationNone];
+             
+             // Update and show the detailed view only when for iPad and iPhone Plus in Landscape
+             if (self.splitViewController.isCollapsed == false) {
+                 [self performSegueWithIdentifier:@"showEmptyGameDetails" sender:Nil];
+             }
          }
      }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -398,11 +410,21 @@ static NSUInteger const SECTION_PLAYERS = 0;
 #pragma mark - Segue
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:@"OpenAddScore"]) {
-        SBAddScoreToPlayerViewController *addController = (SBAddScoreToPlayerViewController*) segue.destinationViewController;
-        ModelScorePlayer* getScorePlayer = [self.modelScorePlayerList objectAtIndex:[self.tv indexPathForSelectedRow].row];
+    if ([segue.identifier isEqualToString:@"openAddScore"]) {
+        UINavigationController* navController = (UINavigationController*) segue.destinationViewController;
+        SBAddScoreToPlayerViewController *addController = (SBAddScoreToPlayerViewController*) navController.topViewController;
+        
+        NSIndexPath* rowIndexPath = (NSIndexPath*) sender;
+        
+        ModelScorePlayer* getScorePlayer = [self.modelScorePlayerList objectAtIndex:rowIndexPath.row];
         addController.scorePlayer = getScorePlayer;
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    [self performSegueWithIdentifier:@"openAddScore" sender:indexPath];
+
 }
 
 @end

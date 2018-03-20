@@ -26,6 +26,7 @@
 @property(nonatomic, retain) IBOutlet UISegmentedControl *segmentedControl;
 @property(nonatomic, retain) IBOutlet UIImageView *photoOfPlayer;
 @property(nonatomic, retain) IBOutlet UITableView * tableViewScoreHistory;
+@property (weak, nonatomic) IBOutlet UIStackView *AddScoreStackView;
 
 @end
 
@@ -35,13 +36,8 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
-    // Configure the navigation bar
-     self.navigationItem.title = [[self.scorePlayer Player] lastName];
-    
-    // set the image of the player
-    self.photoOfPlayer.image = [[self.scorePlayer Player] picture];
+- (void)viewDidLoad {
+    [super viewDidLoad];
 
     // Configure the table height for the score history
     self.tableViewScoreHistory.rowHeight = UITableViewAutomaticDimension;
@@ -49,11 +45,24 @@
     self.tableViewScoreHistory.delegate = self;
     self.tableViewScoreHistory.dataSource = self;
     
-    self.modelScoreList = [DatabaseHelper getSortedScoreList:self.scorePlayer];
+    [self refreshView];
 
+}
+
+- (void) refreshView {
+
+    
+    // Configure the navigation bar
+    self.navigationItem.title = [[self.scorePlayer Player] lastName];
+    
+    // set the image of the player
+    self.photoOfPlayer.image = [[self.scorePlayer Player] picture];
+    
+    self.modelScoreList = [DatabaseHelper getSortedScoreList:self.scorePlayer];
+    
     // compute the lowest and highest score of the player
     [self initializeHighestAndLowestScore];
-
+    
     self.scoreToAdd.placeholder = NSLocalizedString(@"Score", @"(AddScoreToPlayerController) score placeholder for AddScore view");
     
     // Display the +/- sign only if we can have negative score in the game.
@@ -61,9 +70,11 @@
     
     [self.scoreToAdd becomeFirstResponder];
     
+    [self.tableViewScoreHistory reloadData];
 
-    [super viewDidLoad];
 }
+
+
 
 - (void)viewDidUnload
 {
