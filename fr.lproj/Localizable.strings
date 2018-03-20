@@ -24,8 +24,6 @@
 "Edit historical games" = "Modifier l'historique";
 "Error" = "Erreur";
 "Options cannot be configured while a game is not started." = "La partie doit d'abord être démarrée pour configurer les options.";
-"Start a new game" = "Nouvelle partie";
-"Do you want to start a new game?" = "Créer une nouvelle partie ?";
 "Duplicate game" = "Dupliquer une partie";
 "Do you want to create a new game with the same players?" = "Créer une partie avec les mêmes joueurs ?";
 "OK" = "OK";

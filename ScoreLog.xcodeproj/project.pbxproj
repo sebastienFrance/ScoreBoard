@@ -53,7 +53,6 @@
 		BED2828C19DDB1480005C7FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BED2828E19DDB1480005C7FC /* Localizable.strings */; };
 		BED9C7C619D9BB1600CC9D81 /* SBRearMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BED9C7C519D9BB1600CC9D81 /* SBRearMenuCell.m */; };
 		BED9C7CB19DAA04900CC9D81 /* SBGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BED9C7CA19DAA04900CC9D81 /* SBGameManager.m */; };
-		BEDC2FC1205D3B4400F35646 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDC2FC0205D3B4400F35646 /* MainTabBarViewController.m */; };
 		BEE631D0205E670700BB4673 /* Screenshots in Resources */ = {isa = PBXBuildFile; fileRef = BEE631CF205E670700BB4673 /* Screenshots */; };
 		BEE63217205EA51200BB4673 /* MainSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE63216205EA51200BB4673 /* MainSplitViewController.m */; };
 		BEE89FF9143324A200039D87 /* DatabaseAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE89FF8143324A200039D87 /* DatabaseAccess.m */; };
@@ -144,8 +143,6 @@
 		BED9C7C519D9BB1600CC9D81 /* SBRearMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBRearMenuCell.m; sourceTree = "<group>"; };
 		BED9C7C919DAA04900CC9D81 /* SBGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBGameManager.h; sourceTree = "<group>"; };
 		BED9C7CA19DAA04900CC9D81 /* SBGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBGameManager.m; sourceTree = "<group>"; };
-		BEDC2FBF205D3B4400F35646 /* MainTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
-		BEDC2FC0205D3B4400F35646 /* MainTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		BEE631CF205E670700BB4673 /* Screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Screenshots; sourceTree = "<group>"; };
 		BEE631D1205E671D00BB4673 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BEE63215205EA51200BB4673 /* MainSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainSplitViewController.h; sourceTree = "<group>"; };
@@ -304,8 +301,6 @@
 		BEBD05A418906E06004A723A /* PlayersTable */ = {
 			isa = PBXGroup;
 			children = (
-				BEE63215205EA51200BB4673 /* MainSplitViewController.h */,
-				BEE63216205EA51200BB4673 /* MainSplitViewController.m */,
 				BE68714813FAFC1500E515D8 /* SBPlayersViewContoller.h */,
 				BE68714913FAFC1500E515D8 /* SBPlayersViewContoller.m */,
 				BE66A93120586EC700BF0127 /* SBActionsTableViewCell.h */,
@@ -370,13 +365,14 @@
 		BEC8F6F913F197650051770E /* ScoreBoard */ = {
 			isa = PBXGroup;
 			children = (
-				BEDC2FBE205D3B0D00F35646 /* MainTabBarController */,
 				BE522F6B189C0FE100D760C1 /* MainStoryboard.storyboard */,
 				BE2F12A42059C05100F55695 /* Launch Screen.storyboard */,
 				BED9C7C919DAA04900CC9D81 /* SBGameManager.h */,
 				BED9C7CA19DAA04900CC9D81 /* SBGameManager.m */,
 				BEC8F70213F197660051770E /* ScoreBoardAppDelegate.h */,
 				BEC8F70313F197660051770E /* ScoreBoardAppDelegate.m */,
+				BEE63215205EA51200BB4673 /* MainSplitViewController.h */,
+				BEE63216205EA51200BB4673 /* MainSplitViewController.m */,
 				BE63BC4019DC21AD008F9993 /* Historical Games */,
 				BEBD05A418906E06004A723A /* PlayersTable */,
 				BEC8F6FA13F197650051770E /* Supporting Files */,
@@ -408,15 +404,6 @@
 				BEC8F71713F197660051770E /* ScoreLogTests-Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BEDC2FBE205D3B0D00F35646 /* MainTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				BEDC2FBF205D3B4400F35646 /* MainTabBarViewController.h */,
-				BEDC2FC0205D3B4400F35646 /* MainTabBarViewController.m */,
-			);
-			name = MainTabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -564,7 +551,6 @@
 				BE9589CA1441A73600B0D124 /* SBGameTypeViewController.m in Sources */,
 				BE9589D61441D19D00B0D124 /* ModelGameConfig.m in Sources */,
 				BE09EFAC145321E80094C38C /* UIImage+Resize.m in Sources */,
-				BEDC2FC1205D3B4400F35646 /* MainTabBarViewController.m in Sources */,
 				BE09EFB0145322F10094C38C /* UIImage+RoundedCorner.m in Sources */,
 				BE0921CC2055B060002F071E /* SBHistoryCell.m in Sources */,
 				BEE63217205EA51200BB4673 /* MainSplitViewController.m in Sources */,

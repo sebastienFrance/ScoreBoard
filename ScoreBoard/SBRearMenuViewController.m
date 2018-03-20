@@ -35,6 +35,9 @@
 
 @implementation SBRearMenuViewController
 
+static NSUInteger const SECTION_START_NEW_GAME = 0;
+static NSUInteger const SECTION_HISTORY = 1;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,22 +56,45 @@
     // we need to reload the content of the table and to refresh it (because it may have changed)
     self.scorePlayerList = [DatabaseHelper loadHistory];
     [self.theTableView reloadData];
+    
+    if (!self.splitViewController.isCollapsed) {
+        [self performSegueWithIdentifier:@"ShowStartGameDetails" sender:Nil];
+    }
+}
+
+
+- (IBAction)startNewGame:(UIButton *)sender {
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self performSegueWithIdentifier:@"showGame" sender:indexPath];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.scorePlayerList.count;
+    if (section == SECTION_HISTORY) {
+        return self.scorePlayerList.count;
+    } else {
+        return 1;
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == SECTION_HISTORY) {
      return NSLocalizedString(@"Historical Game", @"(RearMenu) Title Historical section");
+    } else {
+        return nil;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self cellForHistorical:tableView row:indexPath.row];
+    if (indexPath.section == SECTION_HISTORY) {
+        return [self cellForHistorical:tableView row:indexPath.row];
+    } else {
+        UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"StartNewGameCellId" forIndexPath:indexPath];
+        return cell;
+    }
 }
 
 -(UITableViewCell*) cellForHistorical:(UITableView *)tableView row:(NSUInteger) theRow {
@@ -89,7 +115,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self historicalRowSelected:indexPath.row];
+    [self performSegueWithIdentifier:@"showGame" sender:indexPath];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showGame"]) {
+        SBPlayersViewContoller* playerController = (SBPlayersViewContoller*) segue.destinationViewController;
+        NSIndexPath* index = (NSIndexPath*) sender;
+        if (index.section == SECTION_HISTORY) {
+            ModelScoreBoard* getScorePlayer = [self.scorePlayerList objectAtIndex:index.row];
+            playerController.scoreBoardModel = getScorePlayer;
+            playerController.gameConfig = getScorePlayer.GameConfig;
+        }
+    }
 }
 
 //***************
@@ -98,15 +136,9 @@
 //
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // The current game cannot be deleted
-    ModelScoreBoard* scoreBoardModel = (ModelScoreBoard*) [self.scorePlayerList objectAtIndex:indexPath.row];
-    
-    SBPlayersViewContoller* controller = [SBGameManager sharedInstance].playerController;
-    ModelScoreBoard* currentScoreBoardModel = controller.scoreBoardModel;
-    
-    // When there's no current game or when the current game is not the current row, then the current row could be deleted
-    return (currentScoreBoardModel == Nil || scoreBoardModel.objectID != currentScoreBoardModel.objectID);
+    return indexPath.section == SECTION_HISTORY;
 }
+
 
 // To be analysed!!!!
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
@@ -142,40 +174,5 @@
     }
 }
 
--(void) historicalRowSelected:(NSUInteger) theRow {
-    SBPlayersViewContoller* controller = [SBGameManager sharedInstance].playerController;
-    
-    ModelScoreBoard* getScorePlayer = [self.scorePlayerList objectAtIndex:[self.theTableView indexPathForSelectedRow].row];
-    
-    [controller updateWithHistoricalGame:getScorePlayer config:getScorePlayer.GameConfig];
-
-    // Animate the transation from the History tab to the Game tab
-    
-    // Get the views to animate.
-    UIView * fromView = self.tabBarController.selectedViewController.view;
-    UIView * toView = [[self.tabBarController.viewControllers objectAtIndex:0] view];
-    
-    // Get the size of the view.
-    CGRect viewSize = fromView.frame;
-    
-    // Add the view that we want to display to superview of currently visible view.
-    [fromView.superview addSubview:toView];
-    
-    // Position it off screen. We will animate it left to right slide.
-    toView.frame = CGRectMake(-self.view.bounds.size.width, viewSize.origin.y, toView.bounds.size.width, viewSize.size.height);
-    
-    // Animate transition
-    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionTransitionNone animations:^{
-        // Animate the views with slide.
-        fromView.frame = CGRectMake(self.view.bounds.size.width, viewSize.origin.y, toView.bounds.size.width, viewSize.size.height);
-        toView.frame = CGRectMake(0, viewSize.origin.y, toView.bounds.size.width, viewSize.size.height);
-    } completion:^(BOOL finished) {
-        if (finished) {
-            // Remove the old view.
-            [fromView removeFromSuperview];
-            self.tabBarController.selectedIndex = 0;
-        }
-    }];
-}
 
 @end

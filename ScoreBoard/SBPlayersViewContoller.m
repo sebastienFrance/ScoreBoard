@@ -58,8 +58,20 @@ static NSUInteger const SECTION_PLAYERS = 0;
     self.tv.rowHeight = UITableViewAutomaticDimension;
     self.tv.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
     
-    [self initializeNewGame];
+    if (self.scoreBoardModel != nil && self.gameConfig != nil) {
+        self.modelScorePlayerList =[DatabaseHelper loadScorePlayerList:self.scoreBoardModel];
+        
+        [self refreshButtonState];
+        if (!self.splitViewController.isCollapsed) {
+            [self performSegueWithIdentifier:@"openAddScore" sender:[NSIndexPath indexPathForRow:0 inSection:0]];
+        }
+    } else {
+        [self initializeNewGame];
+    }
 }
+
+
+
 
 // Start a new game and cleanup the tableview
 - (void) startNewGame {
@@ -86,6 +98,10 @@ static NSUInteger const SECTION_PLAYERS = 0;
     self.scoreBoardModel = Nil;
     self.gameConfig = Nil;
     [self refreshButtonState];
+    
+    if (!self.splitViewController.isCollapsed) {
+        [self performSegueWithIdentifier:@"showEmptyGameDetails" sender:Nil];
+    }
 }
 
 // Start a new game with the list of players from the current game
@@ -104,16 +120,6 @@ static NSUInteger const SECTION_PLAYERS = 0;
 }
 
 
-- (void) updateWithHistoricalGame:(ModelScoreBoard*) scoreBoardModel config:(ModelGameConfig*) gameConfig {
-    self.scoreBoardModel = scoreBoardModel;
-    self.gameConfig = gameConfig;
-    
-    self.modelScorePlayerList =[DatabaseHelper loadScorePlayerList:self.scoreBoardModel];
-    
-    [self refreshButtonState];
-    
-    [self.tv reloadData];
-}
 
 #pragma mark - Utilities
 -(void) refreshButtonState {
@@ -271,25 +277,6 @@ static NSUInteger const SECTION_PLAYERS = 0;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self performSegueWithIdentifier:@"openAddPlayer" sender:Nil];
     });
-}
-
-- (IBAction)startNewEmptyGame:(UIButton *)sender {
-    
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Start a new game", Nil)
-                                                                   message:NSLocalizedString(@"Do you want to start a new game?", Nil)
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* startNewGameAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK",Nil) style:UIAlertActionStyleDefault
-                                                               handler:^(UIAlertAction * action) {
-                                                                   [self startNewGame];
-                                                               }];
-    
-    UIAlertAction* cancelNewGame = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel",Nil) style:UIAlertActionStyleCancel
-                                                          handler:^(UIAlertAction * action) {}];
-    
-    [alert addAction:startNewGameAction];
-    [alert addAction:cancelNewGame];
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)startNewGameWithSamePlayers:(UIButton *)sender {

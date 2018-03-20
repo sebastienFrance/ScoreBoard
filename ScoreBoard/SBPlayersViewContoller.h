@@ -29,7 +29,6 @@
 @property (nonatomic, readonly) Boolean isGameStarted;
 
 
-- (void) updateWithHistoricalGame:(ModelScoreBoard*) scoreBoardModel config:(ModelGameConfig*) gameConfig;
 - (void) startNewGame;
 - (void) startNewGameWithSamePlayer;
 - (void) addPlayer:(ModelPlayer*) newPlayer;

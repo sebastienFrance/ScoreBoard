@@ -8,7 +8,7 @@
 #import "SBActionsTableViewCell.h"
 
 @interface SBActionsTableViewCell()
-@property (weak, nonatomic) IBOutlet UIButton *emptyGameButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *gameWithSamePlayersButton;
 @end
 
@@ -26,13 +26,11 @@
 }
 
 - (void) initWithoutNewGameButton {
-  self.emptyGameButton.hidden = true;
   self.gameWithSamePlayersButton.hidden = true;
 }
 
 - (void) initWithNewGameButton {
     [UIView animateWithDuration:0.3 animations:^{
-        self.emptyGameButton.hidden = false;
         self.gameWithSamePlayersButton.hidden = false;
     }];
     
