@@ -175,9 +175,10 @@
     
     if (contact.imageDataAvailable) {
         self.playerPicture.image =  [[UIImage alloc] initWithData:contact.imageData];
-    } else {
-        self.playerPicture.image = [UIImage imageNamed:@"No_Photo.png"];
     }
+//    else {
+//        self.playerPicture.image = [UIImage imageNamed:@"No_Photo.png"];
+//    }
     
     // build the player name and close the Address Book picker
     self.playerName.text = [NSString stringWithFormat:@"%@ %@", firstName, lastName];

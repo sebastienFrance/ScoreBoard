@@ -57,6 +57,7 @@
     
     // set the image of the player
     self.photoOfPlayer.image = [[self.scorePlayer Player] picture];
+
     
     self.modelScoreList = [DatabaseHelper getSortedScoreList:self.scorePlayer];
     
@@ -68,7 +69,9 @@
     // Display the +/- sign only if we can have negative score in the game.
     self.segmentedControl.hidden = ![[SBGameManager sharedInstance].playerController.gameConfig.NegativeScore boolValue];
     
-    [self.scoreToAdd becomeFirstResponder];
+    if (self.splitViewController.isCollapsed) {
+        [self.scoreToAdd becomeFirstResponder];
+    }
     
     [self.tableViewScoreHistory reloadData];
 

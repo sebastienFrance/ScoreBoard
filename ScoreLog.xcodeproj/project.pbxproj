@@ -27,7 +27,6 @@
 		BE76646514404F6E00543CB1 /* ModelScoreBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = BE76646414404F6E00543CB1 /* ModelScoreBoard.m */; };
 		BE8DC921142DCDCF00F334DE /* ScoreBoardModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE8DC91F142DCDCF00F334DE /* ScoreBoardModel.xcdatamodeld */; };
 		BE932AB4142FC75100324CC3 /* ModelPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE932AB3142FC75100324CC3 /* ModelPlayer.m */; };
-		BE934CB81438C1050051B5AA /* No_Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = BE934CB71438C1050051B5AA /* No_Photo.png */; };
 		BE9589CA1441A73600B0D124 /* SBGameTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9589C91441A73600B0D124 /* SBGameTypeViewController.m */; };
 		BE9589D61441D19D00B0D124 /* ModelGameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9589D51441D19D00B0D124 /* ModelGameConfig.m */; };
 		BE9699EE1435665800D0DD59 /* ModelScoreList.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9699ED1435665800D0DD59 /* ModelScoreList.m */; };
@@ -103,7 +102,6 @@
 		BE8DC920142DCDCF00F334DE /* ScoreBoardModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScoreBoardModel.xcdatamodel; sourceTree = "<group>"; };
 		BE932AB2142FC75100324CC3 /* ModelPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelPlayer.h; path = Model/ModelPlayer.h; sourceTree = "<group>"; };
 		BE932AB3142FC75100324CC3 /* ModelPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelPlayer.m; path = Model/ModelPlayer.m; sourceTree = "<group>"; };
-		BE934CB71438C1050051B5AA /* No_Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = No_Photo.png; path = ScoreBoard/No_Photo.png; sourceTree = "<group>"; };
 		BE9589C81441A73600B0D124 /* SBGameTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBGameTypeViewController.h; sourceTree = "<group>"; };
 		BE9589C91441A73600B0D124 /* SBGameTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBGameTypeViewController.m; sourceTree = "<group>"; };
 		BE9589D41441D19D00B0D124 /* ModelGameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelGameConfig.h; path = Model/ModelGameConfig.h; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 			children = (
 				BE09E7F8189EDD87008FF16A /* Images.xcassets */,
 				BE63BC3E19DC1FCE008F9993 /* Launch.jpg */,
-				BE934CB71438C1050051B5AA /* No_Photo.png */,
 				BE3D07031466C645006508BC /* Icon.png */,
 				BE3D07051466C662006508BC /* Icon@2x.png */,
 				BEC8F70113F197660051770E /* ScoreLog-Prefix.pch */,
@@ -488,7 +485,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE934CB81438C1050051B5AA /* No_Photo.png in Resources */,
 				BED2828C19DDB1480005C7FC /* Localizable.strings in Resources */,
 				BE3D07041466C645006508BC /* Icon.png in Resources */,
 				BE2F12A52059C05100F55695 /* Launch Screen.storyboard in Resources */,

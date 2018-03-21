@@ -33,7 +33,7 @@
     
     self.photo.image = [[argScorePlayer Player] picture];
     if (self.photo.image == Nil) {
-        self.photo.image = [UIImage imageNamed:@"No_Photo.png"];
+        self.photo.image = [UIImage imageNamed:@"Unknown_Person250px.png"];//[UIImage imageNamed:@"No_Photo.png"];
     } else {
         self.photo.contentMode = UIViewContentModeScaleAspectFit;
     }
