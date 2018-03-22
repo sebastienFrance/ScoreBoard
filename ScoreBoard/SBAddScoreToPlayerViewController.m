@@ -27,6 +27,7 @@
 @property(nonatomic, retain) IBOutlet UIImageView *photoOfPlayer;
 @property(nonatomic, retain) IBOutlet UITableView * tableViewScoreHistory;
 @property (weak, nonatomic) IBOutlet UIStackView *AddScoreStackView;
+@property (weak, nonatomic) IBOutlet UIStackView *segmentedControlStackView;
 
 @end
 
@@ -45,11 +46,25 @@
     self.tableViewScoreHistory.delegate = self;
     self.tableViewScoreHistory.dataSource = self;
     
-    [self refreshView];
-
+    [self refreshView:false];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleGameOptionsUpdated:)
+                                                 name:@"GameOptionsUpdated"
+                                               object:nil];
 }
 
-- (void) refreshView {
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+- (void) handleGameOptionsUpdated:(NSNotification *) notification {
+    [self refreshView:TRUE];
+}
+
+
+- (void) refreshView:(BOOL) fromNotif {
 
     
     // Configure the navigation bar
@@ -67,7 +82,19 @@
     self.scoreToAdd.placeholder = NSLocalizedString(@"Score", @"(AddScoreToPlayerController) score placeholder for AddScore view");
     
     // Display the +/- sign only if we can have negative score in the game.
-    self.segmentedControl.hidden = ![[SBGameManager sharedInstance].playerController.gameConfig.NegativeScore boolValue];
+    if (fromNotif) {
+        if (self.segmentedControl.hidden == [[SBGameManager sharedInstance].playerController.gameConfig.NegativeScore boolValue]) {
+            [UIView animateWithDuration:0.4 animations:^ {
+                self.segmentedControl.hidden = ![[SBGameManager sharedInstance].playerController.gameConfig.NegativeScore boolValue];
+                [self.segmentedControlStackView layoutIfNeeded];
+            }];
+        }
+    }
+    else {
+        self.segmentedControl.hidden = ![[SBGameManager sharedInstance].playerController.gameConfig.NegativeScore boolValue];
+    }
+    
+    
     
     if (self.splitViewController.isCollapsed) {
         [self.scoreToAdd becomeFirstResponder];
@@ -151,6 +178,16 @@
 
 
 #pragma mark - UITableViewDataSource protocol
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *tableViewHeaderFooterView = (UITableViewHeaderFooterView *) view;
+    tableViewHeaderFooterView.textLabel.textColor  = [UIColor whiteColor];
+    tableViewHeaderFooterView.contentView.backgroundColor = [UIColor colorWithRed:0.15 green:0.64 blue:0.08 alpha:1.0];
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return NSLocalizedString(@"Score history", nil);
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -191,7 +228,7 @@
        textLabel.textColor = [UIColor redColor]; 
     } else {
         if (self.highestScore == score) {
-            textLabel.textColor = [UIColor greenColor]; 
+            textLabel.textColor = [UIColor colorWithRed:0.15 green:0.64 blue:0.08 alpha:1.0];
         } else {
            textLabel.textColor = [UIColor blackColor];            
         }

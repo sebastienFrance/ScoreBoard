@@ -282,7 +282,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P7h-Tz-Sb0">
-                                <rect key="frame" x="8" y="79" width="359" height="146.5"/>
+                                <rect key="frame" x="8" y="79" width="359" height="118"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="V14-lm-DqE">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="82"/>
@@ -291,10 +291,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="82" id="ES1-zH-RKJ">
-                                                        <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                                                     </constraint>
                                                     <constraint firstAttribute="width" constant="82" id="mZa-m5-giQ">
-                                                        <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                                                     </constraint>
                                                 </constraints>
                                             </imageView>
@@ -308,22 +308,22 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eex-Nr-nU2">
-                                        <rect key="frame" x="0.0" y="90" width="359" height="29"/>
-                                        <segments>
-                                            <segment title="+ (Positive)"/>
-                                            <segment title="- (Minus)"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score history" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJ0-kx-8k4">
-                                        <rect key="frame" x="0.0" y="126" width="359" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4pv-jr-Isv">
+                                        <rect key="frame" x="0.0" y="90" width="359" height="28"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eex-Nr-nU2">
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="29"/>
+                                                <segments>
+                                                    <segment title="+ (Positive)"/>
+                                                    <segment title="- (Minus)"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jRW-x4-OoT">
-                                <rect key="frame" x="0.0" y="225" width="375" height="442"/>
+                                <rect key="frame" x="0.0" y="205" width="375" height="462"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScoreHistory" id="lEB-9U-XxP">
@@ -343,7 +343,7 @@
                             <constraint firstItem="P7h-Tz-Sb0" firstAttribute="top" secondItem="dFm-8S-Ovj" secondAttribute="top" constant="15" id="1RE-Iz-W3v"/>
                             <constraint firstAttribute="trailing" secondItem="jRW-x4-OoT" secondAttribute="trailing" id="1We-bw-hmG"/>
                             <constraint firstItem="dFm-8S-Ovj" firstAttribute="trailing" secondItem="P7h-Tz-Sb0" secondAttribute="trailingMargin" constant="8" id="25P-98-zdv"/>
-                            <constraint firstItem="jRW-x4-OoT" firstAttribute="top" secondItem="P7h-Tz-Sb0" secondAttribute="bottom" id="7Bb-JG-4nS"/>
+                            <constraint firstItem="jRW-x4-OoT" firstAttribute="top" secondItem="P7h-Tz-Sb0" secondAttribute="bottom" constant="8" symbolic="YES" id="7Bb-JG-4nS"/>
                             <constraint firstItem="jRW-x4-OoT" firstAttribute="leading" secondItem="dFm-8S-Ovj" secondAttribute="leading" id="N4f-SB-U2g"/>
                             <constraint firstItem="P7h-Tz-Sb0" firstAttribute="leadingMargin" secondItem="dFm-8S-Ovj" secondAttribute="leading" constant="8" id="gOv-Jx-0Bu"/>
                             <constraint firstItem="jRW-x4-OoT" firstAttribute="bottom" secondItem="dFm-8S-Ovj" secondAttribute="bottom" id="lai-Dv-zge"/>
@@ -362,6 +362,7 @@
                         <outlet property="photoOfPlayer" destination="bWR-eo-WL5" id="1gW-Co-wus"/>
                         <outlet property="scoreToAdd" destination="fcE-KW-Rz9" id="i59-hG-btG"/>
                         <outlet property="segmentedControl" destination="eex-Nr-nU2" id="vzj-cu-ndG"/>
+                        <outlet property="segmentedControlStackView" destination="4pv-jr-Isv" id="C2r-Tn-BeJ"/>
                         <outlet property="tableViewScoreHistory" destination="jRW-x4-OoT" id="Nvu-Yf-pce"/>
                     </connections>
                 </viewController>
@@ -461,7 +462,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellPlayerList" rowHeight="104" id="7sG-sa-rzb" customClass="SBPlayersCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellPlayerList" rowHeight="104" id="7sG-sa-rzb" customClass="SBPlayersCell">
                                         <rect key="frame" x="0.0" y="22" width="375" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7sG-sa-rzb" id="Cjq-wU-5Gq">
@@ -543,7 +544,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MG4-TJ-RFa">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                                             <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                                             <state key="normal" title="Add Player">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -554,7 +555,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpP-go-G8N">
                                                             <rect key="frame" x="0.0" y="49" width="375" height="48.5"/>
                                                             <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                                             <state key="normal" title="New game with same players">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -675,7 +676,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8y-31-b8O">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
                                                             <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                                             <state key="normal" title="start new game">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>

@@ -88,6 +88,13 @@ static NSUInteger const SECTION_HISTORY = 1;
     }
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *tableViewHeaderFooterView = (UITableViewHeaderFooterView *) view;
+    tableViewHeaderFooterView.textLabel.textColor  = [UIColor whiteColor];
+    tableViewHeaderFooterView.contentView.backgroundColor = [UIColor colorWithRed:0.15 green:0.64 blue:0.08 alpha:1.0];
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == SECTION_HISTORY) {
         return [self cellForHistorical:tableView row:indexPath.row];

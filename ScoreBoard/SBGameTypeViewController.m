@@ -66,6 +66,11 @@
     }
      
     [[SBGameManager sharedInstance].playerController endGameType];
+    
+    // All instances of TestClass will be notified
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"GameOptionsUpdated"
+     object:self];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
