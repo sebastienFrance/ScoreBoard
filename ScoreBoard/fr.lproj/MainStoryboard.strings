@@ -88,8 +88,10 @@
 
 /* Class = "UIButton"; normalTitle = "New game with same players"; ObjectID = "qpP-go-G8N"; */
 "qpP-go-G8N.normalTitle" = "Nouvelle partie, même joueurs";
+"I8y-31-b8O.normalTitle" = "Nouvelle partie";
 
 /* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "rTK-go-Nzp"; */
 "rTK-go-Nzp.title" = "Annuler";
 
 "7OJ-Mg-ylb.text" = "Partie en cours";
+
