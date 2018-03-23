@@ -35,7 +35,7 @@
 
 @implementation SBRearMenuViewController
 
-static NSUInteger const SECTION_START_NEW_GAME = 0;
+//static NSUInteger const SECTION_START_NEW_GAME = 0;
 static NSUInteger const SECTION_HISTORY = 1;
 
 
