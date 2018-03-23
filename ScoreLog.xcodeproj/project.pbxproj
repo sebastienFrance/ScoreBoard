@@ -30,7 +30,6 @@
 		BE9589CA1441A73600B0D124 /* SBGameTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9589C91441A73600B0D124 /* SBGameTypeViewController.m */; };
 		BE9589D61441D19D00B0D124 /* ModelGameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9589D51441D19D00B0D124 /* ModelGameConfig.m */; };
 		BE9699EE1435665800D0DD59 /* ModelScoreList.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9699ED1435665800D0DD59 /* ModelScoreList.m */; };
-		BE9D25C81645373F0040A556 /* default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE9D25C71645373F0040A556 /* default-568h@2x.png */; };
 		BEA2A91C143B8AB100167466 /* SBPlayersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA2A91B143B8AB100167466 /* SBPlayersCell.m */; };
 		BEAC1D8619D8026B0019D87A /* SBRearMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC1D8519D8026A0019D87A /* SBRearMenuViewController.m */; };
 		BEB091C018941FBB0012CA47 /* MailHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB091BF18941FBB0012CA47 /* MailHelper.m */; };
@@ -109,7 +108,6 @@
 		BE9589D51441D19D00B0D124 /* ModelGameConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelGameConfig.m; path = Model/ModelGameConfig.m; sourceTree = "<group>"; };
 		BE9699EC1435665800D0DD59 /* ModelScoreList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelScoreList.h; path = Model/ModelScoreList.h; sourceTree = "<group>"; };
 		BE9699ED1435665800D0DD59 /* ModelScoreList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelScoreList.m; path = Model/ModelScoreList.m; sourceTree = "<group>"; };
-		BE9D25C71645373F0040A556 /* default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-568h@2x.png"; sourceTree = "<group>"; };
 		BEA2A91A143B8AB100167466 /* SBPlayersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBPlayersCell.h; sourceTree = "<group>"; };
 		BEA2A91B143B8AB100167466 /* SBPlayersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPlayersCell.m; sourceTree = "<group>"; };
 		BEAC1D8419D8026A0019D87A /* SBRearMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBRearMenuViewController.h; sourceTree = "<group>"; };
@@ -319,7 +317,6 @@
 		BEC8F6E413F197650051770E = {
 			isa = PBXGroup;
 			children = (
-				BE9D25C71645373F0040A556 /* default-568h@2x.png */,
 				BE8DC91D142DCD7C00F334DE /* Model and Model Classes */,
 				BE6ECF1813F6831800A999CD /* Resources */,
 				BE09EFB41453508A0094C38C /* UIImageLibrary */,
@@ -498,7 +495,6 @@
 				BE09E7F9189EDD87008FF16A /* Images.xcassets in Resources */,
 				BE63BC3F19DC1FCE008F9993 /* Launch.jpg in Resources */,
 				BE522F69189C0FE100D760C1 /* MainStoryboard.storyboard in Resources */,
-				BE9D25C81645373F0040A556 /* default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
