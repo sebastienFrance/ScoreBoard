@@ -56,6 +56,7 @@
 		BEE63217205EA51200BB4673 /* MainSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE63216205EA51200BB4673 /* MainSplitViewController.m */; };
 		BEE89FF9143324A200039D87 /* DatabaseAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE89FF8143324A200039D87 /* DatabaseAccess.m */; };
 		BEE98E9413FD858500716683 /* SBAddPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE98E9313FD858500716683 /* SBAddPlayerViewController.m */; };
+		BEF14B4820658AAE00213215 /* ScoreHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF14B4720658AAE00213215 /* ScoreHistoryTableViewCell.m */; };
 		BEFF5E3220489016006823FC /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFF5E3020489015006823FC /* Contacts.framework */; };
 		BEFF5E3320489016006823FC /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFF5E3120489016006823FC /* ContactsUI.framework */; };
 /* End PBXBuildFile section */
@@ -149,6 +150,8 @@
 		BEE89FF8143324A200039D87 /* DatabaseAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseAccess.m; sourceTree = "<group>"; };
 		BEE98E9213FD858500716683 /* SBAddPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBAddPlayerViewController.h; sourceTree = "<group>"; };
 		BEE98E9313FD858500716683 /* SBAddPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBAddPlayerViewController.m; sourceTree = "<group>"; };
+		BEF14B4620658AAE00213215 /* ScoreHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreHistoryTableViewCell.h; sourceTree = "<group>"; };
+		BEF14B4720658AAE00213215 /* ScoreHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreHistoryTableViewCell.m; sourceTree = "<group>"; };
 		BEF51727204A9C6700C5B583 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		BEF51729204AA11300C5B583 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		BEFF5E3020489015006823FC /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
@@ -270,6 +273,8 @@
 			children = (
 				BEC8977714042E1C00D1F674 /* SBAddScoreToPlayerViewController.h */,
 				BEC8977814042E1C00D1F674 /* SBAddScoreToPlayerViewController.m */,
+				BEF14B4620658AAE00213215 /* ScoreHistoryTableViewCell.h */,
+				BEF14B4720658AAE00213215 /* ScoreHistoryTableViewCell.m */,
 			);
 			name = AddScoreToPlayer;
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 				BE9589CA1441A73600B0D124 /* SBGameTypeViewController.m in Sources */,
 				BE9589D61441D19D00B0D124 /* ModelGameConfig.m in Sources */,
 				BE09EFAC145321E80094C38C /* UIImage+Resize.m in Sources */,
+				BEF14B4820658AAE00213215 /* ScoreHistoryTableViewCell.m in Sources */,
 				BE09EFB0145322F10094C38C /* UIImage+RoundedCorner.m in Sources */,
 				BE0921CC2055B060002F071E /* SBHistoryCell.m in Sources */,
 				BEE63217205EA51200BB4673 /* MainSplitViewController.m in Sources */,

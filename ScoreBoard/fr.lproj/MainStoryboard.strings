@@ -87,11 +87,15 @@
 "qfz-zv-Qx5.text" = "10";
 
 /* Class = "UIButton"; normalTitle = "New game with same players"; ObjectID = "qpP-go-G8N"; */
-"qpP-go-G8N.normalTitle" = "Nouvelle partie, même joueurs";
+"qpP-go-G8N.normalTitle" = "Nouvelle partie même joueurs";
 "I8y-31-b8O.normalTitle" = "Nouvelle partie";
 
 /* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "rTK-go-Nzp"; */
 "rTK-go-Nzp.title" = "Annuler";
 
 "7OJ-Mg-ylb.text" = "Partie en cours";
+"R1C-ET-Jgf.text" = "Bienvenue!";
+"VQ8-Z6-dbT.text" = "Créez une nouvelle partie ou continuez une ancienne partie";
+"85J-hy-5c8.text" = "Génial!";
+"y3f-Um-LZ6.text" = "Ajoutez des joueurs à la partie";
 

@@ -14,6 +14,7 @@
 #import "ModelGameConfig.h"
 #import "DatabaseHelper.h"
 #import "SBGameManager.h"
+#import "ScoreHistoryTableViewCell.h"
 
 
 @interface SBAddScoreToPlayerViewController()
@@ -206,36 +207,16 @@
 {
     static NSString *CellIdentifier = @"ScoreHistory";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    } 
+    ScoreHistoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    [self initCellWithScoreHistory:cell scoreIndexPath:indexPath];
+    ModelScoreList* scoreList = [self.modelScoreList objectAtIndex:indexPath.row];
+    NSInteger score = [scoreList.Score integerValue];
+
+    [cell initCellWithScoreHistory:indexPath.row value:score lowest:self.lowestScore highest:self.highestScore];
+    
     return cell;
 }
 
-// Initialize the row with the score
-- (void) initCellWithScoreHistory:(UITableViewCell*) cell scoreIndexPath:(NSIndexPath *)indexPath {
-
-    ModelScoreList* scoreList = [self.modelScoreList objectAtIndex:indexPath.row];
-    NSInteger score = [scoreList.Score integerValue];
-    
-    UILabel* textLabel = cell.textLabel;
-    textLabel.text = [NSString stringWithFormat:@"%lu -> %ld",[indexPath indexAtPosition:1] +1,(long)score]; 
-
-    if (self.lowestScore == score) {
-       textLabel.textColor = [UIColor redColor]; 
-    } else {
-        if (self.highestScore == score) {
-            textLabel.textColor = [UIColor colorWithRed:0.15 green:0.64 blue:0.08 alpha:1.0];
-        } else {
-           textLabel.textColor = [UIColor blackColor];            
-        }
-    }
-    
-    cell.accessoryType = UITableViewCellAccessoryNone;
-}
 
 #pragma mark - UITableViewDelegate protocol
 // Override to support conditional editing of the table view.
