@@ -212,8 +212,12 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unknown_Person_250px" translatesAutoresizingMaskIntoConstraints="NO" id="6aL-ua-suV">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="250" id="6eX-2k-LDV"/>
-                                                    <constraint firstAttribute="height" constant="250" id="f1a-pP-zE1"/>
+                                                    <constraint firstAttribute="width" constant="250" id="6eX-2k-LDV">
+                                                        <variation key="heightClass=compact-widthClass=compact" constant="70"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="250" id="f1a-pP-zE1">
+                                                        <variation key="heightClass=compact-widthClass=compact" constant="70"/>
+                                                    </constraint>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -222,6 +226,9 @@
                                         <rect key="frame" x="0.0" y="258" width="343" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                        <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        </variation>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="k3q-5C-0Dy">
                                         <rect key="frame" x="0.0" y="314" width="343" height="22"/>
@@ -335,10 +342,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wJl-hE-dbo">
-                                                    <rect key="frame" x="15" y="11" width="345" height="22"/>
+                                                    <rect key="frame" x="15" y="11" width="637" height="22"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Req-EU-c6U">
-                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="22"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="637" height="22"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -454,7 +461,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add players to the game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3f-Um-LZ6">
-                                <rect key="frame" x="16" y="325.5" width="343" height="80.5"/>
+                                <rect key="frame" x="16" y="345.5" width="343" height="40.5"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                 <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

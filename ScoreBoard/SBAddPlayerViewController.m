@@ -37,9 +37,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
-    // Configure the navigation bar
-   // self.navigationItem.title = NSLocalizedString(@"Add Player", "(AddPlayerController) View title for Add a new player");
     
     [self setDefaultPlayerName];
     // Open the keyboard directly on the Player Name
