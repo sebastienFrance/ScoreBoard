@@ -24,6 +24,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView *playerPicture;
 @property (nonatomic, retain) IBOutlet UITextField *playerName;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *addButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
 @end
 
@@ -103,6 +104,14 @@
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     } else {
         imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        if([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad) {
+            //imagePicker.modalInPopover = TRUE;
+            imagePicker.modalPresentationStyle = UIModalPresentationPopover;
+            if (imagePicker.popoverPresentationController != Nil) {
+                imagePicker.popoverPresentationController.barButtonItem = self.cameraButton;
+                imagePicker.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+            }
+        }
     }
     
     [self presentViewController:imagePicker animated:YES completion:Nil];
@@ -176,9 +185,6 @@
     if (contact.imageDataAvailable) {
         self.playerPicture.image =  [[UIImage alloc] initWithData:contact.imageData];
     }
-//    else {
-//        self.playerPicture.image = [UIImage imageNamed:@"No_Photo.png"];
-//    }
     
     // build the player name and close the Address Book picker
     self.playerName.text = [NSString stringWithFormat:@"%@ %@", firstName, lastName];

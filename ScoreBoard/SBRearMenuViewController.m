@@ -28,9 +28,6 @@
 @property (nonatomic) NSArray* scorePlayerList;
 
 
-// Warning : the NavigationController must never be deallocated else we cannot return to the Game view!!!
-@property(nonatomic, strong) UINavigationController* gameNavigationController;
-
 @end
 
 @implementation SBRearMenuViewController

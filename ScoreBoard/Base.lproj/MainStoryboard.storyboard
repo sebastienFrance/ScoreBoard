@@ -265,6 +265,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="8Sk-jS-g3u" id="0Ta-w6-Ur3"/>
+                        <outlet property="cameraButton" destination="1Ab-mn-790" id="viH-0w-YIf"/>
                         <outlet property="playerName" destination="oXy-Ob-3LA" id="N5O-Cq-GVN"/>
                         <outlet property="playerPicture" destination="6aL-ua-suV" id="oNf-J7-L1e"/>
                     </connections>
