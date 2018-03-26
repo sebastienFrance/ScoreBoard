@@ -20,6 +20,7 @@
 		BE3D07041466C645006508BC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D07031466C645006508BC /* Icon.png */; };
 		BE3D07061466C662006508BC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D07051466C662006508BC /* Icon@2x.png */; };
 		BE522F69189C0FE100D760C1 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE522F6B189C0FE100D760C1 /* MainStoryboard.storyboard */; };
+		BE5BCFE220695F9C00566B9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE5BCFE420695F9C00566B9D /* InfoPlist.strings */; };
 		BE63BC3F19DC1FCE008F9993 /* Launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE63BC3E19DC1FCE008F9993 /* Launch.jpg */; };
 		BE66A93320586EC700BF0127 /* SBActionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE66A93220586EC700BF0127 /* SBActionsTableViewCell.m */; };
 		BE68714A13FAFC1500E515D8 /* SBPlayersViewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = BE68714913FAFC1500E515D8 /* SBPlayersViewContoller.m */; };
@@ -91,6 +92,8 @@
 		BE3D07031466C645006508BC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "Gimp Score Log/Icon.png"; sourceTree = "<group>"; };
 		BE3D07051466C662006508BC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Gimp Score Log/Icon@2x.png"; sourceTree = "<group>"; };
 		BE522F6A189C0FE100D760C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		BE5BCFE320695F9C00566B9D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BE5BCFE520695FA300566B9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE63BC3E19DC1FCE008F9993 /* Launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Launch.jpg; sourceTree = "<group>"; };
 		BE66A93120586EC700BF0127 /* SBActionsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBActionsTableViewCell.h; sourceTree = "<group>"; };
 		BE66A93220586EC700BF0127 /* SBActionsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBActionsTableViewCell.m; sourceTree = "<group>"; };
@@ -224,6 +227,7 @@
 				BEC8F70113F197660051770E /* ScoreLog-Prefix.pch */,
 				BEC8F6FB13F197650051770E /* ScoreLog-Info.plist */,
 				BED2828E19DDB1480005C7FC /* Localizable.strings */,
+				BE5BCFE420695F9C00566B9D /* InfoPlist.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -494,6 +498,7 @@
 				BE3D07061466C662006508BC /* Icon@2x.png in Resources */,
 				BE09E7F9189EDD87008FF16A /* Images.xcassets in Resources */,
 				BE63BC3F19DC1FCE008F9993 /* Launch.jpg in Resources */,
+				BE5BCFE220695F9C00566B9D /* InfoPlist.strings in Resources */,
 				BE522F69189C0FE100D760C1 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,6 +590,15 @@
 				BE2F12A32059B1A400F55695 /* fr */,
 			);
 			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		BE5BCFE420695F9C00566B9D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE5BCFE320695F9C00566B9D /* fr */,
+				BE5BCFE520695FA300566B9D /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		BED2828E19DDB1480005C7FC /* Localizable.strings */ = {
