@@ -47,6 +47,16 @@
                ReferencedContainer = "container:ScoreLog.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BE2F89B1240212D40065B00C"
+               BuildableName = "ScoreLogUITests.xctest"
+               BlueprintName = "ScoreLogUITests"
+               ReferencedContainer = "container:ScoreLog.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

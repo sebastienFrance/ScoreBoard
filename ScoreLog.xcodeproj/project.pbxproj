@@ -16,6 +16,7 @@
 		BE2639E1140C14D6006F8C20 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2639E0140C14D6006F8C20 /* MobileCoreServices.framework */; };
 		BE2F12A52059C05100F55695 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2F12A42059C05100F55695 /* Launch Screen.storyboard */; };
 		BE2F89A724020E2A0065B00C /* ScoreLogUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F89A624020E2A0065B00C /* ScoreLogUnitTests.swift */; };
+		BE2F89B5240212D40065B00C /* ScoreLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F89B4240212D40065B00C /* ScoreLogUITests.swift */; };
 		BE3A7FA81416AEDE009A1B0B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A7FA71416AEDE009A1B0B /* AddressBookUI.framework */; };
 		BE3A7FAB1416AEED009A1B0B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A7FAA1416AEED009A1B0B /* AddressBook.framework */; };
 		BE3D07041466C645006508BC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3D07031466C645006508BC /* Icon.png */; };
@@ -70,6 +71,13 @@
 			remoteGlobalIDString = BEC8F6EE13F197650051770E;
 			remoteInfo = "Score Log";
 		};
+		BE2F89B7240212D40065B00C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEC8F6E613F197650051770E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEC8F6EE13F197650051770E;
+			remoteInfo = "Score Log";
+		};
 		BEC8F71313F197660051770E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BEC8F6E613F197650051770E /* Project object */;
@@ -98,6 +106,9 @@
 		BE2F89A424020E2A0065B00C /* ScoreLogUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoreLogUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2F89A624020E2A0065B00C /* ScoreLogUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLogUnitTests.swift; sourceTree = "<group>"; };
 		BE2F89A824020E2A0065B00C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE2F89B2240212D40065B00C /* ScoreLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoreLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE2F89B4240212D40065B00C /* ScoreLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLogUITests.swift; sourceTree = "<group>"; };
+		BE2F89B6240212D40065B00C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE3A7FA71416AEDE009A1B0B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		BE3A7FAA1416AEED009A1B0B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		BE3D07031466C645006508BC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "Gimp Score Log/Icon.png"; sourceTree = "<group>"; };
@@ -176,6 +187,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE2F89AF240212D40065B00C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BEC8F6EC13F197650051770E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +245,15 @@
 				BE2F89A824020E2A0065B00C /* Info.plist */,
 			);
 			path = ScoreLogUnitTests;
+			sourceTree = "<group>";
+		};
+		BE2F89B3240212D40065B00C /* ScoreLogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE2F89B4240212D40065B00C /* ScoreLogUITests.swift */,
+				BE2F89B6240212D40065B00C /* Info.plist */,
+			);
+			path = ScoreLogUITests;
 			sourceTree = "<group>";
 		};
 		BE63BC4019DC21AD008F9993 /* Historical Games */ = {
@@ -353,6 +380,7 @@
 				BEC8F6F913F197650051770E /* ScoreBoard */,
 				BEC8F71513F197660051770E /* ScoreBoardTests */,
 				BE2F89A524020E2A0065B00C /* ScoreLogUnitTests */,
+				BE2F89B3240212D40065B00C /* ScoreLogUITests */,
 				BEC8F6F213F197650051770E /* Frameworks */,
 				BEC8F6F013F197650051770E /* Products */,
 				BEE631D1205E671D00BB4673 /* README.md */,
@@ -366,6 +394,7 @@
 				BEC8F6EF13F197650051770E /* ScoreLog.app */,
 				BEC8F70D13F197660051770E /* ScoreLogTests.octest */,
 				BE2F89A424020E2A0065B00C /* ScoreLogUnitTests.xctest */,
+				BE2F89B2240212D40065B00C /* ScoreLogUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -464,6 +493,24 @@
 			productReference = BE2F89A424020E2A0065B00C /* ScoreLogUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BE2F89B1240212D40065B00C /* ScoreLogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE2F89B9240212D40065B00C /* Build configuration list for PBXNativeTarget "ScoreLogUITests" */;
+			buildPhases = (
+				BE2F89AE240212D40065B00C /* Sources */,
+				BE2F89AF240212D40065B00C /* Frameworks */,
+				BE2F89B0240212D40065B00C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE2F89B8240212D40065B00C /* PBXTargetDependency */,
+			);
+			name = ScoreLogUITests;
+			productName = ScoreLogUITests;
+			productReference = BE2F89B2240212D40065B00C /* ScoreLogUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		BEC8F6EE13F197650051770E /* Score Log */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEC8F72113F197660051770E /* Build configuration list for PBXNativeTarget "Score Log" */;
@@ -514,6 +561,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = BEC8F6EE13F197650051770E;
 					};
+					BE2F89B1240212D40065B00C = {
+						CreatedOnToolsVersion = 11.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BEC8F6EE13F197650051770E;
+					};
 					BEC8F6EE13F197650051770E = {
 						ProvisioningStyle = Manual;
 					};
@@ -541,12 +593,20 @@
 				BEC8F6EE13F197650051770E /* Score Log */,
 				BEC8F70C13F197660051770E /* ScoreLogTests */,
 				BE2F89A324020E2A0065B00C /* ScoreLogUnitTests */,
+				BE2F89B1240212D40065B00C /* ScoreLogUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BE2F89A224020E2A0065B00C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE2F89B0240212D40065B00C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -605,6 +665,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE2F89AE240212D40065B00C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE2F89B5240212D40065B00C /* ScoreLogUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BEC8F6EB13F197650051770E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -653,6 +721,11 @@
 			isa = PBXTargetDependency;
 			target = BEC8F6EE13F197650051770E /* Score Log */;
 			targetProxy = BE2F89A924020E2A0065B00C /* PBXContainerItemProxy */;
+		};
+		BE2F89B8240212D40065B00C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEC8F6EE13F197650051770E /* Score Log */;
+			targetProxy = BE2F89B7240212D40065B00C /* PBXContainerItemProxy */;
 		};
 		BEC8F71413F197660051770E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -794,6 +867,119 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScoreLog.app/ScoreLog";
+			};
+			name = Release;
+		};
+		BE2F89BA240212D40065B00C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = ScoreLogUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seb.testCI.ScoreLogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Score Log";
+			};
+			name = Debug;
+		};
+		BE2F89BB240212D40065B00C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = ScoreLogUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seb.testCI.ScoreLogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Score Log";
 			};
 			name = Release;
 		};
@@ -956,6 +1142,15 @@
 			buildConfigurations = (
 				BE2F89AB24020E2A0065B00C /* Debug */,
 				BE2F89AC24020E2A0065B00C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE2F89B9240212D40065B00C /* Build configuration list for PBXNativeTarget "ScoreLogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE2F89BA240212D40065B00C /* Debug */,
+				BE2F89BB240212D40065B00C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
